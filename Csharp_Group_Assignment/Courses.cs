@@ -53,6 +53,12 @@ namespace Csharp_Group_Assignment {
             if (dgvCourses.SelectedCells.Count == 0) {
                 // Dispaly an error message showing that there is no course selected to remove
                 MessageBox.Show("Oops... You have not selected a Course to remove.  Please select a Course to remove and try again.", "Course Selection Not Made", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else if(dgvCourses.SelectedCells.Count == 1){
+                // Remove the course
+
+            }else{
+                // Dispaly an error message showing that there is no course selected to remove
+                MessageBox.Show("Oops... You have made a slection of more than one Course.  Please select a single Course to remove and try again.", "Course Selection Made But More Than One", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
