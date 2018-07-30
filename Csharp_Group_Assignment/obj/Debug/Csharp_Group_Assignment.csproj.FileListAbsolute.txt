@@ -8,3 +8,4 @@ C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.exe
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.pdb
+C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmAddCourse.resources

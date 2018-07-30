@@ -47,15 +47,15 @@
             this.btnSearchCourse = new System.Windows.Forms.Button();
             this.txtSearchCourse = new System.Windows.Forms.TextBox();
             this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnLinkCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnPrintCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnRemoveCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnEditCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnAddCourse = new Csharp_Group_Assignment.CircleButton();
+            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlHelloMsgBackgroundColor.SuspendLayout();
@@ -326,6 +326,7 @@
             this.btnSearchCourse.TabIndex = 3;
             this.btnSearchCourse.Text = "Search";
             this.btnSearchCourse.UseVisualStyleBackColor = false;
+            this.btnSearchCourse.Click += new System.EventHandler(this.btnSearchCourse_Click);
             // 
             // txtSearchCourse
             // 
@@ -336,11 +337,96 @@
             this.txtSearchCourse.Name = "txtSearchCourse";
             this.txtSearchCourse.Size = new System.Drawing.Size(216, 23);
             this.txtSearchCourse.TabIndex = 4;
+            this.txtSearchCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCourse_KeyPress);
             // 
             // ttpGeneral
             // 
             this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
+            // 
+            // btnLinkCourse
+            // 
+            this.btnLinkCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnLinkCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkCourse.FlatAppearance.BorderSize = 0;
+            this.btnLinkCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnLinkCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnLinkCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnLinkCourse.Image")));
+            this.btnLinkCourse.Location = new System.Drawing.Point(452, 12);
+            this.btnLinkCourse.Name = "btnLinkCourse";
+            this.btnLinkCourse.Size = new System.Drawing.Size(45, 40);
+            this.btnLinkCourse.TabIndex = 9;
+            this.ttpGeneral.SetToolTip(this.btnLinkCourse, "Link a Course To...");
+            this.btnLinkCourse.UseVisualStyleBackColor = false;
+            this.btnLinkCourse.MouseEnter += new System.EventHandler(this.btnLinkCourse_MouseEnter);
+            // 
+            // btnPrintCourse
+            // 
+            this.btnPrintCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnPrintCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrintCourse.FlatAppearance.BorderSize = 0;
+            this.btnPrintCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnPrintCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnPrintCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintCourse.Image")));
+            this.btnPrintCourse.Location = new System.Drawing.Point(401, 12);
+            this.btnPrintCourse.Name = "btnPrintCourse";
+            this.btnPrintCourse.Size = new System.Drawing.Size(45, 40);
+            this.btnPrintCourse.TabIndex = 8;
+            this.ttpGeneral.SetToolTip(this.btnPrintCourse, "Print a Report");
+            this.btnPrintCourse.UseVisualStyleBackColor = false;
+            // 
+            // btnRemoveCourse
+            // 
+            this.btnRemoveCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnRemoveCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemoveCourse.FlatAppearance.BorderSize = 0;
+            this.btnRemoveCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnRemoveCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnRemoveCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveCourse.Image")));
+            this.btnRemoveCourse.Location = new System.Drawing.Point(350, 12);
+            this.btnRemoveCourse.Name = "btnRemoveCourse";
+            this.btnRemoveCourse.Size = new System.Drawing.Size(45, 40);
+            this.btnRemoveCourse.TabIndex = 7;
+            this.ttpGeneral.SetToolTip(this.btnRemoveCourse, "Remove a Course");
+            this.btnRemoveCourse.UseVisualStyleBackColor = false;
+            this.btnRemoveCourse.Click += new System.EventHandler(this.btnRemoveCourse_Click);
+            // 
+            // btnEditCourse
+            // 
+            this.btnEditCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnEditCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditCourse.FlatAppearance.BorderSize = 0;
+            this.btnEditCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnEditCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnEditCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCourse.Image")));
+            this.btnEditCourse.Location = new System.Drawing.Point(299, 12);
+            this.btnEditCourse.Name = "btnEditCourse";
+            this.btnEditCourse.Size = new System.Drawing.Size(45, 40);
+            this.btnEditCourse.TabIndex = 6;
+            this.ttpGeneral.SetToolTip(this.btnEditCourse, "Edit a Course");
+            this.btnEditCourse.UseVisualStyleBackColor = false;
+            this.btnEditCourse.Click += new System.EventHandler(this.btnEditCourse_Click);
+            // 
+            // btnAddCourse
+            // 
+            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCourse.FlatAppearance.BorderSize = 0;
+            this.btnAddCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnAddCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCourse.Image")));
+            this.btnAddCourse.Location = new System.Drawing.Point(248, 12);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(45, 40);
+            this.btnAddCourse.TabIndex = 5;
+            this.ttpGeneral.SetToolTip(this.btnAddCourse, "Add a Course");
+            this.btnAddCourse.UseVisualStyleBackColor = false;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // pnlBtnLinkOption
             // 
@@ -398,87 +484,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Program(s)";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnLinkCourse
-            // 
-            this.btnLinkCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnLinkCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkCourse.FlatAppearance.BorderSize = 0;
-            this.btnLinkCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnLinkCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnLinkCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnLinkCourse.Image")));
-            this.btnLinkCourse.Location = new System.Drawing.Point(452, 12);
-            this.btnLinkCourse.Name = "btnLinkCourse";
-            this.btnLinkCourse.Size = new System.Drawing.Size(45, 40);
-            this.btnLinkCourse.TabIndex = 9;
-            this.ttpGeneral.SetToolTip(this.btnLinkCourse, "Link a Course To...");
-            this.btnLinkCourse.UseVisualStyleBackColor = false;
-            this.btnLinkCourse.MouseEnter += new System.EventHandler(this.btnLinkCourse_MouseEnter);
-            // 
-            // btnPrintCourse
-            // 
-            this.btnPrintCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnPrintCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintCourse.FlatAppearance.BorderSize = 0;
-            this.btnPrintCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnPrintCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnPrintCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintCourse.Image")));
-            this.btnPrintCourse.Location = new System.Drawing.Point(401, 12);
-            this.btnPrintCourse.Name = "btnPrintCourse";
-            this.btnPrintCourse.Size = new System.Drawing.Size(45, 40);
-            this.btnPrintCourse.TabIndex = 8;
-            this.ttpGeneral.SetToolTip(this.btnPrintCourse, "Print a Report");
-            this.btnPrintCourse.UseVisualStyleBackColor = false;
-            // 
-            // btnRemoveCourse
-            // 
-            this.btnRemoveCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnRemoveCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemoveCourse.FlatAppearance.BorderSize = 0;
-            this.btnRemoveCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnRemoveCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnRemoveCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveCourse.Image")));
-            this.btnRemoveCourse.Location = new System.Drawing.Point(350, 12);
-            this.btnRemoveCourse.Name = "btnRemoveCourse";
-            this.btnRemoveCourse.Size = new System.Drawing.Size(45, 40);
-            this.btnRemoveCourse.TabIndex = 7;
-            this.ttpGeneral.SetToolTip(this.btnRemoveCourse, "Remove a Course");
-            this.btnRemoveCourse.UseVisualStyleBackColor = false;
-            // 
-            // btnEditCourse
-            // 
-            this.btnEditCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnEditCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditCourse.FlatAppearance.BorderSize = 0;
-            this.btnEditCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnEditCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnEditCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCourse.Image")));
-            this.btnEditCourse.Location = new System.Drawing.Point(299, 12);
-            this.btnEditCourse.Name = "btnEditCourse";
-            this.btnEditCourse.Size = new System.Drawing.Size(45, 40);
-            this.btnEditCourse.TabIndex = 6;
-            this.ttpGeneral.SetToolTip(this.btnEditCourse, "Edit a Course");
-            this.btnEditCourse.UseVisualStyleBackColor = false;
-            // 
-            // btnAddCourse
-            // 
-            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCourse.FlatAppearance.BorderSize = 0;
-            this.btnAddCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnAddCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCourse.Image")));
-            this.btnAddCourse.Location = new System.Drawing.Point(248, 12);
-            this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(45, 40);
-            this.btnAddCourse.TabIndex = 5;
-            this.ttpGeneral.SetToolTip(this.btnAddCourse, "Add a Course");
-            this.btnAddCourse.UseVisualStyleBackColor = false;
             // 
             // frmCourses
             // 
