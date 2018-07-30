@@ -48,7 +48,7 @@
             // 
             this.lblAddCourseTitle.AutoSize = true;
             this.lblAddCourseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseTitle.Location = new System.Drawing.Point(93, 9);
+            this.lblAddCourseTitle.Location = new System.Drawing.Point(100, 9);
             this.lblAddCourseTitle.Name = "lblAddCourseTitle";
             this.lblAddCourseTitle.Size = new System.Drawing.Size(167, 31);
             this.lblAddCourseTitle.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.lblAddCourseCourseCode.AutoSize = true;
             this.lblAddCourseCourseCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseCourseCode.Location = new System.Drawing.Point(9, 57);
+            this.lblAddCourseCourseCode.Location = new System.Drawing.Point(16, 57);
             this.lblAddCourseCourseCode.Name = "lblAddCourseCourseCode";
             this.lblAddCourseCourseCode.Size = new System.Drawing.Size(113, 20);
             this.lblAddCourseCourseCode.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.lblAddCourseCourseName.AutoSize = true;
             this.lblAddCourseCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseCourseName.Location = new System.Drawing.Point(5, 90);
+            this.lblAddCourseCourseName.Location = new System.Drawing.Point(12, 90);
             this.lblAddCourseCourseName.Name = "lblAddCourseCourseName";
             this.lblAddCourseCourseName.Size = new System.Drawing.Size(117, 20);
             this.lblAddCourseCourseName.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.lblAddCourseLocation.AutoSize = true;
             this.lblAddCourseLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseLocation.Location = new System.Drawing.Point(44, 123);
+            this.lblAddCourseLocation.Location = new System.Drawing.Point(51, 123);
             this.lblAddCourseLocation.Name = "lblAddCourseLocation";
             this.lblAddCourseLocation.Size = new System.Drawing.Size(78, 20);
             this.lblAddCourseLocation.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             this.lblAddCourseTime.AutoSize = true;
             this.lblAddCourseTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseTime.Location = new System.Drawing.Point(75, 156);
+            this.lblAddCourseTime.Location = new System.Drawing.Point(82, 156);
             this.lblAddCourseTime.Name = "lblAddCourseTime";
             this.lblAddCourseTime.Size = new System.Drawing.Size(47, 20);
             this.lblAddCourseTime.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             this.lblAddCourseCapacity.AutoSize = true;
             this.lblAddCourseCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseCapacity.Location = new System.Drawing.Point(44, 181);
+            this.lblAddCourseCapacity.Location = new System.Drawing.Point(51, 181);
             this.lblAddCourseCapacity.Name = "lblAddCourseCapacity";
             this.lblAddCourseCapacity.Size = new System.Drawing.Size(78, 20);
             this.lblAddCourseCapacity.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             this.lblAddCourseCredits.AutoSize = true;
             this.lblAddCourseCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddCourseCredits.Location = new System.Drawing.Point(56, 214);
+            this.lblAddCourseCredits.Location = new System.Drawing.Point(63, 214);
             this.lblAddCourseCredits.Name = "lblAddCourseCredits";
             this.lblAddCourseCredits.Size = new System.Drawing.Size(66, 20);
             this.lblAddCourseCredits.TabIndex = 6;
@@ -117,7 +117,7 @@
             // nudCapacity
             // 
             this.nudCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCapacity.Location = new System.Drawing.Point(128, 184);
+            this.nudCapacity.Location = new System.Drawing.Point(135, 184);
             this.nudCapacity.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -131,7 +131,7 @@
             // nudCredits
             // 
             this.nudCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCredits.Location = new System.Drawing.Point(128, 217);
+            this.nudCredits.Location = new System.Drawing.Point(135, 217);
             this.nudCredits.Maximum = new decimal(new int[] {
             10,
             0,
@@ -146,7 +146,7 @@
             this.dtpTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(128, 151);
+            this.dtpTime.Location = new System.Drawing.Point(135, 151);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(215, 26);
             this.dtpTime.TabIndex = 9;
@@ -154,7 +154,7 @@
             // txtLocation
             // 
             this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtLocation.Location = new System.Drawing.Point(128, 120);
+            this.txtLocation.Location = new System.Drawing.Point(135, 120);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(215, 26);
             this.txtLocation.TabIndex = 10;
@@ -162,7 +162,7 @@
             // txtCourseName
             // 
             this.txtCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtCourseName.Location = new System.Drawing.Point(128, 87);
+            this.txtCourseName.Location = new System.Drawing.Point(135, 87);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(215, 26);
             this.txtCourseName.TabIndex = 11;
@@ -170,14 +170,14 @@
             // txtCourseCode
             // 
             this.txtCourseCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtCourseCode.Location = new System.Drawing.Point(128, 54);
+            this.txtCourseCode.Location = new System.Drawing.Point(135, 54);
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(215, 26);
             this.txtCourseCode.TabIndex = 12;
             // 
             // btnAddCourse
             // 
-            this.btnAddCourse.Location = new System.Drawing.Point(260, 261);
+            this.btnAddCourse.Location = new System.Drawing.Point(267, 261);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(83, 31);
             this.btnAddCourse.TabIndex = 14;
@@ -186,7 +186,7 @@
             // 
             // btnAddAnotherCourse
             // 
-            this.btnAddAnotherCourse.Location = new System.Drawing.Point(128, 261);
+            this.btnAddAnotherCourse.Location = new System.Drawing.Point(135, 261);
             this.btnAddAnotherCourse.Name = "btnAddAnotherCourse";
             this.btnAddAnotherCourse.Size = new System.Drawing.Size(126, 31);
             this.btnAddAnotherCourse.TabIndex = 15;
@@ -195,7 +195,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(39, 261);
+            this.btnCancel.Location = new System.Drawing.Point(46, 261);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 31);
             this.btnCancel.TabIndex = 15;
@@ -208,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(352, 300);
+            this.ClientSize = new System.Drawing.Size(357, 300);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddAnotherCourse);
             this.Controls.Add(this.btnAddCourse);

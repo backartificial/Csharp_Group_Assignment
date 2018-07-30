@@ -30,6 +30,13 @@ namespace Csharp_Group_Assignment {
             if(dgvCourses.SelectedCells.Count == 0) {
                 // Dispaly an error message showing that there is no course selected to edit
                 MessageBox.Show("Oops... You have not selected a Course to edit.  Please select a Course to edit and try again.", "Course Selection Not Made", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else if(dgvCourses.SelectedCells.Count == 1) {
+                // Edit the Course the course
+                new frmEditCourse(dgvCourses.SelectedRows[1]).Show();
+
+            }else{
+                // Dispaly an error message showing that there is no course selected to edit
+                MessageBox.Show("Oops... You have made a selction of more than one Course.  Please select a single Course to edit and try again.", "Course Selection Made But More Than One", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -54,11 +61,17 @@ namespace Csharp_Group_Assignment {
                 // Dispaly an error message showing that there is no course selected to remove
                 MessageBox.Show("Oops... You have not selected a Course to remove.  Please select a Course to remove and try again.", "Course Selection Not Made", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }else if(dgvCourses.SelectedCells.Count == 1){
-                // Remove the course
+                // Select the curret row and store it into a variable
+                DataGridViewRow selectedCourse = dgvCourses.CurrentRow;
 
-            }else{
+                // Create a Course object to remove
+                Course removeCourse = new Course(int.Parse(selectedCourse.Cells[0].Value.ToString()), selectedCourse.Cells[1].Value.ToString(), selectedCourse.Cells[2].Value.ToString(), selectedCourse.Cells[3].Value.ToString(), TimeSpan.Parse(selectedCourse.Cells[4].Value.ToString()), int.Parse(selectedCourse.Cells[5].Value.ToString()), int.Parse(selectedCourse.Cells[6].Value.ToString()));
+
+                // Remove the course
+                new frmRemoveCoruse(removeCourse, this).Show();
+            } else {
                 // Dispaly an error message showing that there is no course selected to remove
-                MessageBox.Show("Oops... You have made a slection of more than one Course.  Please select a single Course to remove and try again.", "Course Selection Made But More Than One", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Oops... You have made a selction of more than one Course.  Please select a single Course to remove and try again.", "Course Selection Made But More Than One", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

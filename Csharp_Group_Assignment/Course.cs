@@ -13,13 +13,13 @@ using System;
 // Set the container to the namespace of the project
 namespace Csharp_Group_Assignment {
     // This calss is sued to hold and object of a course
-    class Course {
+    public class Course {
         // Define the needed class attributes
         public int id { get; }
         public string courseCode { get; set; }
         public string name { get; set; }
         public string location { get; set; }
-        public DateTime time { get; set; }
+        public TimeSpan time { get; set; }
         public int capacity { get; set; }
         public int credits { get; set; }
 
@@ -36,7 +36,7 @@ namespace Csharp_Group_Assignment {
          * @param credits: is the amout of credits that a course is worth
          * 
          **/
-        public Course(int id, string courseCode, string name, string location, DateTime time, int capacity, int credits) {
+        public Course(int id, string courseCode, string name, string location, TimeSpan time, int capacity, int credits) {
             // Set the object attributes
             this.id = id;
             this.courseCode = courseCode;
