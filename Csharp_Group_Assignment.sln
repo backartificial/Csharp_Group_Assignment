@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27906.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp_Group_Assignment", "Csharp_Group_Assignment\Csharp_Group_Assignment.csproj", "{D311A640-CC7D-4480-8E9F-B2CCC0E450DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseService", "DatabaseService\DatabaseService.csproj", "{DE02CC41-7925-48EF-BD1F-DA1B51F7D775}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D311A640-CC7D-4480-8E9F-B2CCC0E450DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D311A640-CC7D-4480-8E9F-B2CCC0E450DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D311A640-CC7D-4480-8E9F-B2CCC0E450DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE02CC41-7925-48EF-BD1F-DA1B51F7D775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE02CC41-7925-48EF-BD1F-DA1B51F7D775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE02CC41-7925-48EF-BD1F-DA1B51F7D775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE02CC41-7925-48EF-BD1F-DA1B51F7D775}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
