@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircleImage.cs">
+    <Compile Include="CircleButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Course.cs" />
