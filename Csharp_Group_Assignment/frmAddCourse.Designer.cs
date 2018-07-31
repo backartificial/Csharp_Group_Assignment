@@ -125,7 +125,7 @@
             0});
             this.nudCapacity.Name = "nudCapacity";
             this.nudCapacity.Size = new System.Drawing.Size(215, 26);
-            this.nudCapacity.TabIndex = 7;
+            this.nudCapacity.TabIndex = 5;
             this.nudCapacity.ThousandsSeparator = true;
             // 
             // nudCredits
@@ -139,17 +139,19 @@
             0});
             this.nudCredits.Name = "nudCredits";
             this.nudCredits.Size = new System.Drawing.Size(215, 26);
-            this.nudCredits.TabIndex = 8;
+            this.nudCredits.TabIndex = 6;
             // 
             // dtpTime
             // 
             this.dtpTime.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpTime.CustomFormat = "HH:mm";
             this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpTime.Location = new System.Drawing.Point(135, 151);
             this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(215, 26);
-            this.dtpTime.TabIndex = 9;
+            this.dtpTime.TabIndex = 4;
             // 
             // txtLocation
             // 
@@ -157,7 +159,7 @@
             this.txtLocation.Location = new System.Drawing.Point(135, 120);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(215, 26);
-            this.txtLocation.TabIndex = 10;
+            this.txtLocation.TabIndex = 3;
             // 
             // txtCourseName
             // 
@@ -165,7 +167,7 @@
             this.txtCourseName.Location = new System.Drawing.Point(135, 87);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(215, 26);
-            this.txtCourseName.TabIndex = 11;
+            this.txtCourseName.TabIndex = 2;
             // 
             // txtCourseCode
             // 
@@ -173,34 +175,60 @@
             this.txtCourseCode.Location = new System.Drawing.Point(135, 54);
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(215, 26);
-            this.txtCourseCode.TabIndex = 12;
+            this.txtCourseCode.TabIndex = 1;
             // 
             // btnAddCourse
             // 
+            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCourse.FlatAppearance.BorderSize = 0;
+            this.btnAddCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnAddCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourse.ForeColor = System.Drawing.Color.White;
             this.btnAddCourse.Location = new System.Drawing.Point(267, 261);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(83, 31);
-            this.btnAddCourse.TabIndex = 14;
+            this.btnAddCourse.TabIndex = 7;
             this.btnAddCourse.Text = "Add Course";
-            this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.UseVisualStyleBackColor = false;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnAddAnotherCourse
             // 
+            this.btnAddAnotherCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(184)))));
+            this.btnAddAnotherCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAnotherCourse.FlatAppearance.BorderSize = 0;
+            this.btnAddAnotherCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(102)))), ((int)(((byte)(116)))));
+            this.btnAddAnotherCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(102)))), ((int)(((byte)(116)))));
+            this.btnAddAnotherCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAnotherCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnotherCourse.ForeColor = System.Drawing.Color.White;
             this.btnAddAnotherCourse.Location = new System.Drawing.Point(135, 261);
             this.btnAddAnotherCourse.Name = "btnAddAnotherCourse";
             this.btnAddAnotherCourse.Size = new System.Drawing.Size(126, 31);
-            this.btnAddAnotherCourse.TabIndex = 15;
+            this.btnAddAnotherCourse.TabIndex = 8;
             this.btnAddAnotherCourse.Text = "Add Another Course";
-            this.btnAddAnotherCourse.UseVisualStyleBackColor = true;
+            this.btnAddAnotherCourse.UseVisualStyleBackColor = false;
+            this.btnAddAnotherCourse.Click += new System.EventHandler(this.btnAddAnotherCourse_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(46, 261);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 31);
-            this.btnCancel.TabIndex = 15;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmAddCourse

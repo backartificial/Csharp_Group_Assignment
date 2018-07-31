@@ -25,26 +25,16 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCourses));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.pnlLeftMenu = new System.Windows.Forms.Panel();
+            this.pnlNavButtons = new System.Windows.Forms.Panel();
+            this.btnNavHome = new System.Windows.Forms.Button();
+            this.btnNavProfessors = new System.Windows.Forms.Button();
             this.btnCourses = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNavStudents = new System.Windows.Forms.Button();
+            this.btnNavPrograms = new System.Windows.Forms.Button();
             this.pnlHelloMsgBackgroundColor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
-            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentManagerDBDataSet = new Csharp_Group_Assignment.StudentManagerDBDataSet();
-            this.coursesTableAdapter = new Csharp_Group_Assignment.StudentManagerDBDataSetTableAdapters.CoursesTableAdapter();
-            this.btnSearchCourse = new System.Windows.Forms.Button();
-            this.txtSearchCourse = new System.Windows.Forms.TextBox();
-            this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,13 +42,23 @@
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creditsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentManagerDBDataSet = new Csharp_Group_Assignment.StudentManagerDBDataSet();
+            this.coursesTableAdapter = new Csharp_Group_Assignment.StudentManagerDBDataSetTableAdapters.CoursesTableAdapter();
+            this.btnSearchCourse = new System.Windows.Forms.Button();
+            this.txtSearchCourse = new System.Windows.Forms.TextBox();
+            this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
+            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
+            this.btnLinkStudent = new System.Windows.Forms.Button();
+            this.btnLinkProfessor = new System.Windows.Forms.Button();
+            this.btnLinkProgram = new System.Windows.Forms.Button();
             this.btnLinkCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnPrintCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnRemoveCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnEditCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnAddCourse = new Csharp_Group_Assignment.CircleButton();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlLeftMenu.SuspendLayout();
+            this.pnlNavButtons.SuspendLayout();
             this.pnlHelloMsgBackgroundColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
@@ -66,71 +66,72 @@
             this.pnlBtnLinkOption.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlLeftMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.pnlHelloMsgBackgroundColor);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 571);
-            this.panel1.TabIndex = 0;
+            this.pnlLeftMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.pnlLeftMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLeftMenu.Controls.Add(this.pnlNavButtons);
+            this.pnlLeftMenu.Controls.Add(this.pnlHelloMsgBackgroundColor);
+            this.pnlLeftMenu.Location = new System.Drawing.Point(-1, 0);
+            this.pnlLeftMenu.Name = "pnlLeftMenu";
+            this.pnlLeftMenu.Size = new System.Drawing.Size(242, 574);
+            this.pnlLeftMenu.TabIndex = 0;
             // 
-            // panel2
+            // pnlNavButtons
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlNavButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.btnCourses);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(20, 119);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 268);
-            this.panel2.TabIndex = 6;
+            this.pnlNavButtons.Controls.Add(this.btnNavHome);
+            this.pnlNavButtons.Controls.Add(this.btnNavProfessors);
+            this.pnlNavButtons.Controls.Add(this.btnCourses);
+            this.pnlNavButtons.Controls.Add(this.btnNavStudents);
+            this.pnlNavButtons.Controls.Add(this.btnNavPrograms);
+            this.pnlNavButtons.Location = new System.Drawing.Point(20, 119);
+            this.pnlNavButtons.Name = "pnlNavButtons";
+            this.pnlNavButtons.Size = new System.Drawing.Size(199, 268);
+            this.pnlNavButtons.TabIndex = 6;
             // 
-            // button3
+            // btnNavHome
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnNavHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 49);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Home";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnNavHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnNavHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNavHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavHome.FlatAppearance.BorderSize = 0;
+            this.btnNavHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavHome.ForeColor = System.Drawing.Color.White;
+            this.btnNavHome.Location = new System.Drawing.Point(0, 0);
+            this.btnNavHome.Name = "btnNavHome";
+            this.btnNavHome.Size = new System.Drawing.Size(199, 49);
+            this.btnNavHome.TabIndex = 3;
+            this.btnNavHome.Text = "Home";
+            this.btnNavHome.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnNavProfessors
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnNavProfessors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 220);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(199, 49);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Professors";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnNavProfessors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnNavProfessors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNavProfessors.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavProfessors.FlatAppearance.BorderSize = 0;
+            this.btnNavProfessors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavProfessors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavProfessors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavProfessors.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavProfessors.ForeColor = System.Drawing.Color.White;
+            this.btnNavProfessors.Location = new System.Drawing.Point(0, 220);
+            this.btnNavProfessors.Name = "btnNavProfessors";
+            this.btnNavProfessors.Size = new System.Drawing.Size(199, 49);
+            this.btnNavProfessors.TabIndex = 5;
+            this.btnNavProfessors.Text = "Professors";
+            this.btnNavProfessors.UseVisualStyleBackColor = false;
             // 
             // btnCourses
             // 
@@ -152,70 +153,70 @@
             this.btnCourses.Text = "Courses";
             this.btnCourses.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnNavStudents
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnNavStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 165);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 49);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Students";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnNavStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnNavStudents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNavStudents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavStudents.FlatAppearance.BorderSize = 0;
+            this.btnNavStudents.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavStudents.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavStudents.ForeColor = System.Drawing.Color.White;
+            this.btnNavStudents.Location = new System.Drawing.Point(0, 165);
+            this.btnNavStudents.Name = "btnNavStudents";
+            this.btnNavStudents.Size = new System.Drawing.Size(199, 49);
+            this.btnNavStudents.TabIndex = 4;
+            this.btnNavStudents.Text = "Students";
+            this.btnNavStudents.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnNavPrograms
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnNavPrograms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 49);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Programs";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNavPrograms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnNavPrograms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNavPrograms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNavPrograms.FlatAppearance.BorderSize = 0;
+            this.btnNavPrograms.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavPrograms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavPrograms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavPrograms.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavPrograms.ForeColor = System.Drawing.Color.White;
+            this.btnNavPrograms.Location = new System.Drawing.Point(0, 55);
+            this.btnNavPrograms.Name = "btnNavPrograms";
+            this.btnNavPrograms.Size = new System.Drawing.Size(199, 49);
+            this.btnNavPrograms.TabIndex = 2;
+            this.btnNavPrograms.Text = "Programs";
+            this.btnNavPrograms.UseVisualStyleBackColor = false;
             // 
             // pnlHelloMsgBackgroundColor
             // 
             this.pnlHelloMsgBackgroundColor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlHelloMsgBackgroundColor.BackColor = System.Drawing.Color.White;
-            this.pnlHelloMsgBackgroundColor.Controls.Add(this.label1);
+            this.pnlHelloMsgBackgroundColor.Controls.Add(this.lblWelcomeMessage);
             this.pnlHelloMsgBackgroundColor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHelloMsgBackgroundColor.Location = new System.Drawing.Point(0, 0);
             this.pnlHelloMsgBackgroundColor.Name = "pnlHelloMsgBackgroundColor";
             this.pnlHelloMsgBackgroundColor.Size = new System.Drawing.Size(240, 98);
             this.pnlHelloMsgBackgroundColor.TabIndex = 0;
             // 
-            // label1
+            // lblWelcomeMessage
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblWelcomeMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hello, Administrator!";
+            this.lblWelcomeMessage.AutoSize = true;
+            this.lblWelcomeMessage.BackColor = System.Drawing.Color.White;
+            this.lblWelcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeMessage.Location = new System.Drawing.Point(24, 40);
+            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
+            this.lblWelcomeMessage.Size = new System.Drawing.Size(199, 24);
+            this.lblWelcomeMessage.TabIndex = 0;
+            this.lblWelcomeMessage.Text = "Hello, Administrator!";
             // 
             // dgvCourses
             // 
@@ -238,117 +239,13 @@
             this.creditsDataGridViewTextBoxColumn});
             this.dgvCourses.DataSource = this.coursesBindingSource;
             this.dgvCourses.Location = new System.Drawing.Point(248, 58);
+            this.dgvCourses.MultiSelect = false;
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
+            this.dgvCourses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCourses.Size = new System.Drawing.Size(746, 501);
             this.dgvCourses.TabIndex = 1;
             this.dgvCourses.MouseEnter += new System.EventHandler(this.dgvCourses_MouseEnter);
-            // 
-            // coursesBindingSource
-            // 
-            this.coursesBindingSource.DataMember = "Courses";
-            this.coursesBindingSource.DataSource = this.studentManagerDBDataSet;
-            // 
-            // studentManagerDBDataSet
-            // 
-            this.studentManagerDBDataSet.DataSetName = "StudentManagerDBDataSet";
-            this.studentManagerDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // coursesTableAdapter
-            // 
-            this.coursesTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnSearchCourse
-            // 
-            this.btnSearchCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnSearchCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchCourse.FlatAppearance.BorderSize = 0;
-            this.btnSearchCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnSearchCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnSearchCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCourse.ForeColor = System.Drawing.Color.White;
-            this.btnSearchCourse.Location = new System.Drawing.Point(897, 16);
-            this.btnSearchCourse.Name = "btnSearchCourse";
-            this.btnSearchCourse.Size = new System.Drawing.Size(97, 31);
-            this.btnSearchCourse.TabIndex = 3;
-            this.btnSearchCourse.Text = "Search";
-            this.btnSearchCourse.UseVisualStyleBackColor = false;
-            this.btnSearchCourse.Click += new System.EventHandler(this.btnSearchCourse_Click);
-            // 
-            // txtSearchCourse
-            // 
-            this.txtSearchCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchCourse.BackColor = System.Drawing.Color.White;
-            this.txtSearchCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCourse.Location = new System.Drawing.Point(675, 20);
-            this.txtSearchCourse.Name = "txtSearchCourse";
-            this.txtSearchCourse.Size = new System.Drawing.Size(216, 23);
-            this.txtSearchCourse.TabIndex = 4;
-            this.txtSearchCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCourse_KeyPress);
-            // 
-            // ttpGeneral
-            // 
-            this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
-            // 
-            // pnlBtnLinkOption
-            // 
-            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
-            this.pnlBtnLinkOption.Controls.Add(this.button7);
-            this.pnlBtnLinkOption.Controls.Add(this.button6);
-            this.pnlBtnLinkOption.Controls.Add(this.button1);
-            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
-            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
-            this.pnlBtnLinkOption.Size = new System.Drawing.Size(200, 141);
-            this.pnlBtnLinkOption.TabIndex = 10;
-            this.pnlBtnLinkOption.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(0, 96);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(200, 47);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Student(s)";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(0, 48);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 47);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Professor(s)";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Program(s)";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // id
             // 
@@ -357,6 +254,7 @@
             this.id.HeaderText = "Id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             this.id.Width = 41;
             // 
             // courseCodeDataGridViewTextBoxColumn
@@ -411,6 +309,112 @@
             this.creditsDataGridViewTextBoxColumn.HeaderText = "Credits";
             this.creditsDataGridViewTextBoxColumn.Name = "creditsDataGridViewTextBoxColumn";
             this.creditsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // coursesBindingSource
+            // 
+            this.coursesBindingSource.DataMember = "Courses";
+            this.coursesBindingSource.DataSource = this.studentManagerDBDataSet;
+            // 
+            // studentManagerDBDataSet
+            // 
+            this.studentManagerDBDataSet.DataSetName = "StudentManagerDBDataSet";
+            this.studentManagerDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // coursesTableAdapter
+            // 
+            this.coursesTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnSearchCourse
+            // 
+            this.btnSearchCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnSearchCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCourse.FlatAppearance.BorderSize = 0;
+            this.btnSearchCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnSearchCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnSearchCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCourse.ForeColor = System.Drawing.Color.White;
+            this.btnSearchCourse.Location = new System.Drawing.Point(897, 16);
+            this.btnSearchCourse.Name = "btnSearchCourse";
+            this.btnSearchCourse.Size = new System.Drawing.Size(97, 31);
+            this.btnSearchCourse.TabIndex = 3;
+            this.btnSearchCourse.Text = "Search";
+            this.btnSearchCourse.UseVisualStyleBackColor = false;
+            this.btnSearchCourse.Click += new System.EventHandler(this.btnSearchCourse_Click);
+            // 
+            // txtSearchCourse
+            // 
+            this.txtSearchCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchCourse.BackColor = System.Drawing.Color.White;
+            this.txtSearchCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCourse.Location = new System.Drawing.Point(675, 20);
+            this.txtSearchCourse.Name = "txtSearchCourse";
+            this.txtSearchCourse.Size = new System.Drawing.Size(216, 23);
+            this.txtSearchCourse.TabIndex = 4;
+            this.txtSearchCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCourse_KeyPress);
+            // 
+            // ttpGeneral
+            // 
+            this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
+            // 
+            // pnlBtnLinkOption
+            // 
+            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProfessor);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProgram);
+            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
+            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
+            this.pnlBtnLinkOption.Size = new System.Drawing.Size(200, 141);
+            this.pnlBtnLinkOption.TabIndex = 10;
+            this.pnlBtnLinkOption.Visible = false;
+            // 
+            // btnLinkStudent
+            // 
+            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
+            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
+            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkStudent.Location = new System.Drawing.Point(0, 96);
+            this.btnLinkStudent.Name = "btnLinkStudent";
+            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkStudent.TabIndex = 2;
+            this.btnLinkStudent.Text = "Student(s)";
+            this.btnLinkStudent.UseVisualStyleBackColor = false;
+            // 
+            // btnLinkProfessor
+            // 
+            this.btnLinkProfessor.BackColor = System.Drawing.Color.White;
+            this.btnLinkProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkProfessor.FlatAppearance.BorderSize = 0;
+            this.btnLinkProfessor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkProfessor.Location = new System.Drawing.Point(0, 48);
+            this.btnLinkProfessor.Name = "btnLinkProfessor";
+            this.btnLinkProfessor.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkProfessor.TabIndex = 1;
+            this.btnLinkProfessor.Text = "Professor(s)";
+            this.btnLinkProfessor.UseVisualStyleBackColor = false;
+            // 
+            // btnLinkProgram
+            // 
+            this.btnLinkProgram.BackColor = System.Drawing.Color.White;
+            this.btnLinkProgram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkProgram.FlatAppearance.BorderSize = 0;
+            this.btnLinkProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkProgram.Location = new System.Drawing.Point(0, 0);
+            this.btnLinkProgram.Name = "btnLinkProgram";
+            this.btnLinkProgram.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkProgram.TabIndex = 0;
+            this.btnLinkProgram.Text = "Program(s)";
+            this.btnLinkProgram.UseVisualStyleBackColor = false;
             // 
             // btnLinkCourse
             // 
@@ -511,7 +515,7 @@
             this.Controls.Add(this.txtSearchCourse);
             this.Controls.Add(this.btnSearchCourse);
             this.Controls.Add(this.dgvCourses);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlLeftMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCourses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -519,8 +523,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Courses_Load);
             this.MouseEnter += new System.EventHandler(this.frmCourses_MouseEnter);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnlLeftMenu.ResumeLayout(false);
+            this.pnlNavButtons.ResumeLayout(false);
             this.pnlHelloMsgBackgroundColor.ResumeLayout(false);
             this.pnlHelloMsgBackgroundColor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
@@ -534,15 +538,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlLeftMenu;
         private System.Windows.Forms.Panel pnlHelloMsgBackgroundColor;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcomeMessage;
         private System.Windows.Forms.Button btnCourses;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnlNavButtons;
+        private System.Windows.Forms.Button btnNavHome;
+        private System.Windows.Forms.Button btnNavProfessors;
+        private System.Windows.Forms.Button btnNavStudents;
+        private System.Windows.Forms.Button btnNavPrograms;
         private System.Windows.Forms.Button btnSearchCourse;
         private System.Windows.Forms.TextBox txtSearchCourse;
         private CircleButton btnAddCourse;
@@ -552,9 +556,9 @@
         private CircleButton btnLinkCourse;
         private System.Windows.Forms.ToolTip ttpGeneral;
         private System.Windows.Forms.Panel pnlBtnLinkOption;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLinkStudent;
+        private System.Windows.Forms.Button btnLinkProfessor;
+        private System.Windows.Forms.Button btnLinkProgram;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;

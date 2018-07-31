@@ -55,7 +55,7 @@
             this.btnCancel.Location = new System.Drawing.Point(178, 261);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 31);
-            this.btnCancel.TabIndex = 30;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -73,7 +73,7 @@
             this.btnEditCourse.Location = new System.Drawing.Point(267, 261);
             this.btnEditCourse.Name = "btnEditCourse";
             this.btnEditCourse.Size = new System.Drawing.Size(83, 31);
-            this.btnEditCourse.TabIndex = 29;
+            this.btnEditCourse.TabIndex = 6;
             this.btnEditCourse.Text = "Save";
             this.btnEditCourse.UseVisualStyleBackColor = false;
             this.btnEditCourse.Click += new System.EventHandler(this.btnEditCourse_Click);
@@ -85,7 +85,7 @@
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.ReadOnly = true;
             this.txtCourseCode.Size = new System.Drawing.Size(215, 26);
-            this.txtCourseCode.TabIndex = 28;
+            this.txtCourseCode.TabIndex = 99;
             // 
             // txtCourseName
             // 
@@ -93,7 +93,7 @@
             this.txtCourseName.Location = new System.Drawing.Point(135, 87);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(215, 26);
-            this.txtCourseName.TabIndex = 27;
+            this.txtCourseName.TabIndex = 1;
             // 
             // txtLocation
             // 
@@ -101,7 +101,7 @@
             this.txtLocation.Location = new System.Drawing.Point(135, 120);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(215, 26);
-            this.txtLocation.TabIndex = 26;
+            this.txtLocation.TabIndex = 2;
             // 
             // dtpTime
             // 
@@ -112,7 +112,7 @@
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(215, 26);
-            this.dtpTime.TabIndex = 25;
+            this.dtpTime.TabIndex = 3;
             // 
             // nudCredits
             // 
@@ -125,7 +125,7 @@
             0});
             this.nudCredits.Name = "nudCredits";
             this.nudCredits.Size = new System.Drawing.Size(215, 26);
-            this.nudCredits.TabIndex = 24;
+            this.nudCredits.TabIndex = 5;
             // 
             // nudCapacity
             // 
@@ -138,7 +138,7 @@
             0});
             this.nudCapacity.Name = "nudCapacity";
             this.nudCapacity.Size = new System.Drawing.Size(215, 26);
-            this.nudCapacity.TabIndex = 23;
+            this.nudCapacity.TabIndex = 4;
             this.nudCapacity.ThousandsSeparator = true;
             // 
             // lblCredits

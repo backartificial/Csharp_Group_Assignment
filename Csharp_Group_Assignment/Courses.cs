@@ -74,7 +74,7 @@ namespace Csharp_Group_Assignment {
 
                 // Remove the course
                 new frmRemoveCoruse(removeCourse, this).Show();
-            } else {
+            }else{
                 // Dispaly an error message showing that there is no course selected to remove
                 MessageBox.Show("Oops... You have made a selction of more than one Course.  Please select a single Course to remove and try again.", "Course Selection Made But More Than One", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -82,7 +82,7 @@ namespace Csharp_Group_Assignment {
 
         private void btnAddCourse_Click(object sender, EventArgs e) {
             // Display the Add course Form
-            new frmAddCourse().Show();
+            new frmAddCourse(this).Show();
         }
     }
 }

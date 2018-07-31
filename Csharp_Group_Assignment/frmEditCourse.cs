@@ -31,7 +31,7 @@ namespace Csharp_Group_Assignment {
         }
 
         private void btnEditCourse_Click(object sender, EventArgs e) {
-            // Remove the Course children from the Database
+            // Edit the course in the Database
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.StudentManagerDBConnectionString)) {
                 // Open the DB connection
                 connection.Open();
