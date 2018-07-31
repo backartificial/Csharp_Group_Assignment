@@ -157,6 +157,7 @@
             // 
             this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtLocation.Location = new System.Drawing.Point(135, 120);
+            this.txtLocation.MaxLength = 50;
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(215, 26);
             this.txtLocation.TabIndex = 3;
@@ -165,6 +166,7 @@
             // 
             this.txtCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtCourseName.Location = new System.Drawing.Point(135, 87);
+            this.txtCourseName.MaxLength = 50;
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(215, 26);
             this.txtCourseName.TabIndex = 2;
@@ -173,6 +175,7 @@
             // 
             this.txtCourseCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtCourseCode.Location = new System.Drawing.Point(135, 54);
+            this.txtCourseCode.MaxLength = 6;
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(215, 26);
             this.txtCourseCode.TabIndex = 1;

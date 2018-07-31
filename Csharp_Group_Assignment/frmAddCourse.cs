@@ -18,16 +18,30 @@ namespace Csharp_Group_Assignment {
         }
 
         private void btnAddCourse_Click(object sender, EventArgs e) {
-            // Perform Add Course
-            addCourse();
+            // Perform Add Course and check if it was successful
+            if(addCourse()) {
+                // Close the form
+                Close();
+            }
         }
 
         private void btnAddAnotherCourse_Click(object sender, EventArgs e) {
             // Perform Add Course
-            addCourse();
+            if(addCourse()) {
+                // Clear the form and focus to course code
+                txtCourseCode.Text = "";
+                txtCourseName.Text = "";
+                txtLocation.Text = "";
+                dtpTime.Value = DateTime.Now;
+                nudCapacity.Value = 0;
+                nudCredits.Value = 0;
+
+                // Set the focus to the capacity
+                txtCourseCode.Focus();
+            }
         }
 
-        private void addCourse() {
+        private Boolean addCourse() {
             // Check if the user added all items in the form
             if (txtCourseCode.Text.Trim().Equals("") || txtCourseName.Text.Trim().Equals("") || txtLocation.Text.Trim().Equals("") || dtpTime.Text.Trim().Equals("") || nudCapacity.Value == 0 || nudCredits.Value == 0) {
                 // Display error message
@@ -56,9 +70,6 @@ namespace Csharp_Group_Assignment {
 
                             // Focus on the courseCode field
                             txtCourseCode.Focus();
-
-                            // Perform blank return to not process any more of this function
-                            return;
                         } else{
                             // Add the course
                             using(command = new SqlCommand("INSERT INTO courses (courseCode, name, location, time, capacity, credits) VALUES (@courseCode, @name, @location, @time, @capacity, @credits)", connection)) {
@@ -69,22 +80,25 @@ namespace Csharp_Group_Assignment {
                                 command.Parameters.AddWithValue("@capacity", nudCapacity.Value.ToString());
                                 command.Parameters.AddWithValue("@credits", nudCredits.Value.ToString());
                                 command.ExecuteNonQuery();
+
+                                // Refresh the DataGrid on the Courses form
+                                coursesForm.coursesTableAdapter.Fill(coursesForm.studentManagerDBDataSet.Courses);
+                                coursesForm.dgvCourses.Refresh();
+                                coursesForm.dgvCourses.Parent.Refresh();
+
+                                // Close the DB connection
+                                connection.Close();
+
+                                // Return successful
+                                return true;
                             }
                         }
                     }
-
-                    // Close the DB connection
-                    connection.Close();
                 }
-
-                // Refresh the DataGrid on the Courses form
-                coursesForm.coursesTableAdapter.Fill(coursesForm.studentManagerDBDataSet.Courses);
-                coursesForm.dgvCourses.Refresh();
-                coursesForm.dgvCourses.Parent.Refresh();
-
-                // Close the form
-                Close();
             }
+
+            // Perform blank return to not process any more of this function
+            return false;
         }
     }
 }
