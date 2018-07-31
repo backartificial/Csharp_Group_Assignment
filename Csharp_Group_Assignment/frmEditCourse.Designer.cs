@@ -44,28 +44,46 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(178, 261);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 31);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEditCourse
             // 
+            this.btnEditCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnEditCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditCourse.FlatAppearance.BorderSize = 0;
+            this.btnEditCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnEditCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnEditCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCourse.ForeColor = System.Drawing.Color.White;
             this.btnEditCourse.Location = new System.Drawing.Point(267, 261);
             this.btnEditCourse.Name = "btnEditCourse";
             this.btnEditCourse.Size = new System.Drawing.Size(83, 31);
             this.btnEditCourse.TabIndex = 29;
             this.btnEditCourse.Text = "Save";
-            this.btnEditCourse.UseVisualStyleBackColor = true;
+            this.btnEditCourse.UseVisualStyleBackColor = false;
+            this.btnEditCourse.Click += new System.EventHandler(this.btnEditCourse_Click);
             // 
             // txtCourseCode
             // 
             this.txtCourseCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtCourseCode.Location = new System.Drawing.Point(135, 54);
             this.txtCourseCode.Name = "txtCourseCode";
+            this.txtCourseCode.ReadOnly = true;
             this.txtCourseCode.Size = new System.Drawing.Size(215, 26);
             this.txtCourseCode.TabIndex = 28;
             // 
@@ -92,6 +110,7 @@
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpTime.Location = new System.Drawing.Point(135, 151);
             this.dtpTime.Name = "dtpTime";
+            this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(215, 26);
             this.dtpTime.TabIndex = 25;
             // 
@@ -215,6 +234,7 @@
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditCourse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Course | Student Content Management System";
             this.Load += new System.EventHandler(this.frmEditCourse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCredits)).EndInit();
