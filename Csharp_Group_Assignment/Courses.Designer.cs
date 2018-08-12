@@ -346,12 +346,15 @@
             // txtSearchCourse
             // 
             this.txtSearchCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchCourse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearchCourse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearchCourse.BackColor = System.Drawing.Color.White;
             this.txtSearchCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchCourse.Location = new System.Drawing.Point(675, 20);
             this.txtSearchCourse.Name = "txtSearchCourse";
             this.txtSearchCourse.Size = new System.Drawing.Size(216, 23);
-            this.txtSearchCourse.TabIndex = 4;
+            this.txtSearchCourse.TabIndex = 1;
+            this.txtSearchCourse.TextChanged += new System.EventHandler(this.txtSearchCourse_TextChanged);
             this.txtSearchCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCourse_KeyPress);
             // 
             // ttpGeneral
