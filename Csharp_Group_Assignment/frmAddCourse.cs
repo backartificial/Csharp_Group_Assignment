@@ -1,4 +1,14 @@
-﻿// Include needed packages
+﻿/**
+ * 
+ * File: frmAddCourse.cs
+ * Developer: James Grau
+ * Student Number: 991443203
+ * Date: August 11, 2018
+ * 
+ * 
+ **/
+
+// Include needed packages
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -135,6 +145,10 @@ namespace Csharp_Group_Assignment {
 
             // Perform blank return to not process any more of this function
             return false;
+        }
+
+        private void frmAddCourse_Load(object sender, EventArgs e) {
+
         }
     }
 }

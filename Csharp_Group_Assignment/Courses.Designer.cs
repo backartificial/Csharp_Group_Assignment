@@ -355,7 +355,6 @@
             this.txtSearchCourse.Size = new System.Drawing.Size(216, 23);
             this.txtSearchCourse.TabIndex = 1;
             this.txtSearchCourse.TextChanged += new System.EventHandler(this.txtSearchCourse_TextChanged);
-            this.txtSearchCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchCourse_KeyPress);
             // 
             // ttpGeneral
             // 

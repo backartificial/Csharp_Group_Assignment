@@ -1,4 +1,14 @@
-﻿// Include needed packages
+﻿/**
+ * 
+ * File: Courses.cs
+ * Developer: James Grau
+ * Student Number: 991443203
+ * Date: August 11, 2018
+ * 
+ * 
+ **/
+
+// Include needed packages
 using System;
 using System.Data;
 using System.Windows.Forms;

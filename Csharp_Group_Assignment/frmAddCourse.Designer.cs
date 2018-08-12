@@ -264,6 +264,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Course | Student Content Management System ";
+            this.Load += new System.EventHandler(this.frmAddCourse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCapacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCredits)).EndInit();
             this.ResumeLayout(false);

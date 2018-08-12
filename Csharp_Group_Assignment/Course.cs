@@ -46,7 +46,5 @@ namespace Csharp_Group_Assignment {
             this.capacity = capacity;
             this.credits = credits;
         }
-
-
     }
 }
