@@ -33,8 +33,8 @@ namespace Csharp_Group_Assignment {
          * 
          **/
         private void Courses_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'studentManagerDBDataSet.Courses' table. You can move, or remove it, as needed.
-            coursesTableAdapter.Fill(studentManagerDBDataSet.Courses);
+            // TODO: This line of code loads data into the 'dtsAllData.Courses' table. You can move, or remove it, as needed.
+            coursesTableAdapter.Fill(dtsAllData.Courses);
 
             // Set focus to the txtbox on load
             txtSearchCourse.Focus();
@@ -159,7 +159,7 @@ namespace Csharp_Group_Assignment {
             // Try and filter the table
             try {
                 //  Look in the DataGridView based on the passed value
-                dgvCourses.DataSource = studentManagerDBDataSet.Courses.Where(x => x.courseCode.Contains(txtSearchCourse.Text) || x.name.Contains(txtSearchCourse.Text) || x.location.Contains(txtSearchCourse.Text)).CopyToDataTable();
+                dgvCourses.DataSource = dtsAllData.Courses.Where(x => x.courseCode.Contains(txtSearchCourse.Text) || x.name.Contains(txtSearchCourse.Text) || x.location.Contains(txtSearchCourse.Text)).CopyToDataTable();
             }catch(InvalidOperationException) {
                 // Do nothing
             }

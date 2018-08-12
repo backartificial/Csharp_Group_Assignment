@@ -30,8 +30,10 @@
             this.cmbCourses = new System.Windows.Forms.ComboBox();
             this.cmbLink = new System.Windows.Forms.ComboBox();
             this.grbLinks = new System.Windows.Forms.GroupBox();
-            this.btnLink = new System.Windows.Forms.Button();
             this.tlpLinks = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLink = new System.Windows.Forms.Button();
+            this.programTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProgramTableAdapter();
+            this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
             this.grbLinks.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             // 
             this.lblLinkTitle.AutoSize = true;
             this.lblLinkTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLinkTitle.Location = new System.Drawing.Point(185, 53);
+            this.lblLinkTitle.Location = new System.Drawing.Point(192, 53);
             this.lblLinkTitle.Name = "lblLinkTitle";
             this.lblLinkTitle.Size = new System.Drawing.Size(81, 20);
             this.lblLinkTitle.TabIndex = 2;
@@ -72,7 +74,7 @@
             this.cmbCourses.FormattingEnabled = true;
             this.cmbCourses.Location = new System.Drawing.Point(16, 77);
             this.cmbCourses.Name = "cmbCourses";
-            this.cmbCourses.Size = new System.Drawing.Size(141, 21);
+            this.cmbCourses.Size = new System.Drawing.Size(164, 21);
             this.cmbCourses.TabIndex = 3;
             // 
             // cmbLink
@@ -80,9 +82,9 @@
             this.cmbLink.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLink.FormattingEnabled = true;
-            this.cmbLink.Location = new System.Drawing.Point(189, 77);
+            this.cmbLink.Location = new System.Drawing.Point(196, 77);
             this.cmbLink.Name = "cmbLink";
-            this.cmbLink.Size = new System.Drawing.Size(141, 21);
+            this.cmbLink.Size = new System.Drawing.Size(164, 21);
             this.cmbLink.TabIndex = 4;
             // 
             // grbLinks
@@ -93,21 +95,15 @@
             this.grbLinks.Controls.Add(this.tlpLinks);
             this.grbLinks.Location = new System.Drawing.Point(12, 142);
             this.grbLinks.Name = "grbLinks";
-            this.grbLinks.Size = new System.Drawing.Size(318, 379);
+            this.grbLinks.Size = new System.Drawing.Size(348, 379);
             this.grbLinks.TabIndex = 5;
             this.grbLinks.TabStop = false;
             // 
-            // btnLink
-            // 
-            this.btnLink.Location = new System.Drawing.Point(16, 109);
-            this.btnLink.Name = "btnLink";
-            this.btnLink.Size = new System.Drawing.Size(314, 31);
-            this.btnLink.TabIndex = 6;
-            this.btnLink.Text = "Link";
-            this.btnLink.UseVisualStyleBackColor = true;
-            // 
             // tlpLinks
             // 
+            this.tlpLinks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpLinks.ColumnCount = 3;
             this.tlpLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tlpLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -116,14 +112,31 @@
             this.tlpLinks.Name = "tlpLinks";
             this.tlpLinks.RowCount = 1;
             this.tlpLinks.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpLinks.Size = new System.Drawing.Size(306, 354);
+            this.tlpLinks.Size = new System.Drawing.Size(336, 354);
             this.tlpLinks.TabIndex = 0;
+            // 
+            // btnLink
+            // 
+            this.btnLink.Location = new System.Drawing.Point(16, 109);
+            this.btnLink.Name = "btnLink";
+            this.btnLink.Size = new System.Drawing.Size(344, 31);
+            this.btnLink.TabIndex = 6;
+            this.btnLink.Text = "Link";
+            this.btnLink.UseVisualStyleBackColor = true;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // courseProgramTableAdapter
+            // 
+            this.courseProgramTableAdapter.ClearBeforeFill = true;
             // 
             // frmLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 533);
+            this.ClientSize = new System.Drawing.Size(372, 533);
             this.Controls.Add(this.btnLink);
             this.Controls.Add(this.grbLinks);
             this.Controls.Add(this.cmbLink);
@@ -136,7 +149,6 @@
             this.MinimizeBox = false;
             this.Name = "frmLink";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLink";
             this.Load += new System.EventHandler(this.frmLink_Load);
             this.grbLinks.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -154,5 +166,7 @@
         private System.Windows.Forms.GroupBox grbLinks;
         private System.Windows.Forms.Button btnLink;
         private System.Windows.Forms.TableLayoutPanel tlpLinks;
+        private dtsAllTableAdapters.ProgramTableAdapter programTableAdapter;
+        private dtsAllTableAdapters.CourseProgramTableAdapter courseProgramTableAdapter;
     }
 }

@@ -128,7 +128,7 @@ namespace Csharp_Group_Assignment {
                                 command.ExecuteNonQuery();
 
                                 // Refresh the DataGrid on the Courses form
-                                coursesForm.coursesTableAdapter.Fill(coursesForm.studentManagerDBDataSet.Courses);
+                                coursesForm.coursesTableAdapter.Fill(coursesForm.dtsAllData.Courses);
                                 coursesForm.dgvCourses.Refresh();
                                 coursesForm.dgvCourses.Parent.Refresh();
 

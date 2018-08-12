@@ -584,6 +584,10 @@ namespace Csharp_Group_Assignment {
             
             private global::System.Data.DataColumn columnprogramId;
             
+            private global::System.Data.DataColumn columncname;
+            
+            private global::System.Data.DataColumn columnpname;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CourseProgramDataTable() {
@@ -635,6 +639,22 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cnameColumn {
+                get {
+                    return this.columncname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn pnameColumn {
+                get {
+                    return this.columnpname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -670,11 +690,13 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CourseProgramRow AddCourseProgramRow(CoursesRow parentCoursesRowByFK_CourseProgram_courseId, ProgramRow parentProgramRowByFK_CourseProgram_programId) {
+            public CourseProgramRow AddCourseProgramRow(CoursesRow parentCoursesRowByFK_CourseProgram_courseId, ProgramRow parentProgramRowByFK_CourseProgram_programId, string cname, string pname) {
                 CourseProgramRow rowCourseProgramRow = ((CourseProgramRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        cname,
+                        pname};
                 if ((parentCoursesRowByFK_CourseProgram_courseId != null)) {
                     columnValuesArray[0] = parentCoursesRowByFK_CourseProgram_courseId[0];
                 }
@@ -705,6 +727,8 @@ namespace Csharp_Group_Assignment {
             internal void InitVars() {
                 this.columncourseId = base.Columns["courseId"];
                 this.columnprogramId = base.Columns["programId"];
+                this.columncname = base.Columns["cname"];
+                this.columnpname = base.Columns["pname"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -714,8 +738,16 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columncourseId);
                 this.columnprogramId = new global::System.Data.DataColumn("programId", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprogramId);
+                this.columncname = new global::System.Data.DataColumn("cname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncname);
+                this.columnpname = new global::System.Data.DataColumn("pname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpname);
                 this.columncourseId.AllowDBNull = false;
                 this.columnprogramId.AllowDBNull = false;
+                this.columncname.AllowDBNull = false;
+                this.columncname.MaxLength = 50;
+                this.columnpname.AllowDBNull = false;
+                this.columnpname.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1563,6 +1595,12 @@ namespace Csharp_Group_Assignment {
             
             private global::System.Data.DataColumn columncourseId;
             
+            private global::System.Data.DataColumn columnname;
+            
+            private global::System.Data.DataColumn columnfirstName;
+            
+            private global::System.Data.DataColumn columnlastName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ProfessorCourseDataTable() {
@@ -1614,6 +1652,30 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nameColumn {
+                get {
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn firstNameColumn {
+                get {
+                    return this.columnfirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn lastNameColumn {
+                get {
+                    return this.columnlastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1649,11 +1711,14 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProfessorCourseRow AddProfessorCourseRow(ProfessorRow parentProfessorRowByFK_ProfessorCourse_prefessorId, CoursesRow parentCoursesRowByFK_ProfessorCourse_courseId) {
+            public ProfessorCourseRow AddProfessorCourseRow(ProfessorRow parentProfessorRowByFK_ProfessorCourse_prefessorId, CoursesRow parentCoursesRowByFK_ProfessorCourse_courseId, string name, string firstName, string lastName) {
                 ProfessorCourseRow rowProfessorCourseRow = ((ProfessorCourseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        name,
+                        firstName,
+                        lastName};
                 if ((parentProfessorRowByFK_ProfessorCourse_prefessorId != null)) {
                     columnValuesArray[0] = parentProfessorRowByFK_ProfessorCourse_prefessorId[0];
                 }
@@ -1684,6 +1749,9 @@ namespace Csharp_Group_Assignment {
             internal void InitVars() {
                 this.columnprefessorId = base.Columns["prefessorId"];
                 this.columncourseId = base.Columns["courseId"];
+                this.columnname = base.Columns["name"];
+                this.columnfirstName = base.Columns["firstName"];
+                this.columnlastName = base.Columns["lastName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1693,8 +1761,20 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columnprefessorId);
                 this.columncourseId = new global::System.Data.DataColumn("courseId", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourseId);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columnfirstName = new global::System.Data.DataColumn("firstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirstName);
+                this.columnlastName = new global::System.Data.DataColumn("lastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastName);
                 this.columnprefessorId.AllowDBNull = false;
                 this.columncourseId.AllowDBNull = false;
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 50;
+                this.columnfirstName.AllowDBNull = false;
+                this.columnfirstName.MaxLength = 50;
+                this.columnlastName.AllowDBNull = false;
+                this.columnlastName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2512,6 +2592,12 @@ namespace Csharp_Group_Assignment {
             
             private global::System.Data.DataColumn columncourseId;
             
+            private global::System.Data.DataColumn columnname;
+            
+            private global::System.Data.DataColumn columnfirstName;
+            
+            private global::System.Data.DataColumn columnlastName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public StudentCourseDataTable() {
@@ -2563,6 +2649,30 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nameColumn {
+                get {
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn firstNameColumn {
+                get {
+                    return this.columnfirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn lastNameColumn {
+                get {
+                    return this.columnlastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2598,11 +2708,14 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public StudentCourseRow AddStudentCourseRow(StudentRow parentStudentRowByFK_StudentCourse_studentId, CoursesRow parentCoursesRowByFK_StudentCourse_courseId) {
+            public StudentCourseRow AddStudentCourseRow(StudentRow parentStudentRowByFK_StudentCourse_studentId, CoursesRow parentCoursesRowByFK_StudentCourse_courseId, string name, string firstName, string lastName) {
                 StudentCourseRow rowStudentCourseRow = ((StudentCourseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        name,
+                        firstName,
+                        lastName};
                 if ((parentStudentRowByFK_StudentCourse_studentId != null)) {
                     columnValuesArray[0] = parentStudentRowByFK_StudentCourse_studentId[0];
                 }
@@ -2633,6 +2746,9 @@ namespace Csharp_Group_Assignment {
             internal void InitVars() {
                 this.columnstudentId = base.Columns["studentId"];
                 this.columncourseId = base.Columns["courseId"];
+                this.columnname = base.Columns["name"];
+                this.columnfirstName = base.Columns["firstName"];
+                this.columnlastName = base.Columns["lastName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2642,8 +2758,20 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columnstudentId);
                 this.columncourseId = new global::System.Data.DataColumn("courseId", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourseId);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columnfirstName = new global::System.Data.DataColumn("firstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirstName);
+                this.columnlastName = new global::System.Data.DataColumn("lastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastName);
                 this.columnstudentId.AllowDBNull = false;
                 this.columncourseId.AllowDBNull = false;
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 50;
+                this.columnfirstName.AllowDBNull = false;
+                this.columnfirstName.MaxLength = 50;
+                this.columnlastName.AllowDBNull = false;
+                this.columnlastName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3077,6 +3205,28 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string cname {
+                get {
+                    return ((string)(this[this.tableCourseProgram.cnameColumn]));
+                }
+                set {
+                    this[this.tableCourseProgram.cnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string pname {
+                get {
+                    return ((string)(this[this.tableCourseProgram.pnameColumn]));
+                }
+                set {
+                    this[this.tableCourseProgram.pnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CoursesRow CoursesRow {
                 get {
                     return ((CoursesRow)(this.GetParentRow(this.Table.ParentRelations["FK_CourseProgram_courseId"])));
@@ -3364,6 +3514,39 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string name {
+                get {
+                    return ((string)(this[this.tableProfessorCourse.nameColumn]));
+                }
+                set {
+                    this[this.tableProfessorCourse.nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string firstName {
+                get {
+                    return ((string)(this[this.tableProfessorCourse.firstNameColumn]));
+                }
+                set {
+                    this[this.tableProfessorCourse.firstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string lastName {
+                get {
+                    return ((string)(this[this.tableProfessorCourse.lastNameColumn]));
+                }
+                set {
+                    this[this.tableProfessorCourse.lastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CoursesRow CoursesRow {
                 get {
                     return ((CoursesRow)(this.GetParentRow(this.Table.ParentRelations["FK_ProfessorCourse_courseId"])));
@@ -3624,6 +3807,39 @@ namespace Csharp_Group_Assignment {
                 }
                 set {
                     this[this.tableStudentCourse.courseIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string name {
+                get {
+                    return ((string)(this[this.tableStudentCourse.nameColumn]));
+                }
+                set {
+                    this[this.tableStudentCourse.nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string firstName {
+                get {
+                    return ((string)(this[this.tableStudentCourse.firstNameColumn]));
+                }
+                set {
+                    this[this.tableStudentCourse.firstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string lastName {
+                get {
+                    return ((string)(this[this.tableStudentCourse.lastNameColumn]));
+                }
+                set {
+                    this[this.tableStudentCourse.lastNameColumn] = value;
                 }
             }
             
@@ -4108,6 +4324,8 @@ namespace Csharp_Group_Assignment.dtsAllTableAdapters {
             tableMapping.DataSetTable = "CourseProgram";
             tableMapping.ColumnMappings.Add("courseId", "courseId");
             tableMapping.ColumnMappings.Add("programId", "programId");
+            tableMapping.ColumnMappings.Add("cname", "cname");
+            tableMapping.ColumnMappings.Add("pname", "pname");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -4131,7 +4349,10 @@ namespace Csharp_Group_Assignment.dtsAllTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT courseId, programId FROM dbo.CourseProgram";
+            this._commandCollection[0].CommandText = @"SELECT        CourseProgram.courseId, CourseProgram.programId, Courses.name AS cname, Program.name AS pname
+FROM            CourseProgram INNER JOIN
+                         Courses ON CourseProgram.courseId = Courses.id INNER JOIN
+                         Program ON CourseProgram.programId = Program.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5138,6 +5359,9 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             tableMapping.DataSetTable = "ProfessorCourse";
             tableMapping.ColumnMappings.Add("prefessorId", "prefessorId");
             tableMapping.ColumnMappings.Add("courseId", "courseId");
+            tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("firstName", "firstName");
+            tableMapping.ColumnMappings.Add("lastName", "lastName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -5161,7 +5385,10 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT prefessorId, courseId FROM dbo.ProfessorCourse";
+            this._commandCollection[0].CommandText = @"SELECT        ProfessorCourse.prefessorId, ProfessorCourse.courseId, Courses.name, Professor.firstName, Professor.lastName
+FROM            ProfessorCourse INNER JOIN
+                         Courses ON ProfessorCourse.courseId = Courses.id INNER JOIN
+                         Professor ON ProfessorCourse.prefessorId = Professor.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6153,6 +6380,9 @@ SELECT id, studentNumber, firstName, lastName, birthday, gender, startDate FROM 
             tableMapping.DataSetTable = "StudentCourse";
             tableMapping.ColumnMappings.Add("studentId", "studentId");
             tableMapping.ColumnMappings.Add("courseId", "courseId");
+            tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("firstName", "firstName");
+            tableMapping.ColumnMappings.Add("lastName", "lastName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -6176,7 +6406,10 @@ SELECT id, studentNumber, firstName, lastName, birthday, gender, startDate FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT studentId, courseId FROM dbo.StudentCourse";
+            this._commandCollection[0].CommandText = @"SELECT        StudentCourse.studentId, StudentCourse.courseId, Courses.name, Student.firstName, Student.lastName
+FROM            StudentCourse INNER JOIN
+                         Courses ON StudentCourse.courseId = Courses.id INNER JOIN
+                         Student ON StudentCourse.studentId = Student.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
