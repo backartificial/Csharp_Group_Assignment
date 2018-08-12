@@ -89,7 +89,7 @@ namespace Csharp_Group_Assignment {
          **/
         private Boolean addCourse() {
             // Check if the user added all items in the form
-            if (txtCourseCode.Text.Trim().Equals("") || txtCourseName.Text.Trim().Equals("") || txtLocation.Text.Trim().Equals("") || dtpTime.Text.Trim().Equals("") || nudCapacity.Value == 0 || nudCredits.Value == 0) {
+            if(txtCourseCode.Text.Trim().Equals("") || txtCourseName.Text.Trim().Equals("") || txtLocation.Text.Trim().Equals("") || dtpTime.Text.Trim().Equals("") || nudCapacity.Value == 0 || nudCredits.Value == 0) {
                 // Display error message
                 MessageBox.Show("Oops... Not all fields were filled in.  Please fill in all fields and try again.", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }else{
@@ -116,7 +116,7 @@ namespace Csharp_Group_Assignment {
 
                             // Focus on the courseCode field
                             txtCourseCode.Focus();
-                        } else{
+                        }else{
                             // Add the course
                             using(command = new SqlCommand("INSERT INTO courses (courseCode, name, location, time, capacity, credits) VALUES (@courseCode, @name, @location, @time, @capacity, @credits)", connection)) {
                                 command.Parameters.AddWithValue("@courseCode", txtCourseCode.Text);

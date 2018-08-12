@@ -31,13 +31,14 @@
             this.cmbLink = new System.Windows.Forms.ComboBox();
             this.grbLinks = new System.Windows.Forms.GroupBox();
             this.tlpLinks = new System.Windows.Forms.TableLayoutPanel();
-            this.btnLink = new System.Windows.Forms.Button();
             this.programTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProgramTableAdapter();
             this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
             this.professorCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorCourseTableAdapter();
             this.studentCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentCourseTableAdapter();
             this.studentTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentTableAdapter();
             this.professorTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorTableAdapter();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnLink = new System.Windows.Forms.Button();
             this.grbLinks.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             this.lblCourseTitle.AutoSize = true;
             this.lblCourseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCourseTitle.Location = new System.Drawing.Point(12, 53);
+            this.lblCourseTitle.Location = new System.Drawing.Point(8, 53);
             this.lblCourseTitle.Name = "lblCourseTitle";
             this.lblCourseTitle.Size = new System.Drawing.Size(66, 20);
             this.lblCourseTitle.TabIndex = 1;
@@ -76,7 +77,7 @@
             this.cmbCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourses.FormattingEnabled = true;
-            this.cmbCourses.Location = new System.Drawing.Point(16, 77);
+            this.cmbCourses.Location = new System.Drawing.Point(12, 76);
             this.cmbCourses.Name = "cmbCourses";
             this.cmbCourses.Size = new System.Drawing.Size(164, 21);
             this.cmbCourses.TabIndex = 3;
@@ -99,7 +100,7 @@
             this.grbLinks.Controls.Add(this.tlpLinks);
             this.grbLinks.Location = new System.Drawing.Point(12, 142);
             this.grbLinks.Name = "grbLinks";
-            this.grbLinks.Size = new System.Drawing.Size(348, 379);
+            this.grbLinks.Size = new System.Drawing.Size(348, 349);
             this.grbLinks.TabIndex = 5;
             this.grbLinks.TabStop = false;
             // 
@@ -116,17 +117,8 @@
             this.tlpLinks.Name = "tlpLinks";
             this.tlpLinks.RowCount = 1;
             this.tlpLinks.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpLinks.Size = new System.Drawing.Size(336, 354);
+            this.tlpLinks.Size = new System.Drawing.Size(336, 324);
             this.tlpLinks.TabIndex = 0;
-            // 
-            // btnLink
-            // 
-            this.btnLink.Location = new System.Drawing.Point(16, 109);
-            this.btnLink.Name = "btnLink";
-            this.btnLink.Size = new System.Drawing.Size(344, 31);
-            this.btnLink.TabIndex = 6;
-            this.btnLink.Text = "Link";
-            this.btnLink.UseVisualStyleBackColor = true;
             // 
             // programTableAdapter
             // 
@@ -152,18 +144,58 @@
             // 
             this.professorTableAdapter.ClearBeforeFill = true;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(277, 497);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(83, 31);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnLink
+            // 
+            this.btnLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.btnLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLink.FlatAppearance.BorderSize = 0;
+            this.btnLink.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnLink.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(179)))));
+            this.btnLink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLink.ForeColor = System.Drawing.Color.White;
+            this.btnLink.Location = new System.Drawing.Point(12, 107);
+            this.btnLink.Name = "btnLink";
+            this.btnLink.Size = new System.Drawing.Size(348, 31);
+            this.btnLink.TabIndex = 9;
+            this.btnLink.UseVisualStyleBackColor = false;
+            this.btnLink.Click += new System.EventHandler(this.btnLink_Click);
+            // 
             // frmLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(372, 533);
             this.Controls.Add(this.btnLink);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grbLinks);
             this.Controls.Add(this.cmbLink);
             this.Controls.Add(this.cmbCourses);
             this.Controls.Add(this.lblLinkTitle);
             this.Controls.Add(this.lblCourseTitle);
             this.Controls.Add(this.lblTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -184,7 +216,6 @@
         private System.Windows.Forms.ComboBox cmbCourses;
         private System.Windows.Forms.ComboBox cmbLink;
         private System.Windows.Forms.GroupBox grbLinks;
-        private System.Windows.Forms.Button btnLink;
         private System.Windows.Forms.TableLayoutPanel tlpLinks;
         private dtsAllTableAdapters.ProgramTableAdapter programTableAdapter;
         private dtsAllTableAdapters.CourseProgramTableAdapter courseProgramTableAdapter;
@@ -192,5 +223,7 @@
         private dtsAllTableAdapters.StudentCourseTableAdapter studentCourseTableAdapter;
         private dtsAllTableAdapters.StudentTableAdapter studentTableAdapter;
         private dtsAllTableAdapters.ProfessorTableAdapter professorTableAdapter;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnLink;
     }
 }
