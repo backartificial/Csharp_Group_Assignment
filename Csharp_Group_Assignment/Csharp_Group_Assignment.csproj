@@ -85,6 +85,9 @@
     <Compile Include="frmRemoveCoruse.Designer.cs">
       <DependentUpon>frmRemoveCoruse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -34,6 +34,10 @@
             this.btnLink = new System.Windows.Forms.Button();
             this.programTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProgramTableAdapter();
             this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
+            this.professorCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorCourseTableAdapter();
+            this.studentCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentCourseTableAdapter();
+            this.studentTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentTableAdapter();
+            this.professorTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorTableAdapter();
             this.grbLinks.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +136,22 @@
             // 
             this.courseProgramTableAdapter.ClearBeforeFill = true;
             // 
+            // professorCourseTableAdapter
+            // 
+            this.professorCourseTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentCourseTableAdapter
+            // 
+            this.studentCourseTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // professorTableAdapter
+            // 
+            this.professorTableAdapter.ClearBeforeFill = true;
+            // 
             // frmLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,5 +188,9 @@
         private System.Windows.Forms.TableLayoutPanel tlpLinks;
         private dtsAllTableAdapters.ProgramTableAdapter programTableAdapter;
         private dtsAllTableAdapters.CourseProgramTableAdapter courseProgramTableAdapter;
+        private dtsAllTableAdapters.ProfessorCourseTableAdapter professorCourseTableAdapter;
+        private dtsAllTableAdapters.StudentCourseTableAdapter studentCourseTableAdapter;
+        private dtsAllTableAdapters.StudentTableAdapter studentTableAdapter;
+        private dtsAllTableAdapters.ProfessorTableAdapter professorTableAdapter;
     }
 }

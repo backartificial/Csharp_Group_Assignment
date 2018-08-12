@@ -19,9 +19,6 @@ namespace Csharp_Group_Assignment {
         }
 
         private void frmLink_Load(object sender, EventArgs e) {
-            // Fill the course table adapter with data
-            programTableAdapter.Fill(coursesForm.dtsAllData.Program);
-
             // Set the Form Titles
             Text = linkSection + " Link | Student Content Management System";
             lblTitle.Text = linkSection + " Link";
@@ -53,6 +50,7 @@ namespace Csharp_Group_Assignment {
                 // Link operation for a Program
                 case "Program":
                     // Fill the table adapter for Programs
+                    programTableAdapter.Fill(coursesForm.dtsAllData.Program);
                     courseProgramTableAdapter.Fill(coursesForm.dtsAllData.CourseProgram);
 
                     // Loop throug each program and assign it to the combobox
@@ -72,27 +70,51 @@ namespace Csharp_Group_Assignment {
                     }
                 break;
 
-                // Link operation for a Program
+                // Link operation for a Professor
                 case "Professor":
-                    // Fill the table adapter for Programs
-                    courseProgramTableAdapter.Fill(coursesForm.dtsAllData.CourseProgram);
+                    // Fill the table adapter for Professors
+                    professorTableAdapter.Fill(coursesForm.dtsAllData.Professor);
+                    professorCourseTableAdapter.Fill(coursesForm.dtsAllData.ProfessorCourse);
 
-                    // Loop throug each program and assign it to the combobox
-                    foreach (DataRow row in coursesForm.dtsAllData.Program) {
+                    // Loop throug each professor and assign it to the combobox
+                    foreach (DataRow row in coursesForm.dtsAllData.Professor) {
                         // Add the course to the combobox
-                        cmbLink.Items.Add(new Programs(int.Parse(row["id"].ToString()), row["name"].ToString(), int.Parse(row["duration"].ToString()), char.Parse(row["coop"].ToString()), row["outcome"].ToString()).name);
+                        cmbLink.Items.Add(new Professor(int.Parse(row["id"].ToString()), int.Parse(row["employeeNumber"].ToString()), row["firstName"].ToString(), row["lastName"].ToString(), DateTime.Parse(row["birthday"].ToString()), char.Parse(row["gender"].ToString()), DateTime.Parse(row["startDate"].ToString())).name);
                     }
 
                     // Loop throug each program and assign it to the combobox
-                    foreach (DataRow row in coursesForm.dtsAllData.CourseProgram) {
+                    foreach (DataRow row in coursesForm.dtsAllData.ProfessorCourse) {
                         // Add the course to the table
                         tlpLinks.RowCount = tlpLinks.RowCount + 1;
                         tlpLinks.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                        tlpLinks.Controls.Add(new TextBox() { Text = row["cname"].ToString(), ReadOnly = true, Dock = DockStyle.Fill }, 0, (tlpLinks.RowCount - 1));
+                        tlpLinks.Controls.Add(new TextBox() { Text = row["name"].ToString(), ReadOnly = true, Dock = DockStyle.Fill }, 0, (tlpLinks.RowCount - 1));
                         tlpLinks.Controls.Add(new Label() { Text = "=>", TextAlign = ContentAlignment.MiddleCenter }, 1, (tlpLinks.RowCount - 1));
-                        tlpLinks.Controls.Add(new TextBox() { Text = row["pname"].ToString(), ReadOnly = true, Dock = DockStyle.Fill }, 2, (tlpLinks.RowCount - 1));
+                        tlpLinks.Controls.Add(new TextBox() { Text = row["firstName"].ToString() + " " + row["lastName"].ToString(), ReadOnly = true, Dock = DockStyle.Fill }, 2, (tlpLinks.RowCount - 1));
                     }
-                    break;
+                break;
+
+                // Link operation for a Student
+                case "Student":
+                    // Fill the table adapter for Students
+                    studentTableAdapter.Fill(coursesForm.dtsAllData.Student);
+                    studentCourseTableAdapter.Fill(coursesForm.dtsAllData.StudentCourse);
+
+                    // Loop throug each Student and assign it to the combobox
+                    foreach (DataRow row in coursesForm.dtsAllData.Student) {
+                        // Add the course to the combobox
+                        cmbLink.Items.Add(new Student(int.Parse(row["id"].ToString()), int.Parse(row["studentNumber"].ToString()), row["firstName"].ToString(), row["lastName"].ToString(), DateTime.Parse(row["birthday"].ToString()), char.Parse(row["gender"].ToString()), DateTime.Parse(row["startDate"].ToString())).name);
+                    }
+
+                    // Loop throug each program and assign it to the combobox
+                    foreach (DataRow row in coursesForm.dtsAllData.StudentCourse) {
+                        // Add the course to the table
+                        tlpLinks.RowCount = tlpLinks.RowCount + 1;
+                        tlpLinks.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                        tlpLinks.Controls.Add(new TextBox() { Text = row["name"].ToString(), ReadOnly = true, Dock = DockStyle.Fill }, 0, (tlpLinks.RowCount - 1));
+                        tlpLinks.Controls.Add(new Label() { Text = "=>", TextAlign = ContentAlignment.MiddleCenter }, 1, (tlpLinks.RowCount - 1));
+                        tlpLinks.Controls.Add(new TextBox() { Text = row["firstName"].ToString() + " " + row["lastName"].ToString(), ReadOnly = true, Dock = DockStyle.Fill }, 2, (tlpLinks.RowCount - 1));
+                    }
+                break;
             }
         }
     }

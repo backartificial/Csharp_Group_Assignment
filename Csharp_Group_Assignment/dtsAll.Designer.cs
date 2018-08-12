@@ -1376,7 +1376,7 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProfessorRow AddProfessorRow(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, short startDate) {
+            public ProfessorRow AddProfessorRow(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, System.DateTime startDate) {
                 ProfessorRow rowProfessorRow = ((ProfessorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1439,7 +1439,7 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columnbirthday);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngender);
-                this.columnstartDate = new global::System.Data.DataColumn("startDate", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnstartDate = new global::System.Data.DataColumn("startDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstartDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
@@ -2373,7 +2373,7 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public StudentRow AddStudentRow(short studentNumber, string firstName, string lastName, System.DateTime birthday, string gender, short startDate) {
+            public StudentRow AddStudentRow(short studentNumber, string firstName, string lastName, System.DateTime birthday, string gender, System.DateTime startDate) {
                 StudentRow rowStudentRow = ((StudentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2436,7 +2436,7 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columnbirthday);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngender);
-                this.columnstartDate = new global::System.Data.DataColumn("startDate", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnstartDate = new global::System.Data.DataColumn("startDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstartDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
@@ -3455,9 +3455,9 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short startDate {
+            public System.DateTime startDate {
                 get {
-                    return ((short)(this[this.tableProfessor.startDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableProfessor.startDateColumn]));
                 }
                 set {
                     this[this.tableProfessor.startDateColumn] = value;
@@ -3742,9 +3742,9 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short startDate {
+            public System.DateTime startDate {
                 get {
-                    return ((short)(this[this.tableStudent.startDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableStudent.startDateColumn]));
                 }
                 set {
                     this[this.tableStudent.startDateColumn] = value;
@@ -4973,7 +4973,7 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_birthday", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_startDate", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Professor] ([employeeNumber], [firstName], [lastName], [birthday], [gender], [startDate]) VALUES (@employeeNumber, @firstName, @lastName, @birthday, @gender, @startDate);
@@ -4984,7 +4984,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Professor] SET [employeeNumber] = @employeeNumber, [firstName] = @firstName, [lastName] = @lastName, [birthday] = @birthday, [gender] = @gender, [startDate] = @startDate WHERE (([id] = @Original_id) AND ([employeeNumber] = @Original_employeeNumber) AND ([firstName] = @Original_firstName) AND ([lastName] = @Original_lastName) AND ([birthday] = @Original_birthday) AND ([gender] = @Original_gender) AND ([startDate] = @Original_startDate));
@@ -4995,14 +4995,14 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_employeeNumber", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "employeeNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_firstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_birthday", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_startDate", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -5081,7 +5081,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_id, short Original_employeeNumber, string Original_firstName, string Original_lastName, System.DateTime Original_birthday, string Original_gender, short Original_startDate) {
+        public virtual int Delete(short Original_id, short Original_employeeNumber, string Original_firstName, string Original_lastName, System.DateTime Original_birthday, string Original_gender, System.DateTime Original_startDate) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_employeeNumber));
             if ((Original_firstName == null)) {
@@ -5103,7 +5103,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_gender));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((short)(Original_startDate));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_startDate));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5124,7 +5124,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, short startDate) {
+        public virtual int Insert(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, System.DateTime startDate) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((short)(employeeNumber));
             if ((firstName == null)) {
                 throw new global::System.ArgumentNullException("firstName");
@@ -5145,7 +5145,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(gender));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((short)(startDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(startDate));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5166,7 +5166,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, short startDate, short Original_id, short Original_employeeNumber, string Original_firstName, string Original_lastName, System.DateTime Original_birthday, string Original_gender, short Original_startDate, short id) {
+        public virtual int Update(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, System.DateTime startDate, short Original_id, short Original_employeeNumber, string Original_firstName, string Original_lastName, System.DateTime Original_birthday, string Original_gender, System.DateTime Original_startDate, short id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(employeeNumber));
             if ((firstName == null)) {
                 throw new global::System.ArgumentNullException("firstName");
@@ -5187,7 +5187,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(gender));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(startDate));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(startDate));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_id));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Original_employeeNumber));
             if ((Original_firstName == null)) {
@@ -5209,7 +5209,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_gender));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((short)(Original_startDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_startDate));
             this.Adapter.UpdateCommand.Parameters[13].Value = ((short)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5231,7 +5231,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, short startDate, short Original_id, short Original_employeeNumber, string Original_firstName, string Original_lastName, System.DateTime Original_birthday, string Original_gender, short Original_startDate) {
+        public virtual int Update(short employeeNumber, string firstName, string lastName, System.DateTime birthday, string gender, System.DateTime startDate, short Original_id, short Original_employeeNumber, string Original_firstName, string Original_lastName, System.DateTime Original_birthday, string Original_gender, System.DateTime Original_startDate) {
             return this.Update(employeeNumber, firstName, lastName, birthday, gender, startDate, Original_id, Original_employeeNumber, Original_firstName, Original_lastName, Original_birthday, Original_gender, Original_startDate, Original_id);
         }
     }
