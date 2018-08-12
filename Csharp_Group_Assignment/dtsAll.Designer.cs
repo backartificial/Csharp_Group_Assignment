@@ -426,7 +426,7 @@ namespace Csharp_Group_Assignment {
             this.Relations.Add(this.relationFK_ProfessorCourse_courseId);
             this.relationFK_ProfessorCourse_prefessorId = new global::System.Data.DataRelation("FK_ProfessorCourse_prefessorId", new global::System.Data.DataColumn[] {
                         this.tableProfessor.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProfessorCourse.prefessorIdColumn}, false);
+                        this.tableProfessorCourse.professorIdColumn}, false);
             this.Relations.Add(this.relationFK_ProfessorCourse_prefessorId);
             this.relationFK_StudentCourse_courseId = new global::System.Data.DataRelation("FK_StudentCourse_courseId", new global::System.Data.DataColumn[] {
                         this.tableCourses.idColumn}, new global::System.Data.DataColumn[] {
@@ -1591,7 +1591,7 @@ namespace Csharp_Group_Assignment {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ProfessorCourseDataTable : global::System.Data.TypedTableBase<ProfessorCourseRow> {
             
-            private global::System.Data.DataColumn columnprefessorId;
+            private global::System.Data.DataColumn columnprofessorId;
             
             private global::System.Data.DataColumn columncourseId;
             
@@ -1636,9 +1636,9 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn prefessorIdColumn {
+            public global::System.Data.DataColumn professorIdColumn {
                 get {
-                    return this.columnprefessorId;
+                    return this.columnprofessorId;
                 }
             }
             
@@ -1747,7 +1747,7 @@ namespace Csharp_Group_Assignment {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnprefessorId = base.Columns["prefessorId"];
+                this.columnprofessorId = base.Columns["professorId"];
                 this.columncourseId = base.Columns["courseId"];
                 this.columnname = base.Columns["name"];
                 this.columnfirstName = base.Columns["firstName"];
@@ -1757,8 +1757,8 @@ namespace Csharp_Group_Assignment {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnprefessorId = new global::System.Data.DataColumn("prefessorId", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprefessorId);
+                this.columnprofessorId = new global::System.Data.DataColumn("professorId", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprofessorId);
                 this.columncourseId = new global::System.Data.DataColumn("courseId", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourseId);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1767,7 +1767,7 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columnfirstName);
                 this.columnlastName = new global::System.Data.DataColumn("lastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlastName);
-                this.columnprefessorId.AllowDBNull = false;
+                this.columnprofessorId.AllowDBNull = false;
                 this.columncourseId.AllowDBNull = false;
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 50;
@@ -3492,12 +3492,12 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short prefessorId {
+            public short professorId {
                 get {
-                    return ((short)(this[this.tableProfessorCourse.prefessorIdColumn]));
+                    return ((short)(this[this.tableProfessorCourse.professorIdColumn]));
                 }
                 set {
-                    this[this.tableProfessorCourse.prefessorIdColumn] = value;
+                    this[this.tableProfessorCourse.professorIdColumn] = value;
                 }
             }
             
@@ -5357,7 +5357,7 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ProfessorCourse";
-            tableMapping.ColumnMappings.Add("prefessorId", "prefessorId");
+            tableMapping.ColumnMappings.Add("professorId", "professorId");
             tableMapping.ColumnMappings.Add("courseId", "courseId");
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("firstName", "firstName");
@@ -5385,10 +5385,10 @@ SELECT id, employeeNumber, firstName, lastName, birthday, gender, startDate FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        ProfessorCourse.prefessorId, ProfessorCourse.courseId, Courses.name, Professor.firstName, Professor.lastName
+            this._commandCollection[0].CommandText = @"SELECT        ProfessorCourse.professorId, ProfessorCourse.courseId, Courses.name, Professor.firstName, Professor.lastName
 FROM            ProfessorCourse INNER JOIN
                          Courses ON ProfessorCourse.courseId = Courses.id INNER JOIN
-                         Professor ON ProfessorCourse.prefessorId = Professor.id";
+                         Professor ON ProfessorCourse.professorId = Professor.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

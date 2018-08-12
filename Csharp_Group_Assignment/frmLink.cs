@@ -47,7 +47,7 @@ namespace Csharp_Group_Assignment {
             // Loop throug each course and assign it to the combobox
             foreach(DataRow row in coursesForm.dtsAllData.Courses) {
                 // Add the course to the combobox
-                cmbCourses.Items.Add(new Course(int.Parse(row["id"].ToString()), row["courseCode"].ToString(), row["name"].ToString(), row["location"].ToString(), TimeSpan.Parse(row["time"].ToString()), int.Parse(row["capacity"].ToString()), int.Parse(row["credits"].ToString())).name);
+                cmbCourses.Items.Add(new Course(int.Parse(row["id"].ToString()), row["courseCode"].ToString(), row["name"].ToString(), row["location"].ToString(), TimeSpan.Parse(row["time"].ToString()), int.Parse(row["capacity"].ToString()), int.Parse(row["credits"].ToString())));
             }
 
             // Prepare table columns
@@ -72,7 +72,7 @@ namespace Csharp_Group_Assignment {
                     // Loop throug each program and assign it to the combobox
                     foreach (DataRow row in coursesForm.dtsAllData.Program) {
                         // Add the course to the combobox
-                        cmbLink.Items.Add(new Programs(int.Parse(row["id"].ToString()), row["name"].ToString(), int.Parse(row["duration"].ToString()), char.Parse(row["coop"].ToString()), row["outcome"].ToString()).name);
+                        cmbLink.Items.Add(new Programs(int.Parse(row["id"].ToString()), row["name"].ToString(), int.Parse(row["duration"].ToString()), char.Parse(row["coop"].ToString()), row["outcome"].ToString()));
                     }
 
                     // Loop throug each program and assign it to the combobox
@@ -95,7 +95,7 @@ namespace Csharp_Group_Assignment {
                     // Loop throug each professor and assign it to the combobox
                     foreach (DataRow row in coursesForm.dtsAllData.Professor) {
                         // Add the course to the combobox
-                        cmbLink.Items.Add(new Professor(int.Parse(row["id"].ToString()), int.Parse(row["employeeNumber"].ToString()), row["firstName"].ToString(), row["lastName"].ToString(), DateTime.Parse(row["birthday"].ToString()), char.Parse(row["gender"].ToString()), DateTime.Parse(row["startDate"].ToString())).name);
+                        cmbLink.Items.Add(new Professor(int.Parse(row["id"].ToString()), int.Parse(row["employeeNumber"].ToString()), row["firstName"].ToString(), row["lastName"].ToString(), DateTime.Parse(row["birthday"].ToString()), char.Parse(row["gender"].ToString()), DateTime.Parse(row["startDate"].ToString())));
                     }
 
                     // Loop throug each program and assign it to the combobox
@@ -118,7 +118,7 @@ namespace Csharp_Group_Assignment {
                     // Loop throug each Student and assign it to the combobox
                     foreach (DataRow row in coursesForm.dtsAllData.Student) {
                         // Add the course to the combobox
-                        cmbLink.Items.Add(new Student(int.Parse(row["id"].ToString()), int.Parse(row["studentNumber"].ToString()), row["firstName"].ToString(), row["lastName"].ToString(), DateTime.Parse(row["birthday"].ToString()), char.Parse(row["gender"].ToString()), DateTime.Parse(row["startDate"].ToString())).name);
+                        cmbLink.Items.Add(new Student(int.Parse(row["id"].ToString()), int.Parse(row["studentNumber"].ToString()), row["firstName"].ToString(), row["lastName"].ToString(), DateTime.Parse(row["birthday"].ToString()), char.Parse(row["gender"].ToString()), DateTime.Parse(row["startDate"].ToString())));
                     }
 
                     // Loop throug each program and assign it to the combobox
@@ -189,6 +189,9 @@ namespace Csharp_Group_Assignment {
                                         tlpLinks.Controls.Add(new TextBox() { Text = course.name, ReadOnly = true, Dock = DockStyle.Fill }, 0, (tlpLinks.RowCount - 1));
                                         tlpLinks.Controls.Add(new Label() { Text = "=>", TextAlign = ContentAlignment.MiddleCenter }, 1, (tlpLinks.RowCount - 1));
                                         tlpLinks.Controls.Add(new TextBox() { Text = program.name, ReadOnly = true, Dock = DockStyle.Fill }, 2, (tlpLinks.RowCount - 1));
+                                        
+                                        // Display Success Message
+                                        MessageBox.Show("Success!  Link successfully made!", "Link Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                         // Close the DB connection
                                         connection.Close();
@@ -238,6 +241,9 @@ namespace Csharp_Group_Assignment {
                                         tlpLinks.Controls.Add(new Label() { Text = "=>", TextAlign = ContentAlignment.MiddleCenter }, 1, (tlpLinks.RowCount - 1));
                                         tlpLinks.Controls.Add(new TextBox() { Text = professor.name, ReadOnly = true, Dock = DockStyle.Fill }, 2, (tlpLinks.RowCount - 1));
 
+                                        // Display Success Message
+                                        MessageBox.Show("Success!  Link successfully made!", "Link Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                         // Close the DB connection
                                         connection.Close();
                                     }
@@ -286,6 +292,9 @@ namespace Csharp_Group_Assignment {
                                         tlpLinks.Controls.Add(new Label() { Text = "=>", TextAlign = ContentAlignment.MiddleCenter }, 1, (tlpLinks.RowCount - 1));
                                         tlpLinks.Controls.Add(new TextBox() { Text = student.name, ReadOnly = true, Dock = DockStyle.Fill }, 2, (tlpLinks.RowCount - 1));
 
+                                        // Display Success Message
+                                        MessageBox.Show("Success!  Link successfully made!", "Link Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                         // Close the DB connection
                                         connection.Close();
                                     }
@@ -303,8 +312,20 @@ namespace Csharp_Group_Assignment {
          * 
          **/
         private void btnClose_Click(object sender, EventArgs e) {
-            // Close the form
-            Close();
+            // Check if the user wants to actually exit
+            if(cmbCourses.SelectedIndex > -1 || cmbLink.SelectedIndex > -1) {
+                // Display Confirmation message
+                DialogResult closeOption = MessageBox.Show("Oops...  Loooks like you have attempted to make a link.  Are you sure you want to cancel making the link?", "Form Closure Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                // Check if the user wants to exit
+                if(closeOption == DialogResult.Yes) {
+                    // Close the form
+                    Close();
+                }
+            }else{
+                // Close the form
+                Close();
+            }
         }
     }
 }

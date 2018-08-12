@@ -46,5 +46,15 @@ namespace Csharp_Group_Assignment {
             this.capacity = capacity;
             this.credits = credits;
         }
+
+        /**
+         * 
+         * This function is used to dispaly the course name in a combobox
+         * 
+         **/
+        public override string ToString() {
+            // Return the name of the course
+            return name;
+        }
     }
 }

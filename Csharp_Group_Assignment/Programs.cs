@@ -10,7 +10,7 @@
 
 // Is the name space that this class resides in
 namespace Csharp_Group_Assignment {
-    // This is the class for this form
+    // This is the class for creating an instance of a Program
     public class Programs {
         // Declare the needed class attributes
         public int id { get; }
@@ -37,6 +37,16 @@ namespace Csharp_Group_Assignment {
             this.duration = duration;
             this.coop = coop;
             this.outcome = outcome;
+        }
+
+        /**
+         * 
+         * This function is used to dispaly the program name in a combobox
+         * 
+         **/
+        public override string ToString() {
+            // Return the name of the person
+            return name;
         }
     }
 }
