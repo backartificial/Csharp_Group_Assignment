@@ -1,22 +1,46 @@
-﻿using System;
+﻿// Include needed packages
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+// Is the name space that this class resides in
 namespace Csharp_Group_Assignment {
+    // This is the class for this form
     public partial class frmAddCourse : Form {
+        // Declare needed variables
         private frmCourses coursesForm;
 
+        /**
+         * 
+         * This function is used to initialise this component
+         * 
+         * @param coursesForm: is the course form that is being passed in so that it can be manipulated
+         * 
+         **/
         public frmAddCourse(frmCourses coursesForm) {
+            // Initialize component
             InitializeComponent();
 
+            // Set the form variable
             this.coursesForm = coursesForm;
         }
 
+        /**
+         * 
+         * This function is used to cancel and close this form
+         * 
+         **/
         private void btnCancel_Click(object sender, EventArgs e) {
             // Close the Add Course Form
             Close();
         }
 
+
+        /**
+         * 
+         * This function is used to call the add course function and then close the form
+         * 
+         **/
         private void btnAddCourse_Click(object sender, EventArgs e) {
             // Perform Add Course and check if it was successful
             if(addCourse()) {
@@ -25,6 +49,11 @@ namespace Csharp_Group_Assignment {
             }
         }
 
+        /**
+         * 
+         * This fucntion is used to call the add course function and then clear the form to allow user to add another course
+         * 
+         **/
         private void btnAddAnotherCourse_Click(object sender, EventArgs e) {
             // Perform Add Course
             if(addCourse()) {
@@ -41,6 +70,13 @@ namespace Csharp_Group_Assignment {
             }
         }
 
+        /**
+         * 
+         * This function is used to add the course into the database and then refresh the datagrid view on form frmCourse
+         * 
+         * @return Boolean: true - addedd successfully | false - if course not addedd successfully
+         * 
+         **/
         private Boolean addCourse() {
             // Check if the user added all items in the form
             if (txtCourseCode.Text.Trim().Equals("") || txtCourseName.Text.Trim().Equals("") || txtLocation.Text.Trim().Equals("") || dtpTime.Text.Trim().Equals("") || nudCapacity.Value == 0 || nudCredits.Value == 0) {
