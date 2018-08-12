@@ -34,7 +34,7 @@ namespace Csharp_Group_Assignment {
          **/
         private void Courses_Load(object sender, EventArgs e) {
             // TODO: This line of code loads data into the 'studentManagerDBDataSet.Courses' table. You can move, or remove it, as needed.
-            this.coursesTableAdapter.Fill(this.studentManagerDBDataSet.Courses);
+            coursesTableAdapter.Fill(studentManagerDBDataSet.Courses);
 
             // Set focus to the txtbox on load
             txtSearchCourse.Focus();
@@ -102,10 +102,10 @@ namespace Csharp_Group_Assignment {
          **/
         private void btnRemoveCourse_Click(object sender, EventArgs e) {
             // Check if a cell has been selected in the table
-            if (dgvCourses.SelectedCells.Count == 0) {
+            if(dgvCourses.SelectedCells.Count == 0) {
                 // Dispaly an error message showing that there is no course selected to remove
                 MessageBox.Show("Oops... You have not selected a Course to remove.  Please select a Course to remove and try again.", "Course Selection Not Made", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } else if (dgvCourses.SelectedCells.Count == 1) {
+            }else if (dgvCourses.SelectedCells.Count == 1){
                 // Select the curret row and store it into a variable
                 DataGridViewRow selectedCourse = dgvCourses.CurrentRow;
 
@@ -114,7 +114,7 @@ namespace Csharp_Group_Assignment {
 
                 // Remove the course
                 new frmRemoveCoruse(removeCourse, this).Show();
-            } else {
+            }else{
                 // Dispaly an error message showing that there is no course selected to remove
                 MessageBox.Show("Oops... You have made a selction of more than one Course.  Please select a single Course to remove and try again.", "Course Selection Made But More Than One", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -156,8 +156,43 @@ namespace Csharp_Group_Assignment {
          *  
          **/
         private void courseSearch() {
-            // Look in the DataGridView based on the passed value
-            dgvCourses.DataSource = studentManagerDBDataSet.Courses.Where(x => x.courseCode.Contains(txtSearchCourse.Text) || x.name.Contains(txtSearchCourse.Text) || x.location.Contains(txtSearchCourse.Text)).CopyToDataTable();
+            // Try and filter the table
+            try {
+                //  Look in the DataGridView based on the passed value
+                dgvCourses.DataSource = studentManagerDBDataSet.Courses.Where(x => x.courseCode.Contains(txtSearchCourse.Text) || x.name.Contains(txtSearchCourse.Text) || x.location.Contains(txtSearchCourse.Text)).CopyToDataTable();
+            }catch(InvalidOperationException) {
+                // Do nothing
+            }
+        }
+
+        /**
+         * 
+         * Ths function is used to open the link form and pass in that the user would like to link a course to a program
+         * 
+         **/
+        private void btnLinkProgram_Click(object sender, EventArgs e) {
+            // Open the link form
+            new frmLink("Program", this).Show();
+        }
+
+        /**
+         * 
+         * Ths function is used to open the link form and pass in that the user would like to link a course to a professor
+         * 
+         **/
+        private void btnLinkProfessor_Click(object sender, EventArgs e) {
+            // Open the link form
+            new frmLink("Professor", this).Show();
+        }
+        
+        /**
+         * 
+         * Ths function is used to open the link form and pass in that the user would like to link a course to a student
+         * 
+         **/
+        private void btnLinkStudent_Click(object sender, EventArgs e) {
+            // Open the link form
+            new frmLink("Student", this).Show();
         }
     }
 }

@@ -146,9 +146,5 @@ namespace Csharp_Group_Assignment {
             // Perform blank return to not process any more of this function
             return false;
         }
-
-        private void frmAddCourse_Load(object sender, EventArgs e) {
-
-        }
     }
 }

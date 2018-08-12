@@ -20,9 +20,9 @@ namespace Csharp_Group_Assignment {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("StudentManagerDBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dtsCourse")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class StudentManagerDBDataSet : global::System.Data.DataSet {
+    public partial class dtsCourse : global::System.Data.DataSet {
         
         private CoursesDataTable tableCourses;
         
@@ -30,7 +30,7 @@ namespace Csharp_Group_Assignment {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public StudentManagerDBDataSet() {
+        public dtsCourse() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Csharp_Group_Assignment {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected StudentManagerDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dtsCourse(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Csharp_Group_Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            StudentManagerDBDataSet cln = ((StudentManagerDBDataSet)(base.Clone()));
+            dtsCourse cln = ((dtsCourse)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,7 +199,7 @@ namespace Csharp_Group_Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "StudentManagerDBDataSet";
+            this.DataSetName = "dtsCourse";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/StudentManagerDBDataSet.xsd";
             this.EnforceConstraints = true;
@@ -225,7 +225,7 @@ namespace Csharp_Group_Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            StudentManagerDBDataSet ds = new StudentManagerDBDataSet();
+            dtsCourse ds = new dtsCourse();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -568,7 +568,7 @@ namespace Csharp_Group_Assignment {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                StudentManagerDBDataSet ds = new StudentManagerDBDataSet();
+                dtsCourse ds = new dtsCourse();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -754,7 +754,7 @@ namespace Csharp_Group_Assignment {
         }
     }
 }
-namespace Csharp_Group_Assignment.StudentManagerDBDataSetTableAdapters {
+namespace Csharp_Group_Assignment.dtsCourseTableAdapters {
     
     
     /// <summary>
@@ -950,7 +950,7 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(StudentManagerDBDataSet.CoursesDataTable dataTable) {
+        public virtual int Fill(dtsCourse.CoursesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -963,9 +963,9 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual StudentManagerDBDataSet.CoursesDataTable GetData() {
+        public virtual dtsCourse.CoursesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            StudentManagerDBDataSet.CoursesDataTable dataTable = new StudentManagerDBDataSet.CoursesDataTable();
+            dtsCourse.CoursesDataTable dataTable = new dtsCourse.CoursesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -973,14 +973,14 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StudentManagerDBDataSet.CoursesDataTable dataTable) {
+        public virtual int Update(dtsCourse.CoursesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StudentManagerDBDataSet dataSet) {
+        public virtual int Update(dtsCourse dataSet) {
             return this.Adapter.Update(dataSet, "Courses");
         }
         
@@ -1249,7 +1249,7 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(StudentManagerDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dtsCourse dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._coursesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Courses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1268,7 +1268,7 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(StudentManagerDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dtsCourse dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._coursesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Courses.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1286,7 +1286,7 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(StudentManagerDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dtsCourse dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._coursesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Courses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1328,7 +1328,7 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(StudentManagerDBDataSet dataSet) {
+        public virtual int UpdateAll(dtsCourse dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

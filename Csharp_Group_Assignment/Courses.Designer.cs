@@ -35,35 +35,35 @@
             this.pnlHelloMsgBackgroundColor = new System.Windows.Forms.Panel();
             this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentManagerDBDataSet = new Csharp_Group_Assignment.StudentManagerDBDataSet();
-            this.coursesTableAdapter = new Csharp_Group_Assignment.StudentManagerDBDataSetTableAdapters.CoursesTableAdapter();
             this.btnSearchCourse = new System.Windows.Forms.Button();
             this.txtSearchCourse = new System.Windows.Forms.TextBox();
             this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
-            this.btnLinkStudent = new System.Windows.Forms.Button();
-            this.btnLinkProfessor = new System.Windows.Forms.Button();
-            this.btnLinkProgram = new System.Windows.Forms.Button();
             this.btnLinkCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnPrintCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnRemoveCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnEditCourse = new Csharp_Group_Assignment.CircleButton();
             this.btnAddCourse = new Csharp_Group_Assignment.CircleButton();
+            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
+            this.btnLinkStudent = new System.Windows.Forms.Button();
+            this.btnLinkProfessor = new System.Windows.Forms.Button();
+            this.btnLinkProgram = new System.Windows.Forms.Button();
+            this.studentManagerDBDataSet = new Csharp_Group_Assignment.dtsAll();
+            this.coursesTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CoursesTableAdapter();
+            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlNavButtons.SuspendLayout();
             this.pnlHelloMsgBackgroundColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentManagerDBDataSet)).BeginInit();
             this.pnlBtnLinkOption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagerDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeftMenu
@@ -226,13 +226,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCourses.AutoGenerateColumns = false;
-            this.dgvCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvCourses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.idDataGridViewTextBoxColumn,
             this.courseCodeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
+            this.name,
             this.locationDataGridViewTextBoxColumn,
             this.timeDataGridViewTextBoxColumn,
             this.capacityDataGridViewTextBoxColumn,
@@ -242,87 +241,11 @@
             this.dgvCourses.MultiSelect = false;
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
+            this.dgvCourses.RowHeadersVisible = false;
             this.dgvCourses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCourses.Size = new System.Drawing.Size(746, 501);
             this.dgvCourses.TabIndex = 1;
             this.dgvCourses.MouseEnter += new System.EventHandler(this.dgvCourses_MouseEnter);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 41;
-            // 
-            // courseCodeDataGridViewTextBoxColumn
-            // 
-            this.courseCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.courseCodeDataGridViewTextBoxColumn.DataPropertyName = "courseCode";
-            this.courseCodeDataGridViewTextBoxColumn.HeaderText = "Course Code";
-            this.courseCodeDataGridViewTextBoxColumn.Name = "courseCodeDataGridViewTextBoxColumn";
-            this.courseCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.courseCodeDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.locationDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
-            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.timeDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // capacityDataGridViewTextBoxColumn
-            // 
-            this.capacityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
-            this.capacityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.capacityDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // creditsDataGridViewTextBoxColumn
-            // 
-            this.creditsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.creditsDataGridViewTextBoxColumn.DataPropertyName = "credits";
-            this.creditsDataGridViewTextBoxColumn.HeaderText = "Credits";
-            this.creditsDataGridViewTextBoxColumn.Name = "creditsDataGridViewTextBoxColumn";
-            this.creditsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // coursesBindingSource
-            // 
-            this.coursesBindingSource.DataMember = "Courses";
-            this.coursesBindingSource.DataSource = this.studentManagerDBDataSet;
-            // 
-            // studentManagerDBDataSet
-            // 
-            this.studentManagerDBDataSet.DataSetName = "StudentManagerDBDataSet";
-            this.studentManagerDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // coursesTableAdapter
-            // 
-            this.coursesTableAdapter.ClearBeforeFill = true;
             // 
             // btnSearchCourse
             // 
@@ -360,63 +283,6 @@
             // 
             this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
-            // 
-            // pnlBtnLinkOption
-            // 
-            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProfessor);
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProgram);
-            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
-            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
-            this.pnlBtnLinkOption.Size = new System.Drawing.Size(200, 141);
-            this.pnlBtnLinkOption.TabIndex = 10;
-            this.pnlBtnLinkOption.Visible = false;
-            // 
-            // btnLinkStudent
-            // 
-            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
-            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
-            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkStudent.Location = new System.Drawing.Point(0, 96);
-            this.btnLinkStudent.Name = "btnLinkStudent";
-            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkStudent.TabIndex = 2;
-            this.btnLinkStudent.Text = "Student(s)";
-            this.btnLinkStudent.UseVisualStyleBackColor = false;
-            // 
-            // btnLinkProfessor
-            // 
-            this.btnLinkProfessor.BackColor = System.Drawing.Color.White;
-            this.btnLinkProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkProfessor.FlatAppearance.BorderSize = 0;
-            this.btnLinkProfessor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkProfessor.Location = new System.Drawing.Point(0, 48);
-            this.btnLinkProfessor.Name = "btnLinkProfessor";
-            this.btnLinkProfessor.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkProfessor.TabIndex = 1;
-            this.btnLinkProfessor.Text = "Professor(s)";
-            this.btnLinkProfessor.UseVisualStyleBackColor = false;
-            // 
-            // btnLinkProgram
-            // 
-            this.btnLinkProgram.BackColor = System.Drawing.Color.White;
-            this.btnLinkProgram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkProgram.FlatAppearance.BorderSize = 0;
-            this.btnLinkProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkProgram.Location = new System.Drawing.Point(0, 0);
-            this.btnLinkProgram.Name = "btnLinkProgram";
-            this.btnLinkProgram.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkProgram.TabIndex = 0;
-            this.btnLinkProgram.Text = "Program(s)";
-            this.btnLinkProgram.UseVisualStyleBackColor = false;
             // 
             // btnLinkCourse
             // 
@@ -502,6 +368,143 @@
             this.btnAddCourse.UseVisualStyleBackColor = false;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
+            // pnlBtnLinkOption
+            // 
+            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProfessor);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProgram);
+            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
+            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
+            this.pnlBtnLinkOption.Size = new System.Drawing.Size(200, 141);
+            this.pnlBtnLinkOption.TabIndex = 10;
+            this.pnlBtnLinkOption.Visible = false;
+            // 
+            // btnLinkStudent
+            // 
+            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
+            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
+            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkStudent.Location = new System.Drawing.Point(0, 96);
+            this.btnLinkStudent.Name = "btnLinkStudent";
+            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkStudent.TabIndex = 2;
+            this.btnLinkStudent.Text = "Student(s)";
+            this.btnLinkStudent.UseVisualStyleBackColor = false;
+            this.btnLinkStudent.Click += new System.EventHandler(this.btnLinkStudent_Click);
+            // 
+            // btnLinkProfessor
+            // 
+            this.btnLinkProfessor.BackColor = System.Drawing.Color.White;
+            this.btnLinkProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkProfessor.FlatAppearance.BorderSize = 0;
+            this.btnLinkProfessor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkProfessor.Location = new System.Drawing.Point(0, 48);
+            this.btnLinkProfessor.Name = "btnLinkProfessor";
+            this.btnLinkProfessor.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkProfessor.TabIndex = 1;
+            this.btnLinkProfessor.Text = "Professor(s)";
+            this.btnLinkProfessor.UseVisualStyleBackColor = false;
+            this.btnLinkProfessor.Click += new System.EventHandler(this.btnLinkProfessor_Click);
+            // 
+            // btnLinkProgram
+            // 
+            this.btnLinkProgram.BackColor = System.Drawing.Color.White;
+            this.btnLinkProgram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkProgram.FlatAppearance.BorderSize = 0;
+            this.btnLinkProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkProgram.Location = new System.Drawing.Point(0, 0);
+            this.btnLinkProgram.Name = "btnLinkProgram";
+            this.btnLinkProgram.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkProgram.TabIndex = 0;
+            this.btnLinkProgram.Text = "Program(s)";
+            this.btnLinkProgram.UseVisualStyleBackColor = false;
+            this.btnLinkProgram.Click += new System.EventHandler(this.btnLinkProgram_Click);
+            // 
+            // studentManagerDBDataSet
+            // 
+            this.studentManagerDBDataSet.DataSetName = "StudentManagerDBDataSet";
+            this.studentManagerDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // coursesTableAdapter
+            // 
+            this.coursesTableAdapter.ClearBeforeFill = true;
+            // 
+            // coursesBindingSource
+            // 
+            this.coursesBindingSource.DataMember = "Courses";
+            this.coursesBindingSource.DataSource = this.studentManagerDBDataSet;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.idDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // courseCodeDataGridViewTextBoxColumn
+            // 
+            this.courseCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.courseCodeDataGridViewTextBoxColumn.DataPropertyName = "courseCode";
+            this.courseCodeDataGridViewTextBoxColumn.HeaderText = "Course Code";
+            this.courseCodeDataGridViewTextBoxColumn.Name = "courseCodeDataGridViewTextBoxColumn";
+            this.courseCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.courseCodeDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 60;
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.locationDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // timeDataGridViewTextBoxColumn
+            // 
+            this.timeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.timeDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // capacityDataGridViewTextBoxColumn
+            // 
+            this.capacityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            this.capacityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.capacityDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // creditsDataGridViewTextBoxColumn
+            // 
+            this.creditsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.creditsDataGridViewTextBoxColumn.DataPropertyName = "credits";
+            this.creditsDataGridViewTextBoxColumn.HeaderText = "Credits";
+            this.creditsDataGridViewTextBoxColumn.Name = "creditsDataGridViewTextBoxColumn";
+            this.creditsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,9 +533,9 @@
             this.pnlHelloMsgBackgroundColor.ResumeLayout(false);
             this.pnlHelloMsgBackgroundColor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentManagerDBDataSet)).EndInit();
             this.pnlBtnLinkOption.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagerDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,16 +564,16 @@
         private System.Windows.Forms.Button btnLinkStudent;
         private System.Windows.Forms.Button btnLinkProfessor;
         private System.Windows.Forms.Button btnLinkProgram;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        internal System.Windows.Forms.DataGridView dgvCourses;
+        public dtsAllTableAdapters.CoursesTableAdapter coursesTableAdapter;
+        public dtsAll studentManagerDBDataSet;
+        private System.Windows.Forms.BindingSource coursesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn creditsDataGridViewTextBoxColumn;
-        internal StudentManagerDBDataSet studentManagerDBDataSet;
-        internal System.Windows.Forms.BindingSource coursesBindingSource;
-        internal StudentManagerDBDataSetTableAdapters.CoursesTableAdapter coursesTableAdapter;
-        internal System.Windows.Forms.DataGridView dgvCourses;
     }
 }

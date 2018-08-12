@@ -51,6 +51,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="CourseProgram.cs" />
     <Compile Include="Courses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,12 @@
     <Compile Include="frmEditCourse.Designer.cs">
       <DependentUpon>frmEditCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLink.Designer.cs">
+      <DependentUpon>frmLink.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRemoveCoruse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +83,20 @@
       <DependentUpon>frmRemoveCoruse.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Programs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentManagerDBDataSet.cs">
+      <DependentUpon>StudentManagerDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StudentManagerDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentManagerDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManagerDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagerDBDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Courses.resx">
       <DependentUpon>Courses.cs</DependentUpon>
@@ -90,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditCourse.resx">
       <DependentUpon>frmEditCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLink.resx">
+      <DependentUpon>frmLink.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRemoveCoruse.resx">
       <DependentUpon>frmRemoveCoruse.cs</DependentUpon>
@@ -122,6 +141,17 @@
     </None>
     <None Include="StudentManagerDBDataSet.xss">
       <DependentUpon>StudentManagerDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagerDBDataSet1.xsc">
+      <DependentUpon>StudentManagerDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagerDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentManagerDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentManagerDBDataSet1.xss">
+      <DependentUpon>StudentManagerDBDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

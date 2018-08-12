@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="StudentManagerDBDataSet" targetNamespace="http://tempuri.org/StudentManagerDBDataSet.xsd" xmlns:mstns="http://tempuri.org/StudentManagerDBDataSet.xsd" xmlns="http://tempuri.org/StudentManagerDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dtsCourse" targetNamespace="http://tempuri.org/StudentManagerDBDataSet.xsd" xmlns:mstns="http://tempuri.org/StudentManagerDBDataSet.xsd" xmlns="http://tempuri.org/StudentManagerDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="StudentManagerDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="StudentManagerDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Csharp_Group_Assignment.Properties.Settings.GlobalReference.Default.StudentManagerDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
@@ -84,10 +84,10 @@ SELECT id, courseCode, name, location, time, capacity, credits FROM Courses WHER
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="StudentManagerDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="StudentManagerDBDataSet" msprop:Generator_UserDSName="StudentManagerDBDataSet">
+  <xs:element name="dtsCourse" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dtsCourse" msprop:Generator_UserDSName="dtsCourse">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Courses" msprop:Generator_TableClassName="CoursesDataTable" msprop:Generator_TableVarName="tableCourses" msprop:Generator_TablePropName="Courses" msprop:Generator_RowDeletingName="CoursesRowDeleting" msprop:Generator_RowChangingName="CoursesRowChanging" msprop:Generator_RowEvHandlerName="CoursesRowChangeEventHandler" msprop:Generator_RowDeletedName="CoursesRowDeleted" msprop:Generator_UserTableName="Courses" msprop:Generator_RowChangedName="CoursesRowChanged" msprop:Generator_RowEvArgName="CoursesRowChangeEvent" msprop:Generator_RowClassName="CoursesRow">
+        <xs:element name="Courses" msprop:Generator_TableClassName="CoursesDataTable" msprop:Generator_TableVarName="tableCourses" msprop:Generator_RowChangedName="CoursesRowChanged" msprop:Generator_TablePropName="Courses" msprop:Generator_RowDeletingName="CoursesRowDeleting" msprop:Generator_RowChangingName="CoursesRowChanging" msprop:Generator_RowEvHandlerName="CoursesRowChangeEventHandler" msprop:Generator_RowDeletedName="CoursesRowDeleted" msprop:Generator_RowClassName="CoursesRow" msprop:Generator_UserTableName="Courses" msprop:Generator_RowEvArgName="CoursesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:short" />
