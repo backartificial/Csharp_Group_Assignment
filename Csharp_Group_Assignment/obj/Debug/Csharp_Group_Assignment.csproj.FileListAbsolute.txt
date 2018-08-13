@@ -5,10 +5,13 @@ C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmCourses.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmAddCourse.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmEditCourse.resources
-C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmLink.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmRemoveCoruse.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.Properties.Resources.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.csproj.GenerateResource.cache
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.csproj.CoreCompileInputs.cache
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.exe
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.pdb
+C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.csproj.CopyComplete
+C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\bin\Debug\IronPdf.dll
+C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\bin\Debug\IronPdf.xml
+C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmLinkCourse.resources

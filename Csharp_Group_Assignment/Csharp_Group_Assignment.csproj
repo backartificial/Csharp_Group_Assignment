@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronPdf, Version=4.4.9.15720, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.4.4.9\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,11 +55,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Course.cs" />
-    <Compile Include="Courses.cs">
+    <Compile Include="frmCourses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Courses.Designer.cs">
-      <DependentUpon>Courses.cs</DependentUpon>
+    <Compile Include="frmCourses.Designer.cs">
+      <DependentUpon>frmCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="dtsAll.cs">
       <DependentUpon>dtsAll.xsd</DependentUpon>
@@ -72,11 +76,11 @@
     <Compile Include="frmEditCourse.Designer.cs">
       <DependentUpon>frmEditCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLink.cs">
+    <Compile Include="frmLinkCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLink.Designer.cs">
-      <DependentUpon>frmLink.cs</DependentUpon>
+    <Compile Include="frmLinkCourse.Designer.cs">
+      <DependentUpon>frmLinkCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRemoveCoruse.cs">
       <SubType>Form</SubType>
@@ -95,8 +99,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsAll.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Courses.resx">
-      <DependentUpon>Courses.cs</DependentUpon>
+    <EmbeddedResource Include="frmCourses.resx">
+      <DependentUpon>frmCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddCourse.resx">
       <DependentUpon>frmAddCourse.cs</DependentUpon>
@@ -104,8 +108,8 @@
     <EmbeddedResource Include="frmEditCourse.resx">
       <DependentUpon>frmEditCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLink.resx">
-      <DependentUpon>frmLink.cs</DependentUpon>
+    <EmbeddedResource Include="frmLinkCourse.resx">
+      <DependentUpon>frmLinkCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRemoveCoruse.resx">
       <DependentUpon>frmRemoveCoruse.cs</DependentUpon>
@@ -119,6 +123,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
