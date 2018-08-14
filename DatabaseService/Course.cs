@@ -11,7 +11,7 @@
 using System;
 
 // Set the container to the namespace of the project
-namespace DatabaseService {
+namespace Csharp_Group_Assignment {
     // This calss is sued to hold and object of a course
     public class Course {
         // Define the needed class attributes
@@ -19,7 +19,7 @@ namespace DatabaseService {
         public string courseCode { get; set; }
         public string name { get; set; }
         public string location { get; set; }
-        public DateTime time { get; set; }
+        public TimeSpan time { get; set; }
         public int capacity { get; set; }
         public int credits { get; set; }
 
@@ -36,7 +36,7 @@ namespace DatabaseService {
          * @param credits: is the amout of credits that a course is worth
          * 
          **/
-        public Course(int id, string courseCode, string name, string location, DateTime time, int capacity, int credits) {
+        public Course(int id, string courseCode, string name, string location, TimeSpan time, int capacity, int credits) {
             // Set the object attributes
             this.id = id;
             this.courseCode = courseCode;
@@ -47,6 +47,14 @@ namespace DatabaseService {
             this.credits = credits;
         }
 
-
+        /**
+         * 
+         * This function is used to dispaly the course name in a combobox
+         * 
+         **/
+        public override string ToString() {
+            // Return the name of the course
+            return name;
+        }
     }
 }

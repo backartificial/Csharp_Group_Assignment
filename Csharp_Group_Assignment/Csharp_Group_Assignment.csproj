@@ -55,6 +55,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="frmAddPrograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPrograms.Designer.cs">
+      <DependentUpon>frmAddPrograms.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,17 +82,53 @@
     <Compile Include="frmEditCourse.Designer.cs">
       <DependentUpon>frmEditCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditPrograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPrograms.Designer.cs">
+      <DependentUpon>frmEditPrograms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLinkCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLinkCourse.Designer.cs">
       <DependentUpon>frmLinkCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLinkPrograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLinkPrograms.Designer.cs">
+      <DependentUpon>frmLinkPrograms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrograms.designer.cs">
+      <DependentUpon>frmPrograms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgramsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgramsReport.Designer.cs">
+      <DependentUpon>frmProgramsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRemoveCoruse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRemoveCoruse.Designer.cs">
       <DependentUpon>frmRemoveCoruse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRemovePrograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRemovePrograms.Designer.cs">
+      <DependentUpon>frmRemovePrograms.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Student.cs" />
@@ -99,6 +141,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsAll.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAddPrograms.resx">
+      <DependentUpon>frmAddPrograms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCourses.resx">
       <DependentUpon>frmCourses.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,11 +153,29 @@
     <EmbeddedResource Include="frmEditCourse.resx">
       <DependentUpon>frmEditCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPrograms.resx">
+      <DependentUpon>frmEditPrograms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLinkCourse.resx">
       <DependentUpon>frmLinkCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLinkPrograms.resx">
+      <DependentUpon>frmLinkPrograms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrograms.resx">
+      <DependentUpon>frmPrograms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgramsReport.resx">
+      <DependentUpon>frmProgramsReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRemoveCoruse.resx">
       <DependentUpon>frmRemoveCoruse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRemovePrograms.resx">
+      <DependentUpon>frmRemovePrograms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

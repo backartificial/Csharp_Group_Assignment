@@ -421,5 +421,18 @@ namespace Csharp_Group_Assignment {
                 }
             }
         }
+
+        /**
+         * 
+         * This function is used when a used desires to view the programs section
+         * 
+         **/
+        private void btnNavPrograms_Click(object sender, EventArgs e) {
+            // Shoe the Programs Form
+            new frmPrograms().Activate();
+
+            // Close this form
+            Close();
+        }
     }
 }

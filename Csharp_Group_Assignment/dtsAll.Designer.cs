@@ -2909,6 +2909,12 @@ namespace Csharp_Group_Assignment {
             
             private global::System.Data.DataColumn columnprogramId;
             
+            private global::System.Data.DataColumn columnfirstName;
+            
+            private global::System.Data.DataColumn columnlastName;
+            
+            private global::System.Data.DataColumn columnname;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public StudentProgramDataTable() {
@@ -2960,6 +2966,30 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn firstNameColumn {
+                get {
+                    return this.columnfirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn lastNameColumn {
+                get {
+                    return this.columnlastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nameColumn {
+                get {
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2995,11 +3025,14 @@ namespace Csharp_Group_Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public StudentProgramRow AddStudentProgramRow(StudentRow parentStudentRowByFK_StudentProgram_studentId, ProgramRow parentProgramRowByFK_StudentProgram_programId) {
+            public StudentProgramRow AddStudentProgramRow(StudentRow parentStudentRowByFK_StudentProgram_studentId, ProgramRow parentProgramRowByFK_StudentProgram_programId, string firstName, string lastName, string name) {
                 StudentProgramRow rowStudentProgramRow = ((StudentProgramRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        firstName,
+                        lastName,
+                        name};
                 if ((parentStudentRowByFK_StudentProgram_studentId != null)) {
                     columnValuesArray[0] = parentStudentRowByFK_StudentProgram_studentId[0];
                 }
@@ -3030,6 +3063,9 @@ namespace Csharp_Group_Assignment {
             internal void InitVars() {
                 this.columnstudentId = base.Columns["studentId"];
                 this.columnprogramId = base.Columns["programId"];
+                this.columnfirstName = base.Columns["firstName"];
+                this.columnlastName = base.Columns["lastName"];
+                this.columnname = base.Columns["name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3039,8 +3075,20 @@ namespace Csharp_Group_Assignment {
                 base.Columns.Add(this.columnstudentId);
                 this.columnprogramId = new global::System.Data.DataColumn("programId", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprogramId);
+                this.columnfirstName = new global::System.Data.DataColumn("firstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirstName);
+                this.columnlastName = new global::System.Data.DataColumn("lastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastName);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
                 this.columnstudentId.AllowDBNull = false;
                 this.columnprogramId.AllowDBNull = false;
+                this.columnfirstName.AllowDBNull = false;
+                this.columnfirstName.MaxLength = 50;
+                this.columnlastName.AllowDBNull = false;
+                this.columnlastName.MaxLength = 50;
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3899,6 +3947,39 @@ namespace Csharp_Group_Assignment {
                 }
                 set {
                     this[this.tableStudentProgram.programIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string firstName {
+                get {
+                    return ((string)(this[this.tableStudentProgram.firstNameColumn]));
+                }
+                set {
+                    this[this.tableStudentProgram.firstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string lastName {
+                get {
+                    return ((string)(this[this.tableStudentProgram.lastNameColumn]));
+                }
+                set {
+                    this[this.tableStudentProgram.lastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string name {
+                get {
+                    return ((string)(this[this.tableStudentProgram.nameColumn]));
+                }
+                set {
+                    this[this.tableStudentProgram.nameColumn] = value;
                 }
             }
             
@@ -6613,6 +6694,9 @@ FROM            StudentCourse INNER JOIN
             tableMapping.DataSetTable = "StudentProgram";
             tableMapping.ColumnMappings.Add("studentId", "studentId");
             tableMapping.ColumnMappings.Add("programId", "programId");
+            tableMapping.ColumnMappings.Add("firstName", "firstName");
+            tableMapping.ColumnMappings.Add("lastName", "lastName");
+            tableMapping.ColumnMappings.Add("name", "name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -6636,7 +6720,10 @@ FROM            StudentCourse INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT studentId, programId FROM dbo.StudentProgram";
+            this._commandCollection[0].CommandText = @"SELECT        StudentProgram.studentId, StudentProgram.programId, Student.firstName, Student.lastName, Program.name
+FROM            StudentProgram INNER JOIN
+                         Student ON StudentProgram.studentId = Student.id INNER JOIN
+                         Program ON StudentProgram.programId = Program.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
