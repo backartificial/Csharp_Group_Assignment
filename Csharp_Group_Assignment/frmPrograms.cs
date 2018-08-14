@@ -271,10 +271,10 @@ namespace Csharp_Group_Assignment {
         /** action to open course form */
         private void btnCourses_Click(object sender, EventArgs e) {
             // Shor course form
-            new frmCourses().Show();
+            FormsGlobal.frmCourses.Show();
 
             // close my programs form
-            Hide();
+            FormsGlobal.frmPrograms.Close();
         }
     }
 }

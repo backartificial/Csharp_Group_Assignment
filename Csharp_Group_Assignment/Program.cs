@@ -10,7 +10,7 @@ namespace Csharp_Group_Assignment {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrograms());
+            Application.Run(new frmHome());
         }
     }
 }

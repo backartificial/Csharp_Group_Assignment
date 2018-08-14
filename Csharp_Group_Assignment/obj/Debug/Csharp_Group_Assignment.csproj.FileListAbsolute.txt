@@ -22,3 +22,4 @@ C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmLinkPrograms.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmProgramsReport.resources
 C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmRemovePrograms.resources
+C:\Users\james\source\repos\Assignments\Group_Assignment\Csharp_Group_Assignment\Csharp_Group_Assignment\obj\Debug\Csharp_Group_Assignment.frmStudentsAndProfessors.resources

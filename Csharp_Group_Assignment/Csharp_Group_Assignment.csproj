@@ -55,6 +55,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentsAndProfessors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentsAndProfessors.designer.cs">
+      <DependentUpon>frmStudentsAndProfessors.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddPrograms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +99,6 @@
     </Compile>
     <Compile Include="frmEditPrograms.Designer.cs">
       <DependentUpon>frmEditPrograms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLinkCourse.cs">
       <SubType>Form</SubType>
@@ -130,6 +136,18 @@
     <Compile Include="frmRemovePrograms.Designer.cs">
       <DependentUpon>frmRemovePrograms.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsGlobal.cs" />
+    <Compile Include="info\Entity.cs" />
+    <Compile Include="info\Gender.cs" />
+    <Compile Include="info\LinkType.cs" />
+    <Compile Include="info\member\Person.cs" />
+    <Compile Include="info\member\Professor.cs" />
+    <Compile Include="info\member\Student.cs" />
+    <Compile Include="info\Name.cs" />
+    <Compile Include="info\opportunity\Course.cs" />
+    <Compile Include="info\opportunity\Program.cs" />
+    <Compile Include="info\Outcomes.cs" />
+    <Compile Include="info\Status.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Professor.cs" />
@@ -141,6 +159,64 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsAll.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ui\display\ClickableDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\display\ClickableDisplay.Designer.cs">
+      <DependentUpon>ClickableDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\display\EntityDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\display\EntityDisplay.Designer.cs">
+      <DependentUpon>EntityDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\display\EntityDisplayGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\display\EntityDisplayGroup.Designer.cs" />
+    <Compile Include="ui\display\Indicator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\display\Indicator.Designer.cs" />
+    <Compile Include="ui\display\manipulate\AlterBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\display\manipulate\AlterBox.Designer.cs" />
+    <Compile Include="ui\display\manipulate\AlterPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\display\manipulate\AlterPerson.Designer.cs" />
+    <Compile Include="ui\functionality\ConfirmBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\functionality\ConfirmBox.Designer.cs" />
+    <Compile Include="ui\functionality\ErrorTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\functionality\ErrorTextBox.designer.cs" />
+    <Compile Include="ui\functionality\links\ProfessorLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\functionality\links\ProfessorLink.Designer.cs">
+      <DependentUpon>ProfessorLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\functionality\links\StudentLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\functionality\links\StudentLink.Designer.cs">
+      <DependentUpon>StudentLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\functionality\SearchBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\functionality\SearchBox.Designer.cs" />
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentsAndProfessors.resx">
+      <DependentUpon>frmStudentsAndProfessors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddPrograms.resx">
       <DependentUpon>frmAddPrograms.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditPrograms.resx">
       <DependentUpon>frmEditPrograms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLinkCourse.resx">
       <DependentUpon>frmLinkCourse.cs</DependentUpon>
@@ -185,6 +258,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -213,6 +287,27 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

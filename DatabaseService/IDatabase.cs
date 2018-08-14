@@ -6,6 +6,6 @@ namespace DatabaseService {
     [ServiceContract]
     public interface IDatabase {
         [OperationContract]
-        Course getCourse(int id);
+        Course checkUnique(string courseCode);
     }
 }

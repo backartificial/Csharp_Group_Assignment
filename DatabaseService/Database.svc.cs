@@ -1,5 +1,4 @@
 ﻿using Csharp_Group_Assignment;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -19,44 +18,8 @@ namespace DatabaseService {
             connection.Close();
         }
 
-        private dynamic select(string table, string query, Dictionary<string, string> attributes) {
-            // Open Database Connection
-            Connect();
-
-            List<dynamic> items = new List<dynamic>();
-
-            using(SqlCommand command = new SqlCommand(query, connection)) {
-                foreach(var item in attributes) {
-                    command.Parameters.AddWithValue("@" + item.Key, item.Value);
-                }
-
-                // Using the reader, perform the reading of data
-                using(SqlDataReader reader = command.ExecuteReader()) {
-                    // Loop through each returned item and add it to the list
-                    while(reader.Read()) {
-                        // Append the selected items to the list based on type
-                        items.Add(new Course(int.Parse(reader["id"].ToString()), reader["courseCode"].ToString(), reader["name"].ToString(), reader["location"].ToString(), TimeSpan.Parse(reader["time"].ToString()), int.Parse(reader["capacity"].ToString()), int.Parse(reader["credits"].ToString())));
-                    }
-                }
-            }
-
-            // Disconnect database
-            Disconnect();
-
-            return items;
-        }
-
-        private int count(SqlCommand command) {
-            // Based on the query string, get the amount of returned rows
-            return int.Parse(command.ExecuteScalar().ToString());
-        }
-
-
-
-
-
-        public Course getCourse(int id) {
-            return select("Course", "", new Dictionary<string, string> { { "id", id.ToString() } });
+        public Course checkUnique(string id) {
+            //return select("Course", "", new Dictionary<string, string> { { "id", id.ToString() } });
         }
     }
 }

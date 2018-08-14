@@ -428,11 +428,11 @@ namespace Csharp_Group_Assignment {
          * 
          **/
         private void btnNavPrograms_Click(object sender, EventArgs e) {
-            // Shoe the Programs Form
-            new frmPrograms().Activate();
+            // Show the Programs Form
+            FormsGlobal.frmPrograms.Show();
 
             // Close this form
-            Close();
+            FormsGlobal.frmCourses.Close();
         }
     }
 }
