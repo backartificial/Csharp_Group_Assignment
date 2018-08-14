@@ -18,7 +18,7 @@ namespace DatabaseService {
             connection.Close();
         }
 
-        public Course checkUnique(string id) {
+        public void checkUnique(string id) {
             //return select("Course", "", new Dictionary<string, string> { { "id", id.ToString() } });
         }
     }

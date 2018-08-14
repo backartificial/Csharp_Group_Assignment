@@ -276,5 +276,50 @@ namespace Csharp_Group_Assignment {
             // close my programs form
             FormsGlobal.frmPrograms.Close();
         }
+
+        /**
+         * 
+         * This function is used when a used desires to view the students/professors section
+         * 
+         **/
+        private void btnNavStudents_Click(object sender, EventArgs e) {
+            // Set the view state to Students
+            FormsGlobal.frmStudentsAndProfessors.Current = info.LinkType.Students;
+
+            // Show the Programs Form
+            FormsGlobal.frmStudentsAndProfessors.Show();
+
+            // Close this form
+            FormsGlobal.frmPrograms.Close();
+        }
+
+        /**
+         * 
+         * This function is used when a used desires to view the students/professors section
+         * 
+         **/
+        private void btnNavProfessors_Click(object sender, EventArgs e) {
+            // Set the view state to Students
+            FormsGlobal.frmStudentsAndProfessors.Current = info.LinkType.Professors;
+
+            // Show the Programs Form
+            FormsGlobal.frmStudentsAndProfessors.Show();
+
+            // Close this form
+            FormsGlobal.frmPrograms.Close();
+        }
+
+        /**
+         * 
+         * This function is used when a used desires to view the home form
+         * 
+         **/
+        private void btnNavHome_Click(object sender, EventArgs e) {
+            // Show the Home Form
+            FormsGlobal.frmHome.Show();
+
+            // Close this form
+            FormsGlobal.frmPrograms.Close();
+        }
     }
 }

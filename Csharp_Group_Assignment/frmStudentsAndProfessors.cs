@@ -17,7 +17,6 @@ using System.IO;
 using System.Windows.Forms;
 using IronPdf;
 using Csharp_Group_Assignment.info;
-using Csharp_Group_Assignment.info;
 using Csharp_Group_Assignment.info.opportunity;
 using Csharp_Group_Assignment.ui.display;
 using Csharp_Group_Assignment.ui.display.manipulate;
@@ -50,7 +49,7 @@ namespace Csharp_Group_Assignment
         private readonly Dictionary<LinkType, AlterBox> _alterLinkType = new Dictionary<LinkType, AlterBox>();
 
         // Handles the visual switching of each menu
-        private LinkType? Current
+        public LinkType? Current
         {
             get => _current;
             set

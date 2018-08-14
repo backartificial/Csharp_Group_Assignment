@@ -69,12 +69,12 @@
             // 
             this.btnNavHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNavHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnNavHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
             this.btnNavHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnNavHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNavHome.FlatAppearance.BorderSize = 0;
-            this.btnNavHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnNavHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnNavHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
+            this.btnNavHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
             this.btnNavHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavHome.ForeColor = System.Drawing.Color.White;
@@ -104,17 +104,18 @@
             this.btnNavProfessors.TabIndex = 5;
             this.btnNavProfessors.Text = "Professors";
             this.btnNavProfessors.UseVisualStyleBackColor = false;
+            this.btnNavProfessors.Click += new System.EventHandler(this.btnNavProfessors_Click);
             // 
             // btnCourses
             // 
             this.btnCourses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
             this.btnCourses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCourses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCourses.FlatAppearance.BorderSize = 0;
-            this.btnCourses.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
-            this.btnCourses.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(67)))), ((int)(((byte)(114)))));
+            this.btnCourses.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnCourses.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
             this.btnCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCourses.ForeColor = System.Drawing.Color.White;
@@ -124,6 +125,7 @@
             this.btnCourses.TabIndex = 1;
             this.btnCourses.Text = "Courses";
             this.btnCourses.UseVisualStyleBackColor = false;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
             // btnNavStudents
             // 
@@ -165,6 +167,7 @@
             this.btnNavPrograms.TabIndex = 2;
             this.btnNavPrograms.Text = "Programs";
             this.btnNavPrograms.UseVisualStyleBackColor = false;
+            this.btnNavPrograms.Click += new System.EventHandler(this.btnNavPrograms_Click);
             // 
             // pnlHelloMsgBackgroundColor
             // 

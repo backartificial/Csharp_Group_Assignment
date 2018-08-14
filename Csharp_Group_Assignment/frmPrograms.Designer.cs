@@ -35,35 +35,35 @@
             this.pnlHelloMsgBackgroundColor = new System.Windows.Forms.Panel();
             this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.dgvPrograms = new System.Windows.Forms.DataGridView();
-            this.btnSearchProgram = new System.Windows.Forms.Button();
-            this.txtSearchProgram = new System.Windows.Forms.TextBox();
-            this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
-            this.btnLinkStudent = new System.Windows.Forms.Button();
-            this.btnLinkCourse = new System.Windows.Forms.Button();
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtsAllData = new Csharp_Group_Assignment.dtsAll();
-            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coursesTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CoursesTableAdapter();
-            this.programTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProgramTableAdapter();
-            this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outcomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtsAllData = new Csharp_Group_Assignment.dtsAll();
+            this.btnSearchProgram = new System.Windows.Forms.Button();
+            this.txtSearchProgram = new System.Windows.Forms.TextBox();
+            this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
             this.btnLinkProgram = new Csharp_Group_Assignment.CircleButton();
             this.btnPrintProgramReport = new Csharp_Group_Assignment.CircleButton();
             this.btnRemoveProgram = new Csharp_Group_Assignment.CircleButton();
             this.btnEditProgram = new Csharp_Group_Assignment.CircleButton();
             this.btnAddProgram = new Csharp_Group_Assignment.CircleButton();
+            this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
+            this.btnLinkStudent = new System.Windows.Forms.Button();
+            this.btnLinkCourse = new System.Windows.Forms.Button();
+            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coursesTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CoursesTableAdapter();
+            this.programTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProgramTableAdapter();
+            this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlNavButtons.SuspendLayout();
             this.pnlHelloMsgBackgroundColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrograms)).BeginInit();
-            this.pnlBtnLinkOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsAllData)).BeginInit();
+            this.pnlBtnLinkOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +113,7 @@
             this.btnNavHome.TabIndex = 3;
             this.btnNavHome.Text = "Home";
             this.btnNavHome.UseVisualStyleBackColor = false;
+            this.btnNavHome.Click += new System.EventHandler(this.btnNavHome_Click);
             // 
             // btnNavProfessors
             // 
@@ -133,6 +134,7 @@
             this.btnNavProfessors.TabIndex = 5;
             this.btnNavProfessors.Text = "Professors";
             this.btnNavProfessors.UseVisualStyleBackColor = false;
+            this.btnNavProfessors.Click += new System.EventHandler(this.btnNavProfessors_Click);
             // 
             // btnCourses
             // 
@@ -174,6 +176,7 @@
             this.btnNavStudents.TabIndex = 4;
             this.btnNavStudents.Text = "Students";
             this.btnNavStudents.UseVisualStyleBackColor = false;
+            this.btnNavStudents.Click += new System.EventHandler(this.btnNavStudents_Click);
             // 
             // btnNavPrograms
             // 
@@ -248,115 +251,6 @@
             this.dgvPrograms.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPrograms_CellFormatting);
             this.dgvPrograms.MouseEnter += new System.EventHandler(this.dvgPrograms_MouseEnter);
             // 
-            // btnSearchProgram
-            // 
-            this.btnSearchProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
-            this.btnSearchProgram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchProgram.FlatAppearance.BorderSize = 0;
-            this.btnSearchProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnSearchProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
-            this.btnSearchProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchProgram.ForeColor = System.Drawing.Color.White;
-            this.btnSearchProgram.Location = new System.Drawing.Point(905, 16);
-            this.btnSearchProgram.Name = "btnSearchProgram";
-            this.btnSearchProgram.Size = new System.Drawing.Size(97, 31);
-            this.btnSearchProgram.TabIndex = 3;
-            this.btnSearchProgram.Text = "Search";
-            this.btnSearchProgram.UseVisualStyleBackColor = false;
-            this.btnSearchProgram.Click += new System.EventHandler(this.btnSearchProgram_Click);
-            // 
-            // txtSearchProgram
-            // 
-            this.txtSearchProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchProgram.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtSearchProgram.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearchProgram.BackColor = System.Drawing.Color.White;
-            this.txtSearchProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchProgram.Location = new System.Drawing.Point(683, 20);
-            this.txtSearchProgram.Name = "txtSearchProgram";
-            this.txtSearchProgram.Size = new System.Drawing.Size(216, 23);
-            this.txtSearchProgram.TabIndex = 1;
-            this.txtSearchProgram.TextChanged += new System.EventHandler(this.txtSearchProgram_TextChanged);
-            // 
-            // ttpGeneral
-            // 
-            this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
-            // 
-            // pnlBtnLinkOption
-            // 
-            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkCourse);
-            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
-            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
-            this.pnlBtnLinkOption.Size = new System.Drawing.Size(197, 91);
-            this.pnlBtnLinkOption.TabIndex = 10;
-            this.pnlBtnLinkOption.Visible = false;
-            this.pnlBtnLinkOption.MouseEnter += new System.EventHandler(this.btnLinkProgram_MouseEnter);
-            // 
-            // btnLinkStudent
-            // 
-            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
-            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
-            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkStudent.Location = new System.Drawing.Point(0, 44);
-            this.btnLinkStudent.Name = "btnLinkStudent";
-            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkStudent.TabIndex = 2;
-            this.btnLinkStudent.Text = "Student(s)";
-            this.btnLinkStudent.UseVisualStyleBackColor = false;
-            this.btnLinkStudent.Click += new System.EventHandler(this.btnLinkStudent_Click);
-            // 
-            // btnLinkCourse
-            // 
-            this.btnLinkCourse.BackColor = System.Drawing.Color.White;
-            this.btnLinkCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkCourse.FlatAppearance.BorderSize = 0;
-            this.btnLinkCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkCourse.Location = new System.Drawing.Point(0, 0);
-            this.btnLinkCourse.Name = "btnLinkCourse";
-            this.btnLinkCourse.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkCourse.TabIndex = 0;
-            this.btnLinkCourse.Text = "Course(s)";
-            this.btnLinkCourse.UseVisualStyleBackColor = false;
-            this.btnLinkCourse.Click += new System.EventHandler(this.btnLinkProgram_Click);
-            // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataMember = "Program";
-            this.programBindingSource.DataSource = this.dtsAllData;
-            this.programBindingSource.CurrentChanged += new System.EventHandler(this.programBindingSource_CurrentChanged);
-            // 
-            // dtsAllData
-            // 
-            this.dtsAllData.DataSetName = "dtsAll";
-            this.dtsAllData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // coursesBindingSource
-            // 
-            this.coursesBindingSource.DataMember = "Courses";
-            this.coursesBindingSource.DataSource = this.dtsAllData;
-            // 
-            // coursesTableAdapter
-            // 
-            this.coursesTableAdapter.ClearBeforeFill = true;
-            // 
-            // programTableAdapter
-            // 
-            this.programTableAdapter.ClearBeforeFill = true;
-            // 
-            // courseProgramTableAdapter
-            // 
-            this.courseProgramTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -400,6 +294,54 @@
             this.outcomeDataGridViewTextBoxColumn.HeaderText = "Outcome";
             this.outcomeDataGridViewTextBoxColumn.Name = "outcomeDataGridViewTextBoxColumn";
             this.outcomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.dtsAllData;
+            this.programBindingSource.CurrentChanged += new System.EventHandler(this.programBindingSource_CurrentChanged);
+            // 
+            // dtsAllData
+            // 
+            this.dtsAllData.DataSetName = "dtsAll";
+            this.dtsAllData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnSearchProgram
+            // 
+            this.btnSearchProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
+            this.btnSearchProgram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchProgram.FlatAppearance.BorderSize = 0;
+            this.btnSearchProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnSearchProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(109)))), ((int)(((byte)(186)))));
+            this.btnSearchProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchProgram.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProgram.Location = new System.Drawing.Point(905, 16);
+            this.btnSearchProgram.Name = "btnSearchProgram";
+            this.btnSearchProgram.Size = new System.Drawing.Size(97, 31);
+            this.btnSearchProgram.TabIndex = 3;
+            this.btnSearchProgram.Text = "Search";
+            this.btnSearchProgram.UseVisualStyleBackColor = false;
+            this.btnSearchProgram.Click += new System.EventHandler(this.btnSearchProgram_Click);
+            // 
+            // txtSearchProgram
+            // 
+            this.txtSearchProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchProgram.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearchProgram.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearchProgram.BackColor = System.Drawing.Color.White;
+            this.txtSearchProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProgram.Location = new System.Drawing.Point(683, 20);
+            this.txtSearchProgram.Name = "txtSearchProgram";
+            this.txtSearchProgram.Size = new System.Drawing.Size(216, 23);
+            this.txtSearchProgram.TabIndex = 1;
+            this.txtSearchProgram.TextChanged += new System.EventHandler(this.txtSearchProgram_TextChanged);
+            // 
+            // ttpGeneral
+            // 
+            this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
             // 
             // btnLinkProgram
             // 
@@ -486,6 +428,67 @@
             this.btnAddProgram.UseVisualStyleBackColor = false;
             this.btnAddProgram.Click += new System.EventHandler(this.btnAddProgram_Click);
             // 
+            // pnlBtnLinkOption
+            // 
+            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkCourse);
+            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
+            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
+            this.pnlBtnLinkOption.Size = new System.Drawing.Size(197, 91);
+            this.pnlBtnLinkOption.TabIndex = 10;
+            this.pnlBtnLinkOption.Visible = false;
+            this.pnlBtnLinkOption.MouseEnter += new System.EventHandler(this.btnLinkProgram_MouseEnter);
+            // 
+            // btnLinkStudent
+            // 
+            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
+            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
+            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkStudent.Location = new System.Drawing.Point(0, 44);
+            this.btnLinkStudent.Name = "btnLinkStudent";
+            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkStudent.TabIndex = 2;
+            this.btnLinkStudent.Text = "Student(s)";
+            this.btnLinkStudent.UseVisualStyleBackColor = false;
+            this.btnLinkStudent.Click += new System.EventHandler(this.btnLinkStudent_Click);
+            // 
+            // btnLinkCourse
+            // 
+            this.btnLinkCourse.BackColor = System.Drawing.Color.White;
+            this.btnLinkCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkCourse.FlatAppearance.BorderSize = 0;
+            this.btnLinkCourse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkCourse.Location = new System.Drawing.Point(0, 0);
+            this.btnLinkCourse.Name = "btnLinkCourse";
+            this.btnLinkCourse.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkCourse.TabIndex = 0;
+            this.btnLinkCourse.Text = "Course(s)";
+            this.btnLinkCourse.UseVisualStyleBackColor = false;
+            this.btnLinkCourse.Click += new System.EventHandler(this.btnLinkProgram_Click);
+            // 
+            // coursesBindingSource
+            // 
+            this.coursesBindingSource.DataMember = "Courses";
+            this.coursesBindingSource.DataSource = this.dtsAllData;
+            // 
+            // coursesTableAdapter
+            // 
+            this.coursesTableAdapter.ClearBeforeFill = true;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // courseProgramTableAdapter
+            // 
+            this.courseProgramTableAdapter.ClearBeforeFill = true;
+            // 
             // frmPrograms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,9 +517,9 @@
             this.pnlHelloMsgBackgroundColor.ResumeLayout(false);
             this.pnlHelloMsgBackgroundColor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrograms)).EndInit();
-            this.pnlBtnLinkOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsAllData)).EndInit();
+            this.pnlBtnLinkOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
