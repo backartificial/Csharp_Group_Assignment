@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 
@@ -16,7 +17,7 @@ namespace DatabaseService {
         Data PullData(string table);
 
         [OperationContract]
-        bool PushData(string query);
+        bool PushData(string query, List<Tuple<string, string>> values);
     }
 
     [DataContract]

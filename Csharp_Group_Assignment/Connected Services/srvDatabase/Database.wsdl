@@ -4,6 +4,9 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49886/Database.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:49886/Database.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49886/Database.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DatabaseService" />
+      <xsd:import schemaLocation="http://localhost:49886/Database.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:49886/Database.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IDatabase_checkUniqueCourse_InputMessage">
@@ -18,6 +21,18 @@
   <wsdl:message name="IDatabase_checkUniqueProgram_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkUniqueProgramResponse" />
   </wsdl:message>
+  <wsdl:message name="IDatabase_PullData_InputMessage">
+    <wsdl:part name="parameters" element="tns:PullData" />
+  </wsdl:message>
+  <wsdl:message name="IDatabase_PullData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PullDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDatabase_PushData_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushData" />
+  </wsdl:message>
+  <wsdl:message name="IDatabase_PushData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushDataResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDatabase">
     <wsdl:operation name="checkUniqueCourse">
       <wsdl:input wsaw:Action="http://tempuri.org/IDatabase/checkUniqueCourse" message="tns:IDatabase_checkUniqueCourse_InputMessage" />
@@ -26,6 +41,14 @@
     <wsdl:operation name="checkUniqueProgram">
       <wsdl:input wsaw:Action="http://tempuri.org/IDatabase/checkUniqueProgram" message="tns:IDatabase_checkUniqueProgram_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDatabase/checkUniqueProgramResponse" message="tns:IDatabase_checkUniqueProgram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PullData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatabase/PullData" message="tns:IDatabase_PullData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatabase/PullDataResponse" message="tns:IDatabase_PullData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDatabase/PushData" message="tns:IDatabase_PushData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDatabase/PushDataResponse" message="tns:IDatabase_PushData_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDatabase" type="tns:IDatabase">
@@ -41,6 +64,24 @@
     </wsdl:operation>
     <wsdl:operation name="checkUniqueProgram">
       <soap:operation soapAction="http://tempuri.org/IDatabase/checkUniqueProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PullData">
+      <soap:operation soapAction="http://tempuri.org/IDatabase/PullData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushData">
+      <soap:operation soapAction="http://tempuri.org/IDatabase/PushData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

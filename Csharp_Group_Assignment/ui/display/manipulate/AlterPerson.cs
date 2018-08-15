@@ -30,8 +30,10 @@ namespace Csharp_Group_Assignment.ui.display.manipulate
     {
         private info.member.Person _person;
 
+        private int lastCheck;
+
         protected override bool isValidID(string ID) =>
-            _entity.ID.Equals(ID) || info.Professor.All.Count(entity => entity.ID.Equals(ID)) == 0;
+            _entity.ID.Equals(ID) || (int.TryParse(ID.ToString(), out lastCheck) && info.Professor.All.Count(entity => entity.ID.Equals(ID)) == 0 && info.Student.All.Count(entity => entity.ID.Equals(ID)) == 0);
 
         public override Entity Entity
         {
@@ -141,7 +143,7 @@ namespace Csharp_Group_Assignment.ui.display.manipulate
                 _isClean = false;
                 errID.Status = Status.Error;
 
-                errID.ErrorText = $"The ID must be unique";
+                errID.ErrorText = $"The ID must be unique of an number value.";
                 errID.Text = "";
 
                 errID.Focus();

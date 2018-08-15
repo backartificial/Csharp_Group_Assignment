@@ -273,11 +273,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Connected Services\srvDatabase\Csharp_Group_Assignment.srvDatabase.Data.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\srvDatabase\Database.wsdl" />
     <None Include="Connected Services\srvDatabase\Database.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\srvDatabase\Database1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\srvDatabase\Database2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\srvDatabase\Database21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\srvDatabase\Database22.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

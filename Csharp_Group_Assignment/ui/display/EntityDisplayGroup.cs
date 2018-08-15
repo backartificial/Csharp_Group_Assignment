@@ -192,12 +192,12 @@ namespace Csharp_Group_Assignment.ui.display
             MaxPages = CalculatMax();
 
 
-            if (_maxPages <= previousMax)
+            /*if (_maxPages <= previousMax)
             {
                 return;
             }
 
-            ++Page;
+            ++Page;*/
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Csharp_Group_Assignment.ui.display
                     visualDisplay.Header = $"{person.FullName} ({person.ID})";
                     visualDisplay.Flags = person.Gender.ToString();
                     visualDisplay.SubHeading = $"Birth: {person.BirthDate:yyyy/MM/dd}";
-                    visualDisplay.Additional = $"Start: {person.BirthDate:yyyy/MM/dd}";
+                    visualDisplay.Additional = $"Start: {person.StartDate:yyyy/MM/dd}";
                     break;
                 case info.opportunity.Course course:
 

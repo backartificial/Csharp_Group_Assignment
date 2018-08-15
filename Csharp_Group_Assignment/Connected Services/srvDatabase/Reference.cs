@@ -9,7 +9,54 @@
 //------------------------------------------------------------------------------
 
 namespace Csharp_Group_Assignment.srvDatabase {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Data", Namespace="http://schemas.datacontract.org/2004/07/DatabaseService")]
+    [System.SerializableAttribute()]
+    public partial class Data : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.Dictionary<string, string>[] ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.Dictionary<string, string>[] Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="srvDatabase.IDatabase")]
@@ -26,6 +73,18 @@ namespace Csharp_Group_Assignment.srvDatabase {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDatabase/checkUniqueProgram", ReplyAction="http://tempuri.org/IDatabase/checkUniqueProgramResponse")]
         System.Threading.Tasks.Task<bool> checkUniqueProgramAsync(string programName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDatabase/PullData", ReplyAction="http://tempuri.org/IDatabase/PullDataResponse")]
+        Csharp_Group_Assignment.srvDatabase.Data PullData(string table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDatabase/PullData", ReplyAction="http://tempuri.org/IDatabase/PullDataResponse")]
+        System.Threading.Tasks.Task<Csharp_Group_Assignment.srvDatabase.Data> PullDataAsync(string table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDatabase/PushData", ReplyAction="http://tempuri.org/IDatabase/PushDataResponse")]
+        string PushData(string query, System.Tuple<string, string>[] values);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDatabase/PushData", ReplyAction="http://tempuri.org/IDatabase/PushDataResponse")]
+        System.Threading.Tasks.Task<string> PushDataAsync(string query, System.Tuple<string, string>[] values);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +128,22 @@ namespace Csharp_Group_Assignment.srvDatabase {
         
         public System.Threading.Tasks.Task<bool> checkUniqueProgramAsync(string programName) {
             return base.Channel.checkUniqueProgramAsync(programName);
+        }
+        
+        public Csharp_Group_Assignment.srvDatabase.Data PullData(string table) {
+            return base.Channel.PullData(table);
+        }
+        
+        public System.Threading.Tasks.Task<Csharp_Group_Assignment.srvDatabase.Data> PullDataAsync(string table) {
+            return base.Channel.PullDataAsync(table);
+        }
+        
+        public string PushData(string query, System.Tuple<string, string>[] values) {
+            return base.Channel.PushData(query, values);
+        }
+        
+        public System.Threading.Tasks.Task<string> PushDataAsync(string query, System.Tuple<string, string>[] values) {
+            return base.Channel.PushDataAsync(query, values);
         }
     }
 }

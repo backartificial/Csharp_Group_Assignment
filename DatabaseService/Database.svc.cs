@@ -13,7 +13,7 @@ namespace DatabaseService
         private void Connect()
         {
             // Open the connection to the database
-            connection.Open();
+            if (connection.State == System.Data.ConnectionState.Closed) { connection.Open();  }            
         }
 
         private void Disconnect()
@@ -71,12 +71,14 @@ namespace DatabaseService
 
             var data = new Data { Value = new List<Dictionary<string, string>>() };
 
-            using (var command = new SqlCommand("SELECT * FROM" + table, connection)) {
+            using (var command = new SqlCommand("SELECT * FROM " + table, connection)) {
                 using (var reader = command.ExecuteReader()) {
-                    var row = new Dictionary<string, string>();
                     while (reader.Read()) {
-                        for (var index = 0; index < reader.FieldCount; index++) {
-                            row.Add(reader.GetName(index), reader.GetString(index));
+                        Dictionary<string, string> row = new Dictionary<string, string>();
+
+                        for (int index = 0; index < reader.FieldCount; index++) {
+                            Console.WriteLine("Index: " + index + " Column: " + reader.GetName(index));
+                            row.Add(reader.GetName(index).ToString(), reader.GetValue(index).ToString());
                         }
 
                         data.Value.Add(row);
@@ -89,15 +91,17 @@ namespace DatabaseService
             return data;
         }
 
-        public bool PushData(string query) {
+        public bool PushData(string query, List<Tuple<string, string>> values) {
             try {
                 Connect();
+                if (connection.State == System.Data.ConnectionState.Closed) {Connect();}
+                using (SqlCommand statement = new SqlCommand(query, connection)) {
+                    foreach(var value in values) {
+                        statement.Parameters.AddWithValue(value.Item1, value.Item2);
+                    }
 
-                SqlCommand statement = new SqlCommand(query, connection);
-
-                statement.ExecuteNonQuery();
-
-                statement.Dispose();
+                    statement.ExecuteNonQuery();
+                }
 
                 Disconnect();
             } catch (SqlException ex) {

@@ -23,8 +23,11 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="Database.xsd" MetadataType="Schema" ID="f5addbad-c75b-48a3-870f-fe7705c1b880" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?xsd=xsd1" />
-    <MetadataFile FileName="Database1.xsd" MetadataType="Schema" ID="70920ce8-edba-4220-b69c-5be6328c0e5d" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?xsd=xsd0" />
     <MetadataFile FileName="Database.disco" MetadataType="Disco" ID="71a130e7-6763-4514-b255-ceb164e63b39" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?disco" />
+    <MetadataFile FileName="Database2.xsd" MetadataType="Schema" ID="a59a6c4d-0524-4080-a446-a12e00b1fa68" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?xsd=xsd3" />
+    <MetadataFile FileName="Database21.xsd" MetadataType="Schema" ID="6318c515-6d0f-4920-87d0-5d32c2e2a557" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?xsd=xsd2" />
+    <MetadataFile FileName="Database1.xsd" MetadataType="Schema" ID="70920ce8-edba-4220-b69c-5be6328c0e5d" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?xsd=xsd0" />
+    <MetadataFile FileName="Database22.xsd" MetadataType="Schema" ID="7de9bcc9-21d7-49d3-bac6-7ee0e2bda336" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?xsd=xsd4" />
     <MetadataFile FileName="Database.wsdl" MetadataType="Wsdl" ID="92ceb0c1-c480-4d7e-aee2-b370b38aaec9" SourceId="1" SourceUrl="http://localhost:49886/Database.svc?wsdl" />
   </Metadata>
   <Extensions>

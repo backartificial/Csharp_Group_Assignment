@@ -17,7 +17,6 @@ using System.IO;
 using System.Windows.Forms;
 using IronPdf;
 using Csharp_Group_Assignment.info;
-using Csharp_Group_Assignment.info.opportunity;
 using Csharp_Group_Assignment.ui.display;
 using Csharp_Group_Assignment.ui.display.manipulate;
 using Csharp_Group_Assignment.ui.functionality.links;
@@ -26,6 +25,9 @@ namespace Csharp_Group_Assignment
 {
     public partial class frmStudentsAndProfessors : Form
     {
+        public static srvDatabase.DatabaseClient client = new srvDatabase.DatabaseClient();
+
+
         // Stores the html of all links used to generate the pdf
         private readonly Dictionary<LinkType, Tuple<ClickableDisplay, Control>> _avilableLinkTypees =
             new Dictionary<LinkType, Tuple<ClickableDisplay, Control>>();
@@ -491,9 +493,20 @@ namespace Csharp_Group_Assignment
                                 return;
                             }
 
-                            ((info.Student) edgStudents.Selected).Disconnet();
+                            var student = ((info.Student)edgStudents.Selected); 
+                            
+                            student.Disconnet();
 
-                            edgStudents.RemoveEntry(edgStudents.Selected);
+                            
+
+                            if(bool.Parse(client.PushData("DELETE FROM Student WHERE studentNumber = @id)"
+                                , new List<Tuple<string, string>> {
+                                    Tuple.Create("id", student.ID)
+                                }.ToArray()))){
+                                edgStudents.RemoveEntry(edgStudents.Selected);
+                            }else{
+                                MessageBox.Show("Error Removing Student.  Please try agian.");
+                            }
                         });
                         break;
                     case LinkType.Professors:
@@ -506,9 +519,18 @@ namespace Csharp_Group_Assignment
                                 return;
                             }
 
-                            ((info.Professor) edgProfessors.Selected).Disconnet();
+                            var professor = ((info.Professor)edgProfessors.Selected);
+                            
+                            professor.Disconnet();
 
-                            edgProfessors.RemoveEntry(edgProfessors.Selected);
+                            if (bool.Parse(client.PushData("DELETE FROM Professor WHERE employeeNumber = @id)"
+                                , new List<Tuple<string, string>> {
+                                    Tuple.Create("id", professor.ID)
+                                }.ToArray()))){
+                                edgProfessors.RemoveEntry(edgProfessors.Selected);
+                            } else {
+                                MessageBox.Show("Error Removing Professor.  Please try agian.");
+                            }
                         });
                         break;
                 }
@@ -528,9 +550,22 @@ namespace Csharp_Group_Assignment
 
                         _alterLinkType[_current.Value].Entity = student;
 
-                        if (_alterLinkType[_current.Value].ShowDialog() == DialogResult.OK)
-                        {
-                            edgStudents.AddEntity(student);
+                        if (_alterLinkType[_current.Value].ShowDialog() == DialogResult.OK) {
+
+
+                            if (bool.Parse(client.PushData("INSERT INTO Student (studentNumber, firstName, lastName, birthday, gender, startDate) VALUES (@id, @first, @last, @birth, @gender, @start)"
+                                , new List<Tuple<string, string>> {
+                                    Tuple.Create("id", student.ID)
+                                    , Tuple.Create("first", student.FirstName)
+                                    , Tuple.Create("last", student.LastName)
+                                    , Tuple.Create("birth", student.BirthDate.ToString("yyyy-MM-dd"))
+                                    , Tuple.Create("gender", (student.Gender == Gender.Male ? 'M' : 'F').ToString())
+                                    , Tuple.Create("start", student.StartDate.ToString("yyyy-MM-dd"))
+                                }.ToArray()))) {
+                                edgStudents.AddEntity(student);
+                            } else {
+                                MessageBox.Show("Error Adding Student. Please Try Again");
+                            }
                         }
                         else
                         {
@@ -547,7 +582,21 @@ namespace Csharp_Group_Assignment
 
                         if (_alterLinkType[_current.Value].ShowDialog() == DialogResult.OK)
                         {
-                            edgProfessors.AddEntity(professor);
+
+                            if(bool.Parse(client.PushData("INSERT INTO Professor VALUES(@id, @first, @last, @birth, @gender, @start)"
+                            , new List<Tuple<string, string>> {
+                                    Tuple.Create("id", professor.ID)
+                                    , Tuple.Create("first", professor.FirstName)
+                                    , Tuple.Create("last", professor.LastName)
+                                    , Tuple.Create("birth", professor.BirthDate.ToString("yyyy-MM-dd"))
+                                    , Tuple.Create("gender", (professor.Gender == Gender.Male ? 'M' : 'F').ToString())
+                                    , Tuple.Create("start", professor.StartDate.ToString("yyyy-MM-dd"))
+                            }.ToArray()))) {
+                                edgProfessors.AddEntity(professor);
+                            }
+                            else {
+                                MessageBox.Show("Error Adding Professor. Please Try Again");
+                            }
                         }
                         else
                         {
@@ -570,7 +619,47 @@ namespace Csharp_Group_Assignment
 
                         if (_alterLinkType[Current.Value].ShowDialog() == DialogResult.OK)
                         {
-                            edgStudents.UpdateEntity(edgStudents.Selected);
+                            var student = (info.Student)edgStudents.Selected;
+
+                            if (bool.Parse(client.PushData(
+                                "UPDATE Student SET firstName=@first, lastName=@last, birthday=@birth, gender=@gender, startDate=@start WHERE studentNumber=@id"
+                                , new List<Tuple<string, string>> {
+                                    Tuple.Create("id", student.ID)
+                                    , Tuple.Create("first", student.FirstName)
+                                    , Tuple.Create("last", student.LastName)
+                                    , Tuple.Create("birth", student.BirthDate.ToString("yyyy-MM-dd"))
+                                    , Tuple.Create("gender", (student.Gender == Gender.Male ? 'M' : 'F').ToString())
+                                    , Tuple.Create("start", student.StartDate.ToString("yyyy-MM-dd"))
+                                    }.ToArray()))) {
+                                edgStudents.UpdateEntity(edgStudents.Selected);
+                            } else {
+                                MessageBox.Show("Error Editing Student. Please Try Again");
+                            }
+
+                        }
+
+                    break;
+
+                    case LinkType.Professors:
+                        _alterLinkType[Current.Value].Entity = edgProfessors.Selected;
+
+                        if (_alterLinkType[Current.Value].ShowDialog() == DialogResult.OK) {
+                            var professor = (info.Professor)edgProfessors.Selected;
+
+                            if(bool.Parse(client.PushData(
+                                "UPDATE Professor SET firstName=@first, lastName=@last, birthday=@birth, gender=@gender, startDate=@start WHERE employeeNumber=@id"
+                                , new List<Tuple<string, string>> {
+                                    Tuple.Create("id", professor.ID)
+                                    , Tuple.Create("first", professor.FirstName)
+                                    , Tuple.Create("last", professor.LastName)
+                                    , Tuple.Create("birth", professor.BirthDate.ToString("yyyy-MM-dd"))
+                                    , Tuple.Create("gender", (professor.Gender == Gender.Male ? 'M' : 'F').ToString())
+                                    , Tuple.Create("start", professor.StartDate.ToString("yyyy-MM-dd"))
+                                    }.ToArray()))) {
+                                edgProfessors.UpdateEntity(edgProfessors.Selected);
+                            } else {
+                                MessageBox.Show("Error Editing Professor. Please Try Again");
+                            }
                         }
 
                         break;
@@ -826,55 +915,19 @@ namespace Csharp_Group_Assignment
 
             // Data used to test the functionality of the application
 
-            #region Testing_Data
+            #region Pull_Data
 
-            edgProfessors.AddEntity(new info.Professor("PROF0", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            /*edgProfessors.AddEntity(new Professor("PROF10", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF11", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF12", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF14", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF15", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF16", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF17", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF1", "Bob", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF2", "Amanda", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF3", "Felex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF4", "Kevin", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgProfessors.AddEntity(new Professor("PROF5", "Jane", "A", DateTime.Now, Gender.Male, DateTime.Now));*/
+            foreach (var entries in client.PullData("Student").Value) {
+                edgStudents.AddEntity(new info.Student(entries["studentNumber"], entries["firstName"], entries["lastName"],
+                    DateTime.Parse(entries["birthday"].ToString()), entries["gender"] == "M" ? Gender.Male : Gender.Female,
+                    DateTime.Parse(entries["startDate"].ToString())));
+            }
 
-            edgStudents.AddEntity(new info.Student("STU0", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            /*edgStudents.AddEntity(new Student("STU10", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU11", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU12", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU14", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU15", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU16", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU17", "Alex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU1", "Bob", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU2", "Amanda", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU3", "Felex", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU4", "Kevin", "A", DateTime.Now, Gender.Male, DateTime.Now));
-            edgStudents.AddEntity(new Student("STU5", "Jane", "A", DateTime.Now, Gender.Male, DateTime.Now));*/
-
-            var program = new info.opportunity.Program("PROG0", "Test Course", TimeSpan.FromDays(730), false,
-                Outcomes.Diploma);
-
-            var course = new info.opportunity.Course("CRO0", "Test Course", 100, 4);
-            program.AddLink(course);
-
-            edgPrograms.AddEntity(program);
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG1", "Test Course", TimeSpan.FromDays(730), false,
-                Outcomes.Diploma));
-            /*edgPrograms.AddEntity(new info.opportunity.Program("PROG1"));
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG2"));
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG3"));
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG4"));*/
-
-            edgCourses.AddEntity(course);
-            /*edgPrograms.AddEntity(new info.opportunity.Program("PROG1"));
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG2"));
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG3"));
-            edgPrograms.AddEntity(new info.opportunity.Program("PROG4"));*/
+            foreach (var entries in client.PullData("Professor").Value) {
+                edgProfessors.AddEntity(new info.Professor(entries["employeeNumber"], entries["firstName"], entries["lastName"],
+                    DateTime.Parse(entries["birthday"].ToString()), entries["gender"] == "M" ? Gender.Male : Gender.Female,
+                    DateTime.Parse(entries["startDate"].ToString())));
+            }
 
             #endregion
 
