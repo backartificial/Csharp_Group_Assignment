@@ -22,7 +22,8 @@ namespace Csharp_Group_Assignment {
         static void Main() {
             // Enable visual and rendering options before calling the global home form to open
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.SetCompatibleTextRenderingDefault(true);
+            FormsGlobal.frmHome = new frmHome();
             Application.Run(FormsGlobal.frmHome);
         }
     }

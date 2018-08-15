@@ -47,6 +47,11 @@
             this.btnSearchCourse = new System.Windows.Forms.Button();
             this.txtSearchCourse = new System.Windows.Forms.TextBox();
             this.ttpGeneral = new System.Windows.Forms.ToolTip(this.components);
+            this.btnLinkCourse = new Csharp_Group_Assignment.CircleButton();
+            this.btnPrintCourseReport = new Csharp_Group_Assignment.CircleButton();
+            this.btnRemoveCourse = new Csharp_Group_Assignment.CircleButton();
+            this.btnEditCourse = new Csharp_Group_Assignment.CircleButton();
+            this.btnAddCourse = new Csharp_Group_Assignment.CircleButton();
             this.pnlBtnLinkOption = new System.Windows.Forms.Panel();
             this.btnLinkStudent = new System.Windows.Forms.Button();
             this.btnLinkProfessor = new System.Windows.Forms.Button();
@@ -57,11 +62,6 @@
             this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
             this.professorCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorCourseTableAdapter();
             this.studentCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentCourseTableAdapter();
-            this.btnLinkCourse = new Csharp_Group_Assignment.CircleButton();
-            this.btnPrintCourseReport = new Csharp_Group_Assignment.CircleButton();
-            this.btnRemoveCourse = new Csharp_Group_Assignment.CircleButton();
-            this.btnEditCourse = new Csharp_Group_Assignment.CircleButton();
-            this.btnAddCourse = new Csharp_Group_Assignment.CircleButton();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlNavButtons.SuspendLayout();
             this.pnlHelloMsgBackgroundColor.SuspendLayout();
@@ -366,91 +366,6 @@
             this.ttpGeneral.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttpGeneral.ToolTipTitle = "This Button is Used to...";
             // 
-            // pnlBtnLinkOption
-            // 
-            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProfessor);
-            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProgram);
-            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
-            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
-            this.pnlBtnLinkOption.Size = new System.Drawing.Size(200, 141);
-            this.pnlBtnLinkOption.TabIndex = 10;
-            this.pnlBtnLinkOption.Visible = false;
-            // 
-            // btnLinkStudent
-            // 
-            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
-            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
-            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkStudent.Location = new System.Drawing.Point(0, 96);
-            this.btnLinkStudent.Name = "btnLinkStudent";
-            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkStudent.TabIndex = 2;
-            this.btnLinkStudent.Text = "Student(s)";
-            this.btnLinkStudent.UseVisualStyleBackColor = false;
-            this.btnLinkStudent.Click += new System.EventHandler(this.btnLinkStudent_Click);
-            // 
-            // btnLinkProfessor
-            // 
-            this.btnLinkProfessor.BackColor = System.Drawing.Color.White;
-            this.btnLinkProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkProfessor.FlatAppearance.BorderSize = 0;
-            this.btnLinkProfessor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkProfessor.Location = new System.Drawing.Point(0, 48);
-            this.btnLinkProfessor.Name = "btnLinkProfessor";
-            this.btnLinkProfessor.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkProfessor.TabIndex = 1;
-            this.btnLinkProfessor.Text = "Professor(s)";
-            this.btnLinkProfessor.UseVisualStyleBackColor = false;
-            this.btnLinkProfessor.Click += new System.EventHandler(this.btnLinkProfessor_Click);
-            // 
-            // btnLinkProgram
-            // 
-            this.btnLinkProgram.BackColor = System.Drawing.Color.White;
-            this.btnLinkProgram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLinkProgram.FlatAppearance.BorderSize = 0;
-            this.btnLinkProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLinkProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLinkProgram.Location = new System.Drawing.Point(0, 0);
-            this.btnLinkProgram.Name = "btnLinkProgram";
-            this.btnLinkProgram.Size = new System.Drawing.Size(200, 47);
-            this.btnLinkProgram.TabIndex = 0;
-            this.btnLinkProgram.Text = "Program(s)";
-            this.btnLinkProgram.UseVisualStyleBackColor = false;
-            this.btnLinkProgram.Click += new System.EventHandler(this.btnLinkProgram_Click);
-            // 
-            // coursesTableAdapter
-            // 
-            this.coursesTableAdapter.ClearBeforeFill = true;
-            // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataMember = "Program";
-            this.programBindingSource.DataSource = this.dtsAllData;
-            // 
-            // programTableAdapter
-            // 
-            this.programTableAdapter.ClearBeforeFill = true;
-            // 
-            // courseProgramTableAdapter
-            // 
-            this.courseProgramTableAdapter.ClearBeforeFill = true;
-            // 
-            // professorCourseTableAdapter
-            // 
-            this.professorCourseTableAdapter.ClearBeforeFill = true;
-            // 
-            // studentCourseTableAdapter
-            // 
-            this.studentCourseTableAdapter.ClearBeforeFill = true;
-            // 
             // btnLinkCourse
             // 
             this.btnLinkCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(242)))));
@@ -536,6 +451,91 @@
             this.btnAddCourse.UseVisualStyleBackColor = false;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
+            // pnlBtnLinkOption
+            // 
+            this.pnlBtnLinkOption.BackColor = System.Drawing.Color.LightGray;
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkStudent);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProfessor);
+            this.pnlBtnLinkOption.Controls.Add(this.btnLinkProgram);
+            this.pnlBtnLinkOption.Location = new System.Drawing.Point(455, 41);
+            this.pnlBtnLinkOption.Name = "pnlBtnLinkOption";
+            this.pnlBtnLinkOption.Size = new System.Drawing.Size(200, 141);
+            this.pnlBtnLinkOption.TabIndex = 10;
+            this.pnlBtnLinkOption.Visible = false;
+            // 
+            // btnLinkStudent
+            // 
+            this.btnLinkStudent.BackColor = System.Drawing.Color.White;
+            this.btnLinkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkStudent.FlatAppearance.BorderSize = 0;
+            this.btnLinkStudent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkStudent.Location = new System.Drawing.Point(0, 96);
+            this.btnLinkStudent.Name = "btnLinkStudent";
+            this.btnLinkStudent.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkStudent.TabIndex = 2;
+            this.btnLinkStudent.Text = "Student(s)";
+            this.btnLinkStudent.UseVisualStyleBackColor = false;
+            this.btnLinkStudent.Click += new System.EventHandler(this.btnLinkStudent_Click);
+            // 
+            // btnLinkProfessor
+            // 
+            this.btnLinkProfessor.BackColor = System.Drawing.Color.White;
+            this.btnLinkProfessor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkProfessor.FlatAppearance.BorderSize = 0;
+            this.btnLinkProfessor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkProfessor.Location = new System.Drawing.Point(0, 48);
+            this.btnLinkProfessor.Name = "btnLinkProfessor";
+            this.btnLinkProfessor.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkProfessor.TabIndex = 1;
+            this.btnLinkProfessor.Text = "Professor(s)";
+            this.btnLinkProfessor.UseVisualStyleBackColor = false;
+            this.btnLinkProfessor.Click += new System.EventHandler(this.btnLinkProfessor_Click);
+            // 
+            // btnLinkProgram
+            // 
+            this.btnLinkProgram.BackColor = System.Drawing.Color.White;
+            this.btnLinkProgram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLinkProgram.FlatAppearance.BorderSize = 0;
+            this.btnLinkProgram.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProgram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnLinkProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLinkProgram.Location = new System.Drawing.Point(0, 0);
+            this.btnLinkProgram.Name = "btnLinkProgram";
+            this.btnLinkProgram.Size = new System.Drawing.Size(200, 47);
+            this.btnLinkProgram.TabIndex = 0;
+            this.btnLinkProgram.Text = "Program(s)";
+            this.btnLinkProgram.UseVisualStyleBackColor = false;
+            this.btnLinkProgram.Click += new System.EventHandler(this.btnLinkProgram_Click);
+            // 
+            // coursesTableAdapter
+            // 
+            this.coursesTableAdapter.ClearBeforeFill = true;
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataMember = "Program";
+            this.programBindingSource.DataSource = this.dtsAllData;
+            // 
+            // programTableAdapter
+            // 
+            this.programTableAdapter.ClearBeforeFill = true;
+            // 
+            // courseProgramTableAdapter
+            // 
+            this.courseProgramTableAdapter.ClearBeforeFill = true;
+            // 
+            // professorCourseTableAdapter
+            // 
+            this.professorCourseTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentCourseTableAdapter
+            // 
+            this.studentCourseTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,6 +557,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Courses | Student Content Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCourses_FormClosed);
             this.Load += new System.EventHandler(this.Courses_Load);
             this.MouseEnter += new System.EventHandler(this.frmCourses_MouseEnter);
             this.pnlLeftMenu.ResumeLayout(false);

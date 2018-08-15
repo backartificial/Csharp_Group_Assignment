@@ -101,7 +101,7 @@
             0});
             this.nudDuration.Name = "nudDuration";
             this.nudDuration.Size = new System.Drawing.Size(215, 26);
-            this.nudDuration.TabIndex = 5;
+            this.nudDuration.TabIndex = 3;
             this.nudDuration.ThousandsSeparator = true;
             // 
             // txtProgramOutcome
@@ -111,7 +111,7 @@
             this.txtProgramOutcome.MaxLength = 50;
             this.txtProgramOutcome.Name = "txtProgramOutcome";
             this.txtProgramOutcome.Size = new System.Drawing.Size(215, 26);
-            this.txtProgramOutcome.TabIndex = 2;
+            this.txtProgramOutcome.TabIndex = 5;
             // 
             // txtProgramName
             // 
@@ -135,8 +135,8 @@
             this.btnAddProgram.Location = new System.Drawing.Point(267, 208);
             this.btnAddProgram.Name = "btnAddProgram";
             this.btnAddProgram.Size = new System.Drawing.Size(83, 31);
-            this.btnAddProgram.TabIndex = 7;
-            this.btnAddProgram.Text = "Add Course";
+            this.btnAddProgram.TabIndex = 6;
+            this.btnAddProgram.Text = "Add ";
             this.btnAddProgram.UseVisualStyleBackColor = false;
             this.btnAddProgram.Click += new System.EventHandler(this.btnAddProgram_Click);
             // 
@@ -153,7 +153,7 @@
             this.btnAddAnotherProgram.Location = new System.Drawing.Point(135, 208);
             this.btnAddAnotherProgram.Name = "btnAddAnotherProgram";
             this.btnAddAnotherProgram.Size = new System.Drawing.Size(126, 31);
-            this.btnAddAnotherProgram.TabIndex = 8;
+            this.btnAddAnotherProgram.TabIndex = 7;
             this.btnAddAnotherProgram.Text = "Add Another ";
             this.btnAddAnotherProgram.UseVisualStyleBackColor = false;
             this.btnAddAnotherProgram.Click += new System.EventHandler(this.btnAddAnotherProgram_Click);
@@ -172,7 +172,7 @@
             this.btnCancel.Location = new System.Drawing.Point(46, 208);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 31);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -183,7 +183,7 @@
             this.chkbxCoop.Location = new System.Drawing.Point(135, 130);
             this.chkbxCoop.Name = "chkbxCoop";
             this.chkbxCoop.Size = new System.Drawing.Size(15, 14);
-            this.chkbxCoop.TabIndex = 10;
+            this.chkbxCoop.TabIndex = 4;
             this.chkbxCoop.UseVisualStyleBackColor = true;
             // 
             // lblCoopHelper

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27906.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp_Group_Assignment", "Csharp_Group_Assignment\Csharp_Group_Assignment.csproj", "{D311A640-CC7D-4480-8E9F-B2CCC0E450DB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE02CC41-7925-48EF-BD1F-DA1B51F7D775} = {DE02CC41-7925-48EF-BD1F-DA1B51F7D775}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseService", "DatabaseService\DatabaseService.csproj", "{DE02CC41-7925-48EF-BD1F-DA1B51F7D775}"
 EndProject

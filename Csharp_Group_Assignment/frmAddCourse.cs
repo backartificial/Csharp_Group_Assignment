@@ -98,46 +98,39 @@ namespace Csharp_Group_Assignment {
                     // Open the DB connection
                     connection.Open();
 
-                    // Set the SqlCommand
-                    SqlCommand command;
+                    // Check if the course code is unique
+                    srvDatabase.DatabaseClient client = new srvDatabase.DatabaseClient();
+                    bool isUnique = client.checkUniqueCourse(txtCourseCode.Text.Trim());
 
-                    // Check if the course Code is is use
-                    using(command = new SqlCommand("SELECT COUNT(*) FROM courses WHERE coursecode = @courseCode", connection)) {
-                        command.Parameters.AddWithValue("@courseCode", txtCourseCode.Text);
-                        Int32 count = (Int32)command.ExecuteScalar();
+                    // Check if the courseCode is in use
+                    if(!isUnique) {
+                        // Display Error Message
+                        MessageBox.Show("Oops... Look like the Course Code that you entered is already in use. Please enter another Course Code and try again!", "Course Code Taken", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        // Check if the courseCode is in use
-                        if(count > 0) {
-                            // Display Error Message
-                            MessageBox.Show("Oops... Look like the Course Code that you entered is already in use. Please enter another Course Code and try again!", "Course Code Taken", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        // Focus on the courseCode field
+                        txtCourseCode.Focus();
+                    }else{
+                        // Add the course
+                        using(SqlCommand command = new SqlCommand("INSERT INTO courses (courseCode, name, location, time, capacity, credits) VALUES (@courseCode, @name, @location, @time, @capacity, @credits)", connection)) {
+                            command.Parameters.AddWithValue("@courseCode", txtCourseCode.Text);
+                            command.Parameters.AddWithValue("@name", txtCourseName.Text);
+                            command.Parameters.AddWithValue("@location", txtLocation.Text);
+                            command.Parameters.AddWithValue("@time", dtpTime.Value.ToString());
+                            command.Parameters.AddWithValue("@capacity", nudCapacity.Value.ToString());
+                            command.Parameters.AddWithValue("@credits", nudCredits.Value.ToString());
+                            command.ExecuteNonQuery();
+
+                            // Refresh the DataGrid on the Courses form
+                            coursesForm.coursesTableAdapter.Fill(coursesForm.dtsAllData.Courses);
+                            coursesForm.dgvCourses.Refresh();
+                            coursesForm.dgvCourses.Parent.Refresh();
 
                             // Close the DB connection
                             connection.Close();
 
-                            // Focus on the courseCode field
-                            txtCourseCode.Focus();
-                        }else{
-                            // Add the course
-                            using(command = new SqlCommand("INSERT INTO courses (courseCode, name, location, time, capacity, credits) VALUES (@courseCode, @name, @location, @time, @capacity, @credits)", connection)) {
-                                command.Parameters.AddWithValue("@courseCode", txtCourseCode.Text);
-                                command.Parameters.AddWithValue("@name", txtCourseName.Text);
-                                command.Parameters.AddWithValue("@location", txtLocation.Text);
-                                command.Parameters.AddWithValue("@time", dtpTime.Value.ToString());
-                                command.Parameters.AddWithValue("@capacity", nudCapacity.Value.ToString());
-                                command.Parameters.AddWithValue("@credits", nudCredits.Value.ToString());
-                                command.ExecuteNonQuery();
-
-                                // Refresh the DataGrid on the Courses form
-                                coursesForm.coursesTableAdapter.Fill(coursesForm.dtsAllData.Courses);
-                                coursesForm.dgvCourses.Refresh();
-                                coursesForm.dgvCourses.Parent.Refresh();
-
-                                // Close the DB connection
-                                connection.Close();
-
-                                // Return successful
-                                return true;
-                            }
+                            // Return successful
+                            return true;
                         }
                     }
                 }

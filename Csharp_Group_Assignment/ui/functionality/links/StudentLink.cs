@@ -129,8 +129,8 @@ namespace Csharp_Group_Assignment.ui.functionality.links
                 Tuple.Create<ClickableDisplay, Control>(cdPrograms, edgPrograms));
             _avilableLinkTypees.Add(LinkType.Courses, Tuple.Create<ClickableDisplay, Control>(cdCourses, edgCourses));
 
-            cdPrograms.Click += (sender, e) => { FormsGlobal.frmPrograms.Show(); this.Close(); };
-            cdCourses.Click += (sender, e) => { FormsGlobal.frmCourses.Show(); this.Close(); };
+            cdPrograms.Click += (sender, e) => { FormsGlobal.frmCourses.Show(); FormsGlobal.frmStudentsAndProfessors.Hide(); };
+            cdCourses.Click += (sender, e) => { FormsGlobal.frmPrograms.Show(); FormsGlobal.frmStudentsAndProfessors.Hide(); };
 
             picMinus.Click += (sender, e) =>
             {

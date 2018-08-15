@@ -510,6 +510,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Programs | Student Content Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrograms_FormClosed);
             this.Load += new System.EventHandler(this.Programs_Load);
             this.MouseEnter += new System.EventHandler(this.frmPrograms_MouseEnter);
             this.pnlLeftMenu.ResumeLayout(false);

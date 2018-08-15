@@ -159,8 +159,7 @@ namespace Csharp_Group_Assignment
         /// <summary>
         /// Intailizes all needed things to properly display the database
         /// </summary>
-        public frmStudentsAndProfessors()
-        {
+        public frmStudentsAndProfessors() {
             InitializeComponent();
 
             // Add the links in order to switch between pages
@@ -184,22 +183,16 @@ namespace Csharp_Group_Assignment
             #region Alter Forms
 
             // The form used to add or modify an professeor or student
-            var alterPerson = new AlterPerson
-            {
+            var alterPerson = new AlterPerson {
                 // Display the correct confimation message depending on the current menu the user is on
-                Confirming = () =>
-                {
-                    if (_current == null)
-                    {
+                Confirming = () => {
+                    if (_current == null) {
                         return;
                     }
 
-                    if (Current.Value == LinkType.Students)
-                    {
-                        confirm.ShowDialog(string.Format(_deletionTemplate, "edit", "Student"), result =>
-                        {
-                            if (!result)
-                            {
+                    if (Current.Value == LinkType.Students) {
+                        confirm.ShowDialog(string.Format(_deletionTemplate, "edit", "Student"), result => {
+                            if (!result) {
                                 return;
                             }
 
@@ -211,13 +204,9 @@ namespace Csharp_Group_Assignment
 
                             edgStudents.Selected = null;
                         });
-                    }
-                    else if (Current.Value == LinkType.Professors)
-                    {
-                        confirm.ShowDialog(string.Format(_deletionTemplate, "edit", "Professor"), result =>
-                        {
-                            if (!result)
-                            {
+                    } else if (Current.Value == LinkType.Professors) {
+                        confirm.ShowDialog(string.Format(_deletionTemplate, "edit", "Professor"), result => {
+                            if (!result) {
                                 return;
                             }
 
@@ -247,9 +236,9 @@ namespace Csharp_Group_Assignment
 
             #region Switching Events
 
-            cdHome.Click += (sender, e) => Current = LinkType.Home;
-            cdPrograms.Click += (sender, e) => FormsGlobal.frmPrograms.Show();
-            cdCourses.Click += (sender, e) => FormsGlobal.frmCourses.Show();
+            cdHome.Click += (sender, e) => { FormsGlobal.frmHome.Show(); FormsGlobal.frmStudentsAndProfessors.Hide(); };
+            cdPrograms.Click += (sender, e) => { FormsGlobal.frmPrograms.Show(); FormsGlobal.frmStudentsAndProfessors.Hide(); };
+            cdCourses.Click += (sender, e) => { FormsGlobal.frmCourses.Show(); FormsGlobal.frmStudentsAndProfessors.Hide(); };
             cdStudents.Click += (sender, e) => Current = LinkType.Students;
             cdProfessors.Click += (sender, e) => Current = LinkType.Professors;
 
@@ -890,6 +879,19 @@ namespace Csharp_Group_Assignment
             #endregion
 
             _masterTip.SetToolTip(picReport, "Export Report");
+        }
+
+        /**
+         * 
+         * This function is used to close the application is the home form is hidden
+         * 
+         **/
+        private void frmStudentsAndProfessors_FormClosed(object sender, FormClosedEventArgs e) {
+            // Check if the home form is hiddn
+            if (!FormsGlobal.frmHome.Visible) {
+                // Close the main application
+                FormsGlobal.frmHome.Close();
+            }
         }
     }
 }

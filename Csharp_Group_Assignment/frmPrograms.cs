@@ -274,7 +274,7 @@ namespace Csharp_Group_Assignment {
             FormsGlobal.frmCourses.Show();
 
             // close my programs form
-            FormsGlobal.frmPrograms.Close();
+            FormsGlobal.frmPrograms.Hide();
         }
 
         /**
@@ -290,7 +290,7 @@ namespace Csharp_Group_Assignment {
             FormsGlobal.frmStudentsAndProfessors.Show();
 
             // Close this form
-            FormsGlobal.frmPrograms.Close();
+            FormsGlobal.frmPrograms.Hide();
         }
 
         /**
@@ -306,7 +306,7 @@ namespace Csharp_Group_Assignment {
             FormsGlobal.frmStudentsAndProfessors.Show();
 
             // Close this form
-            FormsGlobal.frmPrograms.Close();
+            FormsGlobal.frmPrograms.Hide();
         }
 
         /**
@@ -319,7 +319,20 @@ namespace Csharp_Group_Assignment {
             FormsGlobal.frmHome.Show();
 
             // Close this form
-            FormsGlobal.frmPrograms.Close();
+            FormsGlobal.frmPrograms.Hide();
+        }
+
+        /**
+         * 
+         * This function is used to close the application is the home form is hidden
+         * 
+         **/
+        private void frmPrograms_FormClosed(object sender, FormClosedEventArgs e) {
+            // Check if the home form is hiddn
+            if(!FormsGlobal.frmHome.Visible) {
+                // Close the main application
+                FormsGlobal.frmHome.Close();
+            }
         }
     }
 }

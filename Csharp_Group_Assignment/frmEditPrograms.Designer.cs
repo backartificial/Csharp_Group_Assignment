@@ -34,6 +34,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCoop = new System.Windows.Forms.Label();
             this.chkbxCoop = new System.Windows.Forms.CheckBox();
+            this.lblCoopHelper = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.btnCancel.Location = new System.Drawing.Point(172, 196);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 31);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -69,7 +70,7 @@
             this.btnEditProgram.Location = new System.Drawing.Point(262, 196);
             this.btnEditProgram.Name = "btnEditProgram";
             this.btnEditProgram.Size = new System.Drawing.Size(83, 31);
-            this.btnEditProgram.TabIndex = 6;
+            this.btnEditProgram.TabIndex = 4;
             this.btnEditProgram.Text = "Save";
             this.btnEditProgram.UseVisualStyleBackColor = false;
             this.btnEditProgram.Click += new System.EventHandler(this.btnEditProgram_Click);
@@ -89,7 +90,7 @@
             this.txtOutcome.Location = new System.Drawing.Point(135, 152);
             this.txtOutcome.Name = "txtOutcome";
             this.txtOutcome.Size = new System.Drawing.Size(215, 26);
-            this.txtOutcome.TabIndex = 2;
+            this.txtOutcome.TabIndex = 3;
             // 
             // nudDuration
             // 
@@ -102,7 +103,7 @@
             0});
             this.nudDuration.Name = "nudDuration";
             this.nudDuration.Size = new System.Drawing.Size(215, 26);
-            this.nudDuration.TabIndex = 4;
+            this.nudDuration.TabIndex = 1;
             this.nudDuration.ThousandsSeparator = true;
             // 
             // lblDuration
@@ -161,8 +162,18 @@
             this.chkbxCoop.Location = new System.Drawing.Point(135, 128);
             this.chkbxCoop.Name = "chkbxCoop";
             this.chkbxCoop.Size = new System.Drawing.Size(15, 14);
-            this.chkbxCoop.TabIndex = 101;
+            this.chkbxCoop.TabIndex = 2;
             this.chkbxCoop.UseVisualStyleBackColor = true;
+            // 
+            // lblCoopHelper
+            // 
+            this.lblCoopHelper.AutoSize = true;
+            this.lblCoopHelper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblCoopHelper.Location = new System.Drawing.Point(156, 123);
+            this.lblCoopHelper.Name = "lblCoopHelper";
+            this.lblCoopHelper.Size = new System.Drawing.Size(85, 20);
+            this.lblCoopHelper.TabIndex = 101;
+            this.lblCoopHelper.Text = "Has Co-op";
             // 
             // frmEditPrograms
             // 
@@ -171,6 +182,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(357, 255);
+            this.Controls.Add(this.lblCoopHelper);
             this.Controls.Add(this.chkbxCoop);
             this.Controls.Add(this.lblCoop);
             this.Controls.Add(this.btnCancel);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCoop;
         private System.Windows.Forms.CheckBox chkbxCoop;
+        private System.Windows.Forms.Label lblCoopHelper;
     }
 }

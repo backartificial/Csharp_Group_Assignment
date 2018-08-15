@@ -33,10 +33,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 85);
+            this.label1.Size = new System.Drawing.Size(410, 85);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Are you sure you want to remove that Program?\r\nNote: You will also be deleting an" +
-    "y links.";
+            this.label1.Text = "Are you sure you want to remove that Program?\r\n";
             // 
             // lblDiagree
             // 
@@ -45,7 +44,7 @@
             this.lblDiagree.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDiagree.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiagree.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.lblDiagree.Location = new System.Drawing.Point(171, 94);
+            this.lblDiagree.Location = new System.Drawing.Point(234, 104);
             this.lblDiagree.Name = "lblDiagree";
             this.lblDiagree.Size = new System.Drawing.Size(107, 26);
             this.lblDiagree.TabIndex = 1;
@@ -58,7 +57,7 @@
             this.lblAgree.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgree.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(149)))), ((int)(((byte)(232)))));
-            this.lblAgree.Location = new System.Drawing.Point(284, 94);
+            this.lblAgree.Location = new System.Drawing.Point(347, 104);
             this.lblAgree.Name = "lblAgree";
             this.lblAgree.Size = new System.Drawing.Size(75, 26);
             this.lblAgree.TabIndex = 2;
@@ -70,7 +69,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(371, 129);
+            this.ClientSize = new System.Drawing.Size(434, 139);
             this.Controls.Add(this.lblAgree);
             this.Controls.Add(this.lblDiagree);
             this.Controls.Add(this.label1);

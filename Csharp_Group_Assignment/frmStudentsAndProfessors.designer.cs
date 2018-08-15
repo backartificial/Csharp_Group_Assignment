@@ -25,12 +25,17 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentsAndProfessors));
             this.pnlEnties = new System.Windows.Forms.Panel();
+            this.picReport = new System.Windows.Forms.PictureBox();
             this.edgProfessors = new Csharp_Group_Assignment.ui.display.EntityDisplayGroup();
             this.edgCourses = new Csharp_Group_Assignment.ui.display.EntityDisplayGroup();
             this.edgPrograms = new Csharp_Group_Assignment.ui.display.EntityDisplayGroup();
             this.edgStudents = new Csharp_Group_Assignment.ui.display.EntityDisplayGroup();
             this.iPage = new Csharp_Group_Assignment.ui.display.Indicator();
             this.cdPage = new Csharp_Group_Assignment.ui.display.ClickableDisplay();
+            this.picLink = new System.Windows.Forms.PictureBox();
+            this.picEdit = new System.Windows.Forms.PictureBox();
+            this.picMinus = new System.Windows.Forms.PictureBox();
+            this.picAdd = new System.Windows.Forms.PictureBox();
             this.sbEntites = new Csharp_Group_Assignment.ui.functionality.SearchBox();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.lblDivider = new System.Windows.Forms.Label();
@@ -41,11 +46,6 @@
             this.cdCourses = new Csharp_Group_Assignment.ui.display.ClickableDisplay();
             this.cdPageCount = new Csharp_Group_Assignment.ui.display.ClickableDisplay();
             this.confirm = new Csharp_Group_Assignment.ui.functionality.ConfirmBox();
-            this.picReport = new System.Windows.Forms.PictureBox();
-            this.picLink = new System.Windows.Forms.PictureBox();
-            this.picEdit = new System.Windows.Forms.PictureBox();
-            this.picMinus = new System.Windows.Forms.PictureBox();
-            this.picAdd = new System.Windows.Forms.PictureBox();
             this.pnlEnties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLink)).BeginInit();
@@ -76,6 +76,19 @@
             this.pnlEnties.Size = new System.Drawing.Size(598, 469);
             this.pnlEnties.TabIndex = 0;
             this.pnlEnties.Text = "grpStudents";
+            // 
+            // picReport
+            // 
+            this.picReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReport.Image = global::Csharp_Group_Assignment.Properties.Resources.report;
+            this.picReport.Location = new System.Drawing.Point(532, 65);
+            this.picReport.Margin = new System.Windows.Forms.Padding(0);
+            this.picReport.Name = "picReport";
+            this.picReport.Size = new System.Drawing.Size(20, 20);
+            this.picReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picReport.TabIndex = 9;
+            this.picReport.TabStop = false;
             // 
             // edgProfessors
             // 
@@ -177,6 +190,61 @@
             this.cdPage.Title = "1";
             this.cdPage.UnderlineColor = System.Drawing.Color.Black;
             this.cdPage.UnderlineHight = 2;
+            // 
+            // picLink
+            // 
+            this.picLink.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLink.Image = global::Csharp_Group_Assignment.Properties.Resources.link;
+            this.picLink.Location = new System.Drawing.Point(500, 67);
+            this.picLink.Margin = new System.Windows.Forms.Padding(0);
+            this.picLink.Name = "picLink";
+            this.picLink.Size = new System.Drawing.Size(15, 17);
+            this.picLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLink.TabIndex = 5;
+            this.picLink.TabStop = false;
+            this.picLink.Visible = false;
+            // 
+            // picEdit
+            // 
+            this.picEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEdit.Image = global::Csharp_Group_Assignment.Properties.Resources.edit;
+            this.picEdit.Location = new System.Drawing.Point(94, 67);
+            this.picEdit.Margin = new System.Windows.Forms.Padding(0);
+            this.picEdit.Name = "picEdit";
+            this.picEdit.Size = new System.Drawing.Size(15, 17);
+            this.picEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEdit.TabIndex = 3;
+            this.picEdit.TabStop = false;
+            this.picEdit.Visible = false;
+            // 
+            // picMinus
+            // 
+            this.picMinus.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picMinus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinus.Image = global::Csharp_Group_Assignment.Properties.Resources.minus;
+            this.picMinus.Location = new System.Drawing.Point(67, 67);
+            this.picMinus.Margin = new System.Windows.Forms.Padding(0);
+            this.picMinus.Name = "picMinus";
+            this.picMinus.Size = new System.Drawing.Size(15, 17);
+            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMinus.TabIndex = 2;
+            this.picMinus.TabStop = false;
+            this.picMinus.Visible = false;
+            // 
+            // picAdd
+            // 
+            this.picAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picAdd.Image = global::Csharp_Group_Assignment.Properties.Resources.plus;
+            this.picAdd.Location = new System.Drawing.Point(39, 67);
+            this.picAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.picAdd.Name = "picAdd";
+            this.picAdd.Size = new System.Drawing.Size(15, 17);
+            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAdd.TabIndex = 1;
+            this.picAdd.TabStop = false;
             // 
             // sbEntites
             // 
@@ -320,75 +388,7 @@
             this.confirm.Title = "Are you sure you want to delete that Program?";
             this.confirm.Visible = false;
             // 
-            // picReport
-            // 
-            this.picReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picReport.Image = global::Csharp_Group_Assignment.Properties.Resources.report;
-            this.picReport.Location = new System.Drawing.Point(532, 65);
-            this.picReport.Margin = new System.Windows.Forms.Padding(0);
-            this.picReport.Name = "picReport";
-            this.picReport.Size = new System.Drawing.Size(20, 20);
-            this.picReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picReport.TabIndex = 9;
-            this.picReport.TabStop = false;
-            // 
-            // picLink
-            // 
-            this.picLink.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLink.Image = global::Csharp_Group_Assignment.Properties.Resources.link;
-            this.picLink.Location = new System.Drawing.Point(500, 67);
-            this.picLink.Margin = new System.Windows.Forms.Padding(0);
-            this.picLink.Name = "picLink";
-            this.picLink.Size = new System.Drawing.Size(15, 17);
-            this.picLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLink.TabIndex = 5;
-            this.picLink.TabStop = false;
-            this.picLink.Visible = false;
-            // 
-            // picEdit
-            // 
-            this.picEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picEdit.Image = global::Csharp_Group_Assignment.Properties.Resources.edit;
-            this.picEdit.Location = new System.Drawing.Point(94, 67);
-            this.picEdit.Margin = new System.Windows.Forms.Padding(0);
-            this.picEdit.Name = "picEdit";
-            this.picEdit.Size = new System.Drawing.Size(15, 17);
-            this.picEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEdit.TabIndex = 3;
-            this.picEdit.TabStop = false;
-            this.picEdit.Visible = false;
-            // 
-            // picMinus
-            // 
-            this.picMinus.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picMinus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMinus.Image = global::Csharp_Group_Assignment.Properties.Resources.minus;
-            this.picMinus.Location = new System.Drawing.Point(67, 67);
-            this.picMinus.Margin = new System.Windows.Forms.Padding(0);
-            this.picMinus.Name = "picMinus";
-            this.picMinus.Size = new System.Drawing.Size(15, 17);
-            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMinus.TabIndex = 2;
-            this.picMinus.TabStop = false;
-            this.picMinus.Visible = false;
-            // 
-            // picAdd
-            // 
-            this.picAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picAdd.Image = global::Csharp_Group_Assignment.Properties.Resources.plus;
-            this.picAdd.Location = new System.Drawing.Point(39, 67);
-            this.picAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(15, 17);
-            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdd.TabIndex = 1;
-            this.picAdd.TabStop = false;
-            // 
-            // Form1
+            // frmStudentsAndProfessors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -403,8 +403,9 @@
             this.Controls.Add(this.pnlHome);
             this.Controls.Add(this.pnlEnties);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "frmStudentsAndProfessors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmStudentsAndProfessors_FormClosed);
             this.pnlEnties.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLink)).EndInit();

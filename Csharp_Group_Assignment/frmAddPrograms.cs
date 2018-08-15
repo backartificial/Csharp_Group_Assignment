@@ -108,60 +108,54 @@ namespace Csharp_Group_Assignment {
                     // Open the DB connection
                     connection.Open();
 
-                    // Set the SqlCommand
-                    SqlCommand command;
+                    // Check if the program name is unique
+                    srvDatabase.DatabaseClient client = new srvDatabase.DatabaseClient();
+                    bool isUnique = client.checkUniqueProgram(txtProgramName.Text.Trim());
 
-                    // Check if the program name is in use
-                    using (command = new SqlCommand("SELECT COUNT(*) FROM program WHERE name = @progName", connection))
+                    // If the program name is in use display a message
+                    if (!isUnique)
                     {
-                        command.Parameters.AddWithValue("@progName", txtProgramName.Text);
-                        Int32 count = (Int32)command.ExecuteScalar();
+                        // Display Error Message
+                        MessageBox.Show("Oops... Look like the Program Name that you entered is already in use. Please enter another Program Name and try again!", "Program Name Taken", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        // If the program name is in use display a message
-                        if (count > 0)
+                        // Close the DB connection
+                        connection.Close();
+
+                        // Focus on the program name field
+                        txtProgramName.Focus();
+                    }
+                    else
+                    {
+                        // Add the program
+                        using (SqlCommand command = new SqlCommand("INSERT INTO program (name, duration, coop, outcome) VALUES (@progName, @dur, @coop, @outcome)", connection))
                         {
-                            // Display Error Message
-                            MessageBox.Show("Oops... Look like the Program Name that you entered is already in use. Please enter another Program Name and try again!", "Program Name Taken", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            command.Parameters.AddWithValue("@progName", txtProgramName.Text);
+                            command.Parameters.AddWithValue("@dur", nudDuration.Value.ToString());
+
+                            //determines if the program has the coop option
+                            if (chkbxCoop.Checked)
+                            {
+                                command.Parameters.AddWithValue("@coop", '1');
+                            }
+                            else
+                            {
+                                command.Parameters.AddWithValue("@coop", '0');
+                            }
+
+                            command.Parameters.AddWithValue("@outcome", txtProgramOutcome.Text);
+
+                            command.ExecuteNonQuery();
+
+                            // Refresh the DataGrid on the Programs form
+                            programsForm.programTableAdapter.Fill(programsForm.dtsAllData.Program);
+                            programsForm.dgvPrograms.Refresh();
+                            programsForm.dgvPrograms.Parent.Refresh();
 
                             // Close the DB connection
                             connection.Close();
 
-                            // Focus on the program name field
-                            txtProgramName.Focus();
-                        }
-                        else
-                        {
-                            // Add the program
-                            using (command = new SqlCommand("INSERT INTO program (name, duration, coop, outcome) VALUES (@progName, @dur, @coop, @outcome)", connection))
-                            {
-                                command.Parameters.AddWithValue("@progName", txtProgramName.Text);
-                                command.Parameters.AddWithValue("@dur", nudDuration.Value.ToString());
-
-                                //determines if the program has the coop option
-                                if (chkbxCoop.Checked)
-                                {
-                                    command.Parameters.AddWithValue("@coop", '1');
-                                }
-                                else
-                                {
-                                    command.Parameters.AddWithValue("@coop", '0');
-                                }
-
-                                command.Parameters.AddWithValue("@outcome", txtProgramOutcome.Text);
-
-                                command.ExecuteNonQuery();
-
-                                // Refresh the DataGrid on the Programs form
-                                programsForm.programTableAdapter.Fill(programsForm.dtsAllData.Program);
-                                programsForm.dgvPrograms.Refresh();
-                                programsForm.dgvPrograms.Parent.Refresh();
-
-                                // Close the DB connection
-                                connection.Close();
-
-                                // Return successful
-                                return true;
-                            }
+                            // Return successful
+                            return true;
                         }
                     }
                 }

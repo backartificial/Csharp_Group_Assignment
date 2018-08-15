@@ -194,7 +194,7 @@
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(83, 31);
             this.btnAddCourse.TabIndex = 7;
-            this.btnAddCourse.Text = "Add Course";
+            this.btnAddCourse.Text = "Add";
             this.btnAddCourse.UseVisualStyleBackColor = false;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
@@ -212,7 +212,7 @@
             this.btnAddAnotherCourse.Name = "btnAddAnotherCourse";
             this.btnAddAnotherCourse.Size = new System.Drawing.Size(126, 31);
             this.btnAddAnotherCourse.TabIndex = 8;
-            this.btnAddAnotherCourse.Text = "Add Another Course";
+            this.btnAddAnotherCourse.Text = "Add Another";
             this.btnAddAnotherCourse.UseVisualStyleBackColor = false;
             this.btnAddAnotherCourse.Click += new System.EventHandler(this.btnAddAnotherCourse_Click);
             // 
