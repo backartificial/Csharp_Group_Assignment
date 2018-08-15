@@ -2,8 +2,7 @@
  * 
  * File: Professor.cs
  * Date: August 12, 2018
- * Developer: James Grau
- * Student Number: 991443203
+ * Developer: Nathaniel
  * 
  **/
 

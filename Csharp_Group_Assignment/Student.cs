@@ -1,8 +1,7 @@
 ﻿/**
 * 
 * File: Student.cs
-* Developer: James Grau
-* Student Number: 991443203
+* Developer: Nathaniel
 * Date: August 12, 2018
 * 
 * 

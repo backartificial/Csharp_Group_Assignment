@@ -26,6 +26,15 @@ namespace Csharp_Group_Assignment {
         public frmCourses() {
             // Initialize the component
             InitializeComponent();
+
+            // Fill the table adapters
+            coursesTableAdapter.Fill(dtsAllData.Courses);
+            programTableAdapter.Fill(dtsAllData.Program);
+            courseProgramTableAdapter.Fill(dtsAllData.CourseProgram);
+            professorCourseTableAdapter.Fill(dtsAllData.ProfessorCourse);
+            studentCourseTableAdapter.Fill(dtsAllData.StudentCourse);
+            studentTableAdapter.Fill(dtsAllData.Student);
+            professorTableAdapter.Fill(dtsAllData.Professor);
         }
 
         /**
@@ -34,11 +43,6 @@ namespace Csharp_Group_Assignment {
          * 
          **/
         private void Courses_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'dtsAllData.Program' table. You can move, or remove it, as needed.
-            this.programTableAdapter.Fill(this.dtsAllData.Program);
-            // TODO: This line of code loads data into the 'dtsAllData.Courses' table. You can move, or remove it, as needed.
-            coursesTableAdapter.Fill(dtsAllData.Courses);
-
             // Set focus to the txtbox on load
             txtSearchCourse.Focus();
         }
@@ -204,12 +208,6 @@ namespace Csharp_Group_Assignment {
          * 
          **/
         private void btnPrintCourseReport_Click(object sender, EventArgs e) {
-            // Fill the Table Adapters
-            programTableAdapter.Fill(dtsAllData.Program);
-            courseProgramTableAdapter.Fill(dtsAllData.CourseProgram);
-            professorCourseTableAdapter.Fill(dtsAllData.ProfessorCourse);
-            studentCourseTableAdapter.Fill(dtsAllData.StudentCourse);
-
             // Sort the DataSetViews by course id
                 // Course-Program Data View
                 DataView courseProgramView = new DataView(dtsAllData.CourseProgram);

@@ -62,6 +62,8 @@
             this.courseProgramTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.CourseProgramTableAdapter();
             this.professorCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorCourseTableAdapter();
             this.studentCourseTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentCourseTableAdapter();
+            this.professorTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.ProfessorTableAdapter();
+            this.studentTableAdapter = new Csharp_Group_Assignment.dtsAllTableAdapters.StudentTableAdapter();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlNavButtons.SuspendLayout();
             this.pnlHelloMsgBackgroundColor.SuspendLayout();
@@ -536,6 +538,14 @@
             // 
             this.studentCourseTableAdapter.ClearBeforeFill = true;
             // 
+            // professorTableAdapter
+            // 
+            this.professorTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,5 +623,7 @@
         private dtsAllTableAdapters.CourseProgramTableAdapter courseProgramTableAdapter;
         private dtsAllTableAdapters.ProfessorCourseTableAdapter professorCourseTableAdapter;
         private dtsAllTableAdapters.StudentCourseTableAdapter studentCourseTableAdapter;
+        private dtsAllTableAdapters.ProfessorTableAdapter professorTableAdapter;
+        private dtsAllTableAdapters.StudentTableAdapter studentTableAdapter;
     }
 }

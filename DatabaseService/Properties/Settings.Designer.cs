@@ -26,8 +26,8 @@ namespace DatabaseService.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAMES-SHERIDAN-\\\\JAMESGRAUSQLSERV;Initial Catalog=StudentManagerDB;In" +
-            "tegrated Security=SSPI;Persist Security Info=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAMES-SHERIDAN-\\JAMESGRAUSQLSERV;Initial Catalog=StudentManagerDB;Int" +
+            "egrated Security=True")]
         public string DBConnectionString {
             get {
                 return ((string)(this["DBConnectionString"]));

@@ -8,7 +8,9 @@
  **/
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 // Namespace in which this class resides
 namespace Csharp_Group_Assignment {
@@ -80,6 +82,40 @@ namespace Csharp_Group_Assignment {
 
             // Hide the current form
             FormsGlobal.frmHome.Hide();
+        }
+
+        /**
+         * 
+         * This funcion is used to display the chart on the main page
+         * 
+         **/
+        private void frmHome_Load(object sender, EventArgs e) {
+            // Reset default chart options
+            chtMain.Series.Clear();
+            chtMain.Legends.Clear();
+
+            // Add Legend
+            chtMain.Legends.Add("Tables");
+            chtMain.Legends[0].LegendStyle = LegendStyle.Table;
+            chtMain.Legends[0].Docking = Docking.Bottom;
+            chtMain.Legends[0].Alignment = StringAlignment.Center;
+            chtMain.Legends[0].Title = "Database Distribution";
+            chtMain.Legends[0].BorderColor = Color.Black;
+
+            // Add Chart Series
+            string seriesName = "Database Distribution";
+            chtMain.Series.Add(seriesName);
+            chtMain.Series[seriesName].ChartType = SeriesChartType.Pie;
+            chtMain.Series[seriesName].Points.AddXY("Programs", FormsGlobal.frmCourses.dtsAllData.Program.Count);
+            chtMain.Series[seriesName].Points.AddXY("Courses", FormsGlobal.frmCourses.dtsAllData.Courses.Count);
+            chtMain.Series[seriesName].Points.AddXY("Students", FormsGlobal.frmCourses.dtsAllData.Student.Count);
+            chtMain.Series[seriesName].Points.AddXY("Professors", FormsGlobal.frmCourses.dtsAllData.Professor.Count);
+
+            // Loop though each data point and show the percentage and value
+            foreach (DataPoint p in chtMain.Series[seriesName].Points) {
+                // Set label to values and percentage
+                p.Label = "#VALX\n#PERCENT";
+            }
         }
     }
 }

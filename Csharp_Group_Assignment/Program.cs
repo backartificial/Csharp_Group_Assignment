@@ -1,8 +1,7 @@
 ﻿/**
  * 
  * File: Program.cs
- * Developer: James Grau
- * Student Number: 991443203
+ * Developer: Emily
  * Date: August 14, 2018
  * 
  **/
