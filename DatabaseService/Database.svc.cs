@@ -66,5 +66,45 @@ namespace DatabaseService
             }
         }
 
+        public Data PullData(string table) {
+            Connect();
+
+            var data = new Data { Value = new List<Dictionary<string, string>>() };
+
+            using (var command = new SqlCommand("SELECT * FROM" + table, connection)) {
+                using (var reader = command.ExecuteReader()) {
+                    var row = new Dictionary<string, string>();
+                    while (reader.Read()) {
+                        for (var index = 0; index < reader.FieldCount; index++) {
+                            row.Add(reader.GetName(index), reader.GetString(index));
+                        }
+
+                        data.Value.Add(row);
+                    }
+                }
+            }
+
+            Disconnect();
+
+            return data;
+        }
+
+        public bool PushData(string query) {
+            try {
+                Connect();
+
+                SqlCommand statement = new SqlCommand(query, connection);
+
+                statement.ExecuteNonQuery();
+
+                statement.Dispose();
+
+                Disconnect();
+            } catch (SqlException ex) {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
